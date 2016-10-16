@@ -39,7 +39,7 @@
     <ul class="tablist">
       <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
+      <li><a href="examples.html"><span>Tests</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -72,16 +72,21 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> syntax[] = <span class="stringliteral">&quot;Hello/0 -&gt; string greeting&quot;</span>;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">struct </span><a class="code" href="group__blink__parser.html#structblink__schema">blink_schema</a> s;</div>
-<div class="line"><a class="code" href="group__blink__parser.html#gab38406dcd0bb1b7a03071258a684d8bd">BLINK_NewSchema</a>(&amp;s);</div>
-<div class="line"><a class="code" href="group__blink__parser.html#ga9ca7fb5c0a43406ebb8409482e602992">BLINK_Parse</a>(&amp;s, syntax, <span class="keyword">sizeof</span>(syntax));</div>
-<div class="line"><a class="code" href="group__blink__parser.html#ga6d9852d46fd9741792fe36146e68c637">BLINK_DestroySchema</a>(&amp;s);</div>
+<div class="line"><a class="code" href="group__blink__parser.html#gae88ba931f7b1772f36db957f0f7a193a">BLINK_NewSchema</a>(&amp;s);</div>
+<div class="line"><a class="code" href="group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f">BLINK_Parse</a>(&amp;s, syntax, <span class="keyword">sizeof</span>(syntax));</div>
+<div class="line"><a class="code" href="group__blink__parser.html#gaad736fcf94e77f4c8921bc49811446a4">BLINK_DestroySchema</a>(&amp;s);</div>
 </div><!-- fragment --><h2>Compile Time Options</h2>
 <div class="fragment"><div class="line"><span class="comment">// remove asserts (default: not defined)</span></div>
 <div class="line"><span class="preprocessor">#define NDEBUG</span></div>
 <div class="line"><span class="preprocessor"></span></div>
 <div class="line"><span class="comment">// define the maximum inheritence depth (default: 10)</span></div>
-<div class="line"><span class="preprocessor">#define BLINK_INHERIT_DEPTH   10</span></div>
-</div><!-- fragment --><h2>License</h2>
+<div class="line"><span class="preprocessor">#define BLINK_INHERIT_DEPTH 10</span></div>
+<div class="line"><span class="preprocessor"></span></div>
+<div class="line"><span class="comment">// define the maximum number of references allowed in a chain (default: 10)</span></div>
+<div class="line"><span class="preprocessor">#define BLINK_LINK_DEPTH    10</span></div>
+</div><!-- fragment --><h2>See Also</h2>
+<p><a href="https://github.com/cjhdev/slow_blink" title="SlowBlink">SlowBlink</a>: Blink Protocol in Ruby</p>
+<h2>License</h2>
 <p>uBlink has an MIT license.</p>
 <h2>Contact</h2>
 <p><a href="#" onclick="location.href='mai'+'lto:'+'con'+'ta'+'ct@'+'cj'+'h.i'+'d.'+'au'; return false;">conta<span style="display: none;">.nosp@m.</span>ct@c<span style="display: none;">.nosp@m.</span>jh.id<span style="display: none;">.nosp@m.</span>.au</a> </p>

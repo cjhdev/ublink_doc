@@ -39,7 +39,7 @@
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="modules.html"><span>Modules</span></a></li>
-      <li><a href="examples.html"><span>Examples</span></a></li>
+      <li><a href="examples.html"><span>Tests</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -67,31 +67,959 @@ $(document).ready(function(){initNavTree('group__blink__compact__form.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga82a5db6b9be94d9584b00935269992df"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga82a5db6b9be94d9584b00935269992df">BLINK_PutVLCNull</a> (uint8_t *out, uint32_t outMax)</td></tr>
-<tr class="memdesc:ga82a5db6b9be94d9584b00935269992df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode a VLC null.  <a href="#ga82a5db6b9be94d9584b00935269992df">More...</a><br/></td></tr>
-<tr class="separator:ga82a5db6b9be94d9584b00935269992df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa65a7f87fc88f3337ec0d0bfe6aa7817"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gaa65a7f87fc88f3337ec0d0bfe6aa7817">BLINK_EncodeVLCNull</a> (uint8_t *out, uint32_t outMax)</td></tr>
+<tr class="memdesc:gaa65a7f87fc88f3337ec0d0bfe6aa7817"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode a VLC null.  <a href="#gaa65a7f87fc88f3337ec0d0bfe6aa7817">More...</a><br/></td></tr>
+<tr class="separator:gaa65a7f87fc88f3337ec0d0bfe6aa7817"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0637beba14e98980c58d7822e2b97242"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga0637beba14e98980c58d7822e2b97242">BLINK_GetVLCSizeUnsigned</a> (uint64_t value)</td></tr>
 <tr class="memdesc:ga0637beba14e98980c58d7822e2b97242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return minimum number of bytes required to VLC encode unsigned integer value.  <a href="#ga0637beba14e98980c58d7822e2b97242">More...</a><br/></td></tr>
 <tr class="separator:ga0637beba14e98980c58d7822e2b97242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae25e121fd396ab40c034e5eadbdae0bd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gae25e121fd396ab40c034e5eadbdae0bd">BLINK_GetVLCSizeSigned</a> (int64_t value)</td></tr>
 <tr class="memdesc:gae25e121fd396ab40c034e5eadbdae0bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return minimum number of bytes required to VLC encode signed integer value.  <a href="#gae25e121fd396ab40c034e5eadbdae0bd">More...</a><br/></td></tr>
 <tr class="separator:gae25e121fd396ab40c034e5eadbdae0bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad6a23f527ee9e42fb4482b3c44d80a72"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gad6a23f527ee9e42fb4482b3c44d80a72">BLINK_PutVLC</a> (uint64_t in, bool isSigned, uint8_t *out, uint32_t outMax)</td></tr>
-<tr class="memdesc:gad6a23f527ee9e42fb4482b3c44d80a72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode signed/unsigned integer as VLC.  <a href="#gad6a23f527ee9e42fb4482b3c44d80a72">More...</a><br/></td></tr>
-<tr class="separator:gad6a23f527ee9e42fb4482b3c44d80a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacec0aacce56d36dd7ad81608ab97bc3d"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gacec0aacce56d36dd7ad81608ab97bc3d">BLINK_GetVLC</a> (const uint8_t *in, uint32_t inLen, bool isSigned, uint64_t *out, bool *isNull)</td></tr>
-<tr class="memdesc:gacec0aacce56d36dd7ad81608ab97bc3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode signed/unsigned integer as VLC.  <a href="#gacec0aacce56d36dd7ad81608ab97bc3d">More...</a><br/></td></tr>
-<tr class="separator:gacec0aacce56d36dd7ad81608ab97bc3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2583169a24d8d8c687a5103836ed43a4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga2583169a24d8d8c687a5103836ed43a4">BLINK_EncodeVLC</a> (uint64_t in, bool isSigned, uint8_t *out, uint32_t outMax)</td></tr>
+<tr class="memdesc:ga2583169a24d8d8c687a5103836ed43a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode signed/unsigned integer as VLC.  <a href="#ga2583169a24d8d8c687a5103836ed43a4">More...</a><br/></td></tr>
+<tr class="separator:ga2583169a24d8d8c687a5103836ed43a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff30b4619c2bf4302f1fc625aace9894"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gaff30b4619c2bf4302f1fc625aace9894">BLINK_DecodeVLC</a> (const uint8_t *in, uint32_t inLen, bool isSigned, uint64_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:gaff30b4619c2bf4302f1fc625aace9894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode signed/unsigned integer as VLC.  <a href="#gaff30b4619c2bf4302f1fc625aace9894">More...</a><br/></td></tr>
+<tr class="separator:gaff30b4619c2bf4302f1fc625aace9894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga994ab0e3d645d28f9a8fc576e04f4d6e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga994ab0e3d645d28f9a8fc576e04f4d6e">BLINK_DecodeBool</a> (const uint8_t *in, uint32_t inLen, bool *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga994ab0e3d645d28f9a8fc576e04f4d6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>bool</code>  <a href="#ga994ab0e3d645d28f9a8fc576e04f4d6e">More...</a><br/></td></tr>
+<tr class="separator:ga994ab0e3d645d28f9a8fc576e04f4d6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga481101bb25bd9baca58bc183d7da9af2"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga481101bb25bd9baca58bc183d7da9af2">BLINK_DecodeU8</a> (const uint8_t *in, uint32_t inLen, uint8_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga481101bb25bd9baca58bc183d7da9af2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>u8</code>  <a href="#ga481101bb25bd9baca58bc183d7da9af2">More...</a><br/></td></tr>
+<tr class="separator:ga481101bb25bd9baca58bc183d7da9af2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37702a7e0493014b2ebe84e85c363e33"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga37702a7e0493014b2ebe84e85c363e33">BLINK_DecodeU16</a> (const uint8_t *in, uint32_t inLen, uint16_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga37702a7e0493014b2ebe84e85c363e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>u16</code>  <a href="#ga37702a7e0493014b2ebe84e85c363e33">More...</a><br/></td></tr>
+<tr class="separator:ga37702a7e0493014b2ebe84e85c363e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gace74e5b22c0fe3155cae1af7fde6b48b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gace74e5b22c0fe3155cae1af7fde6b48b">BLINK_DecodeU32</a> (const uint8_t *in, uint32_t inLen, uint32_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:gace74e5b22c0fe3155cae1af7fde6b48b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>u32</code>  <a href="#gace74e5b22c0fe3155cae1af7fde6b48b">More...</a><br/></td></tr>
+<tr class="separator:gace74e5b22c0fe3155cae1af7fde6b48b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14daf28d6b1b497c9818d97dc7b493f9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga14daf28d6b1b497c9818d97dc7b493f9">BLINK_DecodeU64</a> (const uint8_t *in, uint32_t inLen, uint64_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga14daf28d6b1b497c9818d97dc7b493f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>u64</code>  <a href="#ga14daf28d6b1b497c9818d97dc7b493f9">More...</a><br/></td></tr>
+<tr class="separator:ga14daf28d6b1b497c9818d97dc7b493f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d903e072ee921e8f46bdb64f5952e74"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga0d903e072ee921e8f46bdb64f5952e74">BLINK_DecodeI8</a> (const uint8_t *in, uint32_t inLen, int8_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga0d903e072ee921e8f46bdb64f5952e74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>i8</code>  <a href="#ga0d903e072ee921e8f46bdb64f5952e74">More...</a><br/></td></tr>
+<tr class="separator:ga0d903e072ee921e8f46bdb64f5952e74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga423390bbd73602bb396437bd1483a654"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga423390bbd73602bb396437bd1483a654">BLINK_DecodeI16</a> (const uint8_t *in, uint32_t inLen, int16_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga423390bbd73602bb396437bd1483a654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>i16</code>  <a href="#ga423390bbd73602bb396437bd1483a654">More...</a><br/></td></tr>
+<tr class="separator:ga423390bbd73602bb396437bd1483a654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga80edd2ca69947d29791aa374ebf22a2a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga80edd2ca69947d29791aa374ebf22a2a">BLINK_DecodeI32</a> (const uint8_t *in, uint32_t inLen, int32_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga80edd2ca69947d29791aa374ebf22a2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>i32</code>  <a href="#ga80edd2ca69947d29791aa374ebf22a2a">More...</a><br/></td></tr>
+<tr class="separator:ga80edd2ca69947d29791aa374ebf22a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2e838ef0b6e5963280d66148610259c4"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga2e838ef0b6e5963280d66148610259c4">BLINK_DecodeI64</a> (const uint8_t *in, uint32_t inLen, int64_t *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga2e838ef0b6e5963280d66148610259c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>i64</code>  <a href="#ga2e838ef0b6e5963280d66148610259c4">More...</a><br/></td></tr>
+<tr class="separator:ga2e838ef0b6e5963280d66148610259c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9288b41b835fc965e71aa9cf3716604e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga9288b41b835fc965e71aa9cf3716604e">BLINK_DecodeBinary</a> (const uint8_t *in, uint32_t inLen, const uint8_t **out, uint32_t *outLen, bool *isNull)</td></tr>
+<tr class="memdesc:ga9288b41b835fc965e71aa9cf3716604e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>binary</code>  <a href="#ga9288b41b835fc965e71aa9cf3716604e">More...</a><br/></td></tr>
+<tr class="separator:ga9288b41b835fc965e71aa9cf3716604e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga218c850ec723e9f7e74491714c6f5e33"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga218c850ec723e9f7e74491714c6f5e33">BLINK_DecodeString</a> (const uint8_t *in, uint32_t inLen, const uint8_t **out, uint32_t *outLen, bool *isNull)</td></tr>
+<tr class="memdesc:ga218c850ec723e9f7e74491714c6f5e33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>string</code>  <a href="#ga218c850ec723e9f7e74491714c6f5e33">More...</a><br/></td></tr>
+<tr class="separator:ga218c850ec723e9f7e74491714c6f5e33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5f7aca2e400b579e70b15607780c6b09"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga5f7aca2e400b579e70b15607780c6b09">BLINK_DecodeFixed</a> (const uint8_t *in, uint32_t inLen, const uint8_t **out, uint32_t size)</td></tr>
+<tr class="memdesc:ga5f7aca2e400b579e70b15607780c6b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>fixed</code>  <a href="#ga5f7aca2e400b579e70b15607780c6b09">More...</a><br/></td></tr>
+<tr class="separator:ga5f7aca2e400b579e70b15607780c6b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafeecc37660552bc1361ac4f94087679e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gafeecc37660552bc1361ac4f94087679e">BLINK_DecodeOptionalFixed</a> (const uint8_t *in, uint32_t inLen, const uint8_t **out, uint32_t size, bool *isNull)</td></tr>
+<tr class="memdesc:gafeecc37660552bc1361ac4f94087679e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode an optional <code>fixed</code>  <a href="#gafeecc37660552bc1361ac4f94087679e">More...</a><br/></td></tr>
+<tr class="separator:gafeecc37660552bc1361ac4f94087679e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf65d1bafabc886fb91ba5cbd4f1addb"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gaaf65d1bafabc886fb91ba5cbd4f1addb">BLINK_DecodeDecimal</a> (const uint8_t *in, uint32_t inLen, int64_t *mantissa, int8_t *exponent, bool *isNull)</td></tr>
+<tr class="memdesc:gaaf65d1bafabc886fb91ba5cbd4f1addb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>decimal</code>  <a href="#gaaf65d1bafabc886fb91ba5cbd4f1addb">More...</a><br/></td></tr>
+<tr class="separator:gaaf65d1bafabc886fb91ba5cbd4f1addb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6630b8f2aeaf160234171ba4f8fbc734"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga6630b8f2aeaf160234171ba4f8fbc734">BLINK_DecodeF64</a> (const uint8_t *in, uint32_t inLen, double *out, bool *isNull)</td></tr>
+<tr class="memdesc:ga6630b8f2aeaf160234171ba4f8fbc734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>f64</code>  <a href="#ga6630b8f2aeaf160234171ba4f8fbc734">More...</a><br/></td></tr>
+<tr class="separator:ga6630b8f2aeaf160234171ba4f8fbc734"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Compact form primitives. </p>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gacec0aacce56d36dd7ad81608ab97bc3d"></a>
+<a class="anchor" id="ga9288b41b835fc965e71aa9cf3716604e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint8_t BLINK_GetVLC </td>
+          <td class="memname">uint32_t BLINK_DecodeBinary </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t **&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>outLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>binary</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">outLen</td><td>byte length of <code>out</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..0xffffffff</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a11">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga994ab0e3d645d28f9a8fc576e04f4d6e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeBool </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>bool</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..1</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a9">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gaaf65d1bafabc886fb91ba5cbd4f1addb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeDecimal </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t *&#160;</td>
+          <td class="paramname"><em>mantissa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *&#160;</td>
+          <td class="paramname"><em>exponent</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>decimal</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">mantissa</td><td>decoded mantissa </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">exponent</td><td>decoded exponent </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..11</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a14">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga6630b8f2aeaf160234171ba4f8fbc734"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeF64 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>f64</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..9</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a8">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga5f7aca2e400b579e70b15607780c6b09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t BLINK_DecodeFixed </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t **&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>fixed</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>byte size of <code>fixed</code> field</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..0xffffffff</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a12">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga423390bbd73602bb396437bd1483a654"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeI16 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>i16</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..3</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a5">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga80edd2ca69947d29791aa374ebf22a2a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeI32 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>i32</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..5</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a6">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga2e838ef0b6e5963280d66148610259c4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeI64 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>i64</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..9</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a7">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga0d903e072ee921e8f46bdb64f5952e74"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeI8 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>i8</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..1</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a4">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gafeecc37660552bc1361ac4f94087679e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t BLINK_DecodeOptionalFixed </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t **&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode an optional <code>fixed</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">size</td><td>byte size of <code>fixed</code> field </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..0xffffffff</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a13">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga218c850ec723e9f7e74491714c6f5e33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t BLINK_DecodeString </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t **&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>outLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>string</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">outLen</td><td>byte length of <code>out</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..0xffffffff</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a10">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga37702a7e0493014b2ebe84e85c363e33"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeU16 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>u16</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..3</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a1">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gace74e5b22c0fe3155cae1af7fde6b48b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeU32 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>u32</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..5</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a2">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga14daf28d6b1b497c9818d97dc7b493f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeU64 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>u64</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..9</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a3">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="ga481101bb25bd9baca58bc183d7da9af2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeU8 </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>isNull</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode <code>u8</code> </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>decoded value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..1</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a0">tc_BLINK_Decode.c</a>.</dd>
+</dl>
+</div>
+</div>
+<a class="anchor" id="gaff30b4619c2bf4302f1fc625aace9894"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodeVLC </td>
           <td>(</td>
           <td class="paramtype">const uint8_t *&#160;</td>
           <td class="paramname"><em>in</em>, </td>
@@ -135,14 +1063,112 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">isSigned</td><td>integer shall be intepreted as 2s complement </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>output integer buffer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set <code>true</code> if <code>in</code> decodes to NULL</td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">isNull</td><td>set to <code>true</code> if <code>in</code> decodes to NULL</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">0..255</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+    <tr><td class="paramname">0..9</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2583169a24d8d8c687a5103836ed43a4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_EncodeVLC </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isSigned</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>outMax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode signed/unsigned integer as VLC. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>signed or unsigned value to encode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isSigned</td><td><code>true</code> to indicated <code>value</code> is a signed integer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>output buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outMax</td><td>maximum byte lenght of <code>out</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..9</td><td>(bytes successfully written to <code>out</code>) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa65a7f87fc88f3337ec0d0bfe6aa7817"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_EncodeVLCNull </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>out</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>outMax</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Encode a VLC null. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>output buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outMax</td><td>maximum byte length of <code>out</code></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..1</td><td>(bytes successfully written to <code>out</code>) </td></tr>
   </table>
   </dd>
 </dl>
@@ -205,104 +1231,6 @@ Functions</h2></td></tr>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">1..9</td><td>(minimum number of bytes to VLC encode unsigned <code>value</code>) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="gad6a23f527ee9e42fb4482b3c44d80a72"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BLINK_PutVLC </td>
-          <td>(</td>
-          <td class="paramtype">uint64_t&#160;</td>
-          <td class="paramname"><em>in</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>isSigned</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>outMax</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Encode signed/unsigned integer as VLC. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>signed or unsigned value to encode </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">isSigned</td><td><code>true</code> to indicated <code>value</code> is a signed integer </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>output buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">outMax</td><td>maximum byte lenght of <code>out</code></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0..255</td><td>(bytes successfully written to <code>out</code>) </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a class="anchor" id="ga82a5db6b9be94d9584b00935269992df"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint8_t BLINK_PutVLCNull </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t *&#160;</td>
-          <td class="paramname"><em>out</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t&#160;</td>
-          <td class="paramname"><em>outMax</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Encode a VLC null. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>output buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">outMax</td><td>maximum byte length of <code>out</code></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">0..255</td><td>(bytes successfully written to <code>out</code>) </td></tr>
   </table>
   </dd>
 </dl>

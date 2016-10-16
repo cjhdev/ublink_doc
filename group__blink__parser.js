@@ -4,6 +4,7 @@ var group__blink__parser =
       [ "isSequence", "group__blink__parser.html#a93669c917b619b9631b3ae8bd1ab709c", null ],
       [ "ref", "group__blink__parser.html#af739bdec79dd9cd75be4c4a32471ff7a", null ],
       [ "refLen", "group__blink__parser.html#a693cc66be90f1606b4adc2f9c11d3953", null ],
+      [ "resolvedRef", "group__blink__parser.html#a129f6c7731e872d8cd9f671b9da35d41", null ],
       [ "size", "group__blink__parser.html#a8a970d1409ff22a9e32762a14bcf9367", null ],
       [ "tag", "group__blink__parser.html#abf020da948ec219705035cd2be02ebf8", null ]
     ] ],
@@ -26,11 +27,11 @@ var group__blink__parser =
       [ "superGroupLen", "group__blink__parser.html#a89137900c89b085a60bd3ffe74642226", null ]
     ] ],
     [ "blink_symbol", "group__blink__parser.html#structblink__symbol", [
-      [ "id", "group__blink__parser.html#a3750f1618c2c1cd81ab27fc865df7e9d", null ],
       [ "implicitID", "group__blink__parser.html#a3e971a556f67ae57c99558bc75a71a7e", null ],
       [ "name", "group__blink__parser.html#aec23c788990a7b326fc248a859d0f5bb", null ],
       [ "nameLen", "group__blink__parser.html#a4c7d921a676122e1934d23dfc0e7894f", null ],
-      [ "next", "group__blink__parser.html#aa622e4b1bb997fdbe033440080c8200f", null ]
+      [ "next", "group__blink__parser.html#aa622e4b1bb997fdbe033440080c8200f", null ],
+      [ "value", "group__blink__parser.html#a3ebade3da07c0b160e2dbb30b45c395b", null ]
     ] ],
     [ "blink_enum", "group__blink__parser.html#structblink__enum", [
       [ "name", "group__blink__parser.html#a784a9638a745efc57e7080b4c9eae357", null ],
@@ -68,7 +69,9 @@ var group__blink__parser =
       [ "types", "group__blink__parser.html#aab192a14172f3fb15ad1bc86eb154119", null ]
     ] ],
     [ "blink_schema", "group__blink__parser.html#structblink__schema", [
+      [ "calloc", "group__blink__parser.html#adec782fadef06117a046cb03d5b2f11f", null ],
       [ "finalised", "group__blink__parser.html#a82fbba6e303905d684bcc70d2a4c2035", null ],
+      [ "free", "group__blink__parser.html#a678f94402ceefc1a61adf652de15a98a", null ],
       [ "ns", "group__blink__parser.html#ad31467a41b30db048157e122484a633d", null ]
     ] ],
     [ "blink_field_iterator", "group__blink__parser.html#structblink__field__iterator", [
@@ -76,6 +79,9 @@ var group__blink__parser =
       [ "field", "group__blink__parser.html#a6b7af961477c66c4a3a0350b8ae46f75", null ]
     ] ],
     [ "BLINK_INHERIT_DEPTH", "group__blink__parser.html#ga14131866a7eba6a0b1e64d9eab1a3f2c", null ],
+    [ "BLINK_LINK_DEPTH", "group__blink__parser.html#ga82a317701d4dd2613f556048a693f317", null ],
+    [ "fn_blink_calloc_t", "group__blink__parser.html#gaa00ea24fa82793ec21dbf2e588f3e435", null ],
+    [ "fn_blink_free_t", "group__blink__parser.html#ga7c256c11a35d84bd71890992ae24b9da", null ],
     [ "blink_type_tag", "group__blink__parser.html#ga3c752bf7f68879c88427adabf3778509", [
       [ "TYPE_STRING", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509addb4be6b1cc25112defabef75f73427a", null ],
       [ "TYPE_BINARY", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509aa5ffcdf7807a1bb2607a525a08682304", null ],
@@ -89,23 +95,29 @@ var group__blink__parser =
       [ "TYPE_I16", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a53aad119b5a256579dfa5290485de039", null ],
       [ "TYPE_I32", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ac7934ca10ab7b05c96f1eea440e28793", null ],
       [ "TYPE_I64", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a64b38adc375312ef1c6502095501d652", null ],
+      [ "TYPE_F64", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a53fe97e5cd809f8c663be3b1b318ec41", null ],
+      [ "TYPE_DECIMAL", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ac80ed02ff29fa334158b601181f5ae28", null ],
+      [ "TYPE_OBJECT", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a43aef6302e2b8ee4efdd9ca87636d7c8", null ],
+      [ "TYPE_ENUM", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a156a7eedfef32c6e58187646502f7815", null ],
       [ "TYPE_REF", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ab25e3007adfa6aaac1d847bfe02db13a", null ],
+      [ "TYPE_STATIC_GROUP", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a49fc69bb81f08a371c2bd1614041ebba", null ],
       [ "TYPE_DYNAMIC_REF", "group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a278d2b22bd41a561873350151311d44b", null ]
     ] ],
-    [ "BLINK_DestroySchema", "group__blink__parser.html#ga6d9852d46fd9741792fe36146e68c637", null ],
+    [ "BLINK_DestroySchema", "group__blink__parser.html#gaad736fcf94e77f4c8921bc49811446a4", null ],
     [ "BLINK_FieldIsOptional", "group__blink__parser.html#ga19f360c6fe5d0b8e9dcb660c79c23e5a", null ],
     [ "BLINK_GetFieldName", "group__blink__parser.html#ga128d7ec0d3a157c7e98aa5e7abc564d5", null ],
     [ "BLINK_GetFieldRef", "group__blink__parser.html#ga0d2251015db9530f2de59c69a5685b0b", null ],
     [ "BLINK_GetFieldSize", "group__blink__parser.html#gacbaad4cc43b10d777feb0c3549b7ab76", null ],
     [ "BLINK_GetFieldType", "group__blink__parser.html#gacbed11e63e0e85c17153ef6333389c85", null ],
-    [ "BLINK_GetGroupByID", "group__blink__parser.html#ga84f416e62b8226f6739bf5a963ac7aff", null ],
-    [ "BLINK_GetGroupByName", "group__blink__parser.html#gab3087c1c41a1d54b67b71bd1bb4b27f1", null ],
+    [ "BLINK_GetGroupByID", "group__blink__parser.html#ga51ae8879a21939c7ed348da0a079febc", null ],
+    [ "BLINK_GetGroupByName", "group__blink__parser.html#ga4aea3f79a6b64fb756c03fa38c53b61d", null ],
     [ "BLINK_GetGroupName", "group__blink__parser.html#gac34fdf5c5f2ef3d9acd5202734d99376", null ],
     [ "BLINK_GetSuperGroup", "group__blink__parser.html#ga6fdc526e7e285509e5945a4b891f9995", null ],
+    [ "BLINK_GetSymbolName", "group__blink__parser.html#gadd050b42034b891ac009d18423886ea0", null ],
+    [ "BLINK_GetSymbolValue", "group__blink__parser.html#ga361657878628d3565be04b51232dbe9c", null ],
+    [ "BLINK_GetType", "group__blink__parser.html#ga23f2a3307c0b15e22b1601657a533d07", null ],
     [ "BLINK_NewFieldIterator", "group__blink__parser.html#gae75f2b543c736d249ef4bc6a60ec766d", null ],
-    [ "BLINK_NewSchema", "group__blink__parser.html#gab38406dcd0bb1b7a03071258a684d8bd", null ],
+    [ "BLINK_NewSchema", "group__blink__parser.html#gae88ba931f7b1772f36db957f0f7a193a", null ],
     [ "BLINK_NextField", "group__blink__parser.html#gaf617560c11740101c623af82a7318a9e", null ],
-    [ "BLINK_Parse", "group__blink__parser.html#ga9ca7fb5c0a43406ebb8409482e602992", null ],
-    [ "BLINK_ParseFinal", "group__blink__parser.html#gac2340ef4d342f10cd385e77c43217f2a", null ],
-    [ "BLINK_ParseNext", "group__blink__parser.html#ga5d687901ca0d28cb984f07d885f430f4", null ]
+    [ "BLINK_Parse", "group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f", null ]
 ];

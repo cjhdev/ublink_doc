@@ -2,7 +2,7 @@ var NAVTREE =
 [
   [ "uBlink", "index.html", [
     [ "Modules", "modules.html", "modules" ],
-    [ "Examples", "examples.html", "examples" ]
+    [ "Tests", "examples.html", "examples" ]
   ] ]
 ];
 
