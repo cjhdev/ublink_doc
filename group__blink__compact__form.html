@@ -1116,14 +1116,14 @@ Functions</h2></td></tr>
 <p>Encode signed/unsigned integer as VLC. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>signed or unsigned value to encode </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">isSigned</td><td><code>true</code> to indicated <code>value</code> is a signed integer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>value to encode </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">isSigned</td><td>if true <code>value</code> will be interpreted as a signed integer </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>output buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">outMax</td><td>maximum byte lenght of <code>out</code></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">outMax</td><td>byte length of <code>out</code></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint8_t </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>uint8_t</dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">0..9</td><td>(bytes successfully written to <code>out</code>) </td></tr>
