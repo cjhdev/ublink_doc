@@ -88,7 +88,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeU8_max(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0x00};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xbf, 0x03};</div>
 <div class="line">    uint8_t out;</div>
 <div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
 <div class="line">    uint8_t expectedOut = UINT8_MAX;</div>
@@ -184,7 +184,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeI8_min(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0x00};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0x80, 0xfe};</div>
 <div class="line">    int8_t out;</div>
 <div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
 <div class="line">    int8_t expectedOut = INT8_MIN;</div>
@@ -196,7 +196,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeI8_max(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0x00};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xbf,0x01};</div>
 <div class="line">    int8_t out;</div>
 <div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
 <div class="line">    int8_t expectedOut = INT8_MAX;</div>
@@ -231,7 +231,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line">}</div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeI16_max(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc3, 0xff, 0x7f};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc2, 0xff, 0x7f};</div>
 <div class="line">    int16_t out;</div>
 <div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
 <div class="line">    int16_t expectedOut = INT16_MAX;</div>
@@ -255,7 +255,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeI32_min(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc4, 0x00, 0x00, 0x00, 0x00};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc4, 0x00, 0x00, 0x00, 0x80};</div>
 <div class="line">    int32_t out;</div>
 <div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
 <div class="line">    int32_t expectedOut = INT32_MIN;</div>
@@ -267,7 +267,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeI32_max(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc4, 0xff,0xff,0xff,0xff};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc4, 0xff,0xff,0xff,0x7f};</div>
 <div class="line">    int32_t out;</div>
 <div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
 <div class="line">    int32_t expectedOut = INT32_MAX;</div>
@@ -291,7 +291,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeI64_min(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc8, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x80};</div>
 <div class="line">    int64_t out;</div>
 <div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
 <div class="line">    int64_t expectedOut = INT64_MIN;</div>
@@ -303,7 +303,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeI64_max(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
-<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc8, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc8, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f};</div>
 <div class="line">    int64_t out;</div>
 <div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
 <div class="line">    int64_t expectedOut = INT64_MAX;</div>

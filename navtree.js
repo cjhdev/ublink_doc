@@ -8,7 +8,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"examples.html"
+"examples.html",
+"group__blink__parser.html#structblink__field__iterator"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
