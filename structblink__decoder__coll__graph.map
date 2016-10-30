@@ -1,11 +1,4 @@
 <map id="blink_decoder" name="blink_decoder">
-<area shape="rect" id="node2" href="$group__blink__decoder.html#structblink__decoder__events" title="Function pointers are called in response to events. " alt="" coords="5,384,152,411"/>
-<area shape="rect" id="node3" href="$group__blink__parser.html#structblink__group" title="group " alt="" coords="67,199,155,225"/>
-<area shape="rect" id="node7" href="$group__blink__parser.html#structblink__namespace" title="namespace " alt="" coords="168,333,291,360"/>
-<area shape="rect" id="node4" href="$group__blink__parser.html#structblink__field" title="field " alt="" coords="71,96,149,123"/>
-<area shape="rect" id="node5" href="$group__blink__parser.html#structblink__type" title="type " alt="" coords="153,5,233,32"/>
-<area shape="rect" id="node8" href="$group__blink__parser.html#structblink__type__def" title="type definition " alt="" coords="188,147,295,173"/>
-<area shape="rect" id="node6" href="$group__blink__parser.html#structblink__schema" title="schema " alt="" coords="159,435,261,461"/>
-<area shape="rect" id="node9" href="$group__blink__parser.html#structblink__enum" title="enumeration " alt="" coords="331,199,419,225"/>
-<area shape="rect" id="node10" href="$group__blink__parser.html#structblink__symbol" title="enumeration symbol " alt="" coords="329,96,428,123"/>
+<area shape="rect" id="node2" href="$group__blink__decoder.html#structblink__decoder__events" title="Function pointers are called in response to events. " alt="" coords="5,5,152,32"/>
+<area shape="rect" id="node3" href="$group__blink__parser.html#structblink__schema" title="schema " alt="" coords="177,5,279,32"/>
 </map>

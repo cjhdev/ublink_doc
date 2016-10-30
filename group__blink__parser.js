@@ -1,85 +1,16 @@
 var group__blink__parser =
 [
-    [ "blink_type", "group__blink__parser.html#structblink__type", [
-      [ "isSequence", "group__blink__parser.html#a93669c917b619b9631b3ae8bd1ab709c", null ],
-      [ "ref", "group__blink__parser.html#af739bdec79dd9cd75be4c4a32471ff7a", null ],
-      [ "refLen", "group__blink__parser.html#a693cc66be90f1606b4adc2f9c11d3953", null ],
-      [ "resolvedRef", "group__blink__parser.html#a129f6c7731e872d8cd9f671b9da35d41", null ],
-      [ "size", "group__blink__parser.html#a8a970d1409ff22a9e32762a14bcf9367", null ],
-      [ "tag", "group__blink__parser.html#abf020da948ec219705035cd2be02ebf8", null ]
-    ] ],
-    [ "blink_field", "group__blink__parser.html#structblink__field", [
-      [ "isOptional", "group__blink__parser.html#a041bb1aa0d145f688cb30af78a9a7bad", null ],
-      [ "name", "group__blink__parser.html#aaf8bf863245aed90699dcede808d346f", null ],
-      [ "nameLen", "group__blink__parser.html#ab708e336cc93e8e7d705d4296c4b9f23", null ],
-      [ "next", "group__blink__parser.html#a2cebb587cfc7aad567278d44e05dbed8", null ],
-      [ "type", "group__blink__parser.html#a448f1efbcab370bc8d85795b3b9f9f04", null ]
-    ] ],
-    [ "blink_group", "group__blink__parser.html#structblink__group", [
-      [ "f", "group__blink__parser.html#a8d1cd9a9351f4064a13b95f9aea1af7e", null ],
-      [ "hasID", "group__blink__parser.html#ac95e21941c9815f605e3e555d07bf7cf", null ],
-      [ "id", "group__blink__parser.html#aca8f88387c175adbc5dfb951292120ac", null ],
-      [ "name", "group__blink__parser.html#abea0d1a7d04992e1a7eaf7884d43786d", null ],
-      [ "nameLen", "group__blink__parser.html#af9ac5ef919c65eb2aabf62d4f1f31d1a", null ],
-      [ "next", "group__blink__parser.html#a023cdef6a7e8f1b7a66b5501c63f5812", null ],
-      [ "s", "group__blink__parser.html#a4ce9f79f847702954ada442daac2dc4f", null ],
-      [ "superGroup", "group__blink__parser.html#a33a869b2dde0b1cf8a38213e4741ed93", null ],
-      [ "superGroupLen", "group__blink__parser.html#a89137900c89b085a60bd3ffe74642226", null ]
-    ] ],
-    [ "blink_symbol", "group__blink__parser.html#structblink__symbol", [
-      [ "implicitID", "group__blink__parser.html#a3e971a556f67ae57c99558bc75a71a7e", null ],
-      [ "name", "group__blink__parser.html#aec23c788990a7b326fc248a859d0f5bb", null ],
-      [ "nameLen", "group__blink__parser.html#a4c7d921a676122e1934d23dfc0e7894f", null ],
-      [ "next", "group__blink__parser.html#aa622e4b1bb997fdbe033440080c8200f", null ],
-      [ "value", "group__blink__parser.html#a3ebade3da07c0b160e2dbb30b45c395b", null ]
-    ] ],
-    [ "blink_enum", "group__blink__parser.html#structblink__enum", [
-      [ "name", "group__blink__parser.html#a784a9638a745efc57e7080b4c9eae357", null ],
-      [ "nameLen", "group__blink__parser.html#a4ce0f1063afd326264095322422a05ad", null ],
-      [ "next", "group__blink__parser.html#a4a2ceb622f5522f8cc1d086b8c028013", null ],
-      [ "s", "group__blink__parser.html#a3814ad16d3c8064fe66eb6327298e329", null ]
-    ] ],
-    [ "blink_type_def", "group__blink__parser.html#structblink__type__def", [
-      [ "name", "group__blink__parser.html#a6a0df3ac610229c9008c253f87a05eb1", null ],
-      [ "nameLen", "group__blink__parser.html#a49fe2f1112d844ce7639e150a48d2743", null ],
-      [ "next", "group__blink__parser.html#a2e35fcdd67c37bbd44a90a18827cb28c", null ],
-      [ "type", "group__blink__parser.html#ad2d091fd3aa5f11dbdd2cdf16c4e98fc", null ]
-    ] ],
-    [ "blink_annote", "group__blink__parser.html#structblink__annote", [
-      [ "isNumeric", "group__blink__parser.html#abd156bc5f5edb1c5c01e1ed9fc0b4735", null ],
-      [ "key", "group__blink__parser.html#a55e80ae7125de9920962095c0d51616c", null ],
-      [ "keyLen", "group__blink__parser.html#a7d683c5d1adb4e4be301a874fdcda384", null ],
-      [ "next", "group__blink__parser.html#a4dc6fda6f7ce9e234f9ccf257f7c6cba", null ],
-      [ "number", "group__blink__parser.html#ac14b12ce79c882b00e985245a1100ad8", null ],
-      [ "value", "group__blink__parser.html#aad8314210288fc460744d6abf040a37c", null ],
-      [ "valueLen", "group__blink__parser.html#a0adf93248d3ab65a72d0fd05aedaacce", null ]
-    ] ],
-    [ "blink_inline_annote", "group__blink__parser.html#structblink__inline__annote", [
-      [ "a", "group__blink__parser.html#a6eb8a33d450ff4536965c4b9f6845669", null ],
-      [ "name", "group__blink__parser.html#abdc518821fc5ff76b6d2710ad027625b", null ],
-      [ "nameLen", "group__blink__parser.html#ad1627088eaeb214d3e5c7c72943c59e8", null ],
-      [ "next", "group__blink__parser.html#adb0ade0637efb378f6fa5bad5f71c2e7", null ]
-    ] ],
-    [ "blink_namespace", "group__blink__parser.html#structblink__namespace", [
-      [ "enums", "group__blink__parser.html#a96d4326f160bc59e6551dd469025eff2", null ],
-      [ "groups", "group__blink__parser.html#a356898ba5b93ba95b164f8016ee86a35", null ],
-      [ "name", "group__blink__parser.html#a6071c434258183bc1730bd1aec057f6c", null ],
-      [ "nameLen", "group__blink__parser.html#ac4e91ee36a04223ebcc8de88356389e0", null ],
-      [ "next", "group__blink__parser.html#a55f0fa443b004bb0c4db980155e03d85", null ],
-      [ "types", "group__blink__parser.html#aab192a14172f3fb15ad1bc86eb154119", null ]
-    ] ],
     [ "blink_schema", "group__blink__parser.html#structblink__schema", [
       [ "calloc", "group__blink__parser.html#adec782fadef06117a046cb03d5b2f11f", null ],
       [ "finalised", "group__blink__parser.html#a82fbba6e303905d684bcc70d2a4c2035", null ],
       [ "free", "group__blink__parser.html#a678f94402ceefc1a61adf652de15a98a", null ],
-      [ "ns", "group__blink__parser.html#ad31467a41b30db048157e122484a633d", null ]
+      [ "ns", "group__blink__parser.html#a0ec392e26da4f00b5935ade7f75db02f", null ]
     ] ],
     [ "blink_field_iterator", "group__blink__parser.html#structblink__field__iterator", [
       [ "depth", "group__blink__parser.html#a6b5342b94a0c689cb6d09ccca43f795e", null ],
-      [ "field", "group__blink__parser.html#a6b7af961477c66c4a3a0350b8ae46f75", null ]
+      [ "field", "group__blink__parser.html#ae0b4cd98b6ab31c2f4df9221d6c8763a", null ]
     ] ],
     [ "BLINK_INHERIT_DEPTH", "group__blink__parser.html#ga14131866a7eba6a0b1e64d9eab1a3f2c", null ],
-    [ "BLINK_LINK_DEPTH", "group__blink__parser.html#ga82a317701d4dd2613f556048a693f317", null ],
     [ "fn_blink_calloc_t", "group__blink__parser.html#gaa00ea24fa82793ec21dbf2e588f3e435", null ],
     [ "fn_blink_free_t", "group__blink__parser.html#ga7c256c11a35d84bd71890992ae24b9da", null ],
     [ "blink_type_tag", "group__blink__parser.html#ga3c752bf7f68879c88427adabf3778509", [

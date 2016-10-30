@@ -116,22 +116,22 @@ $(document).ready(function(){initNavTree('tc_BLINK_Parse_8c-example.html','');})
 <div class="line">    <span class="keyword">struct </span><a name="_a8"></a><a class="code" href="group__blink__parser.html#structblink__field__iterator">blink_field_iterator</a> iter;</div>
 <div class="line">    TEST_ASSERT_EQUAL_PTR(&amp;iter, <a name="a9"></a><a class="code" href="group__blink__parser.html#gae75f2b543c736d249ef4bc6a60ec766d">BLINK_NewFieldIterator</a>(<a class="code" href="group__blink__parser.html#ga4aea3f79a6b64fb756c03fa38c53b61d">BLINK_GetGroupByName</a>(&amp;ctxt, <span class="stringliteral">&quot;Message&quot;</span>, strlen(<span class="stringliteral">&quot;Message&quot;</span>)), &amp;iter));</div>
 <div class="line"></div>
-<div class="line">    <span class="keyword">const</span> <span class="keyword">struct </span><a name="_a10"></a><a class="code" href="group__blink__parser.html#structblink__field">blink_field</a> *f = <a name="a11"></a><a class="code" href="group__blink__parser.html#gaf617560c11740101c623af82a7318a9e">BLINK_NextField</a>(&amp;iter);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keyword">struct </span>blink_field *f = <a name="a10"></a><a class="code" href="group__blink__parser.html#gaf617560c11740101c623af82a7318a9e">BLINK_NextField</a>(&amp;iter);</div>
 <div class="line">    TEST_ASSERT_TRUE(f != NULL);</div>
 <div class="line"></div>
 <div class="line">    <span class="keywordtype">size_t</span> len;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *<a name="a12"></a><a class="code" href="group__blink__parser.html#aaf8bf863245aed90699dcede808d346f">name</a> = <a name="a13"></a><a class="code" href="group__blink__parser.html#ga128d7ec0d3a157c7e98aa5e7abc564d5">BLINK_GetFieldName</a>(f, &amp;len);</div>
-<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__parser.html#ga3c752bf7f68879c88427adabf3778509">blink_type_tag</a> tag = <a name="a14"></a><a class="code" href="group__blink__parser.html#gacbed11e63e0e85c17153ef6333389c85">BLINK_GetFieldType</a>(f);</div>
-<div class="line">    uint32_t size = <a name="a15"></a><a class="code" href="group__blink__parser.html#gacbaad4cc43b10d777feb0c3549b7ab76">BLINK_GetFieldSize</a>(f);</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *name = <a name="a11"></a><a class="code" href="group__blink__parser.html#ga128d7ec0d3a157c7e98aa5e7abc564d5">BLINK_GetFieldName</a>(f, &amp;len);</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__parser.html#ga3c752bf7f68879c88427adabf3778509">blink_type_tag</a> tag = <a name="a12"></a><a class="code" href="group__blink__parser.html#gacbed11e63e0e85c17153ef6333389c85">BLINK_GetFieldType</a>(f);</div>
+<div class="line">    uint32_t size = <a name="a13"></a><a class="code" href="group__blink__parser.html#gacbaad4cc43b10d777feb0c3549b7ab76">BLINK_GetFieldSize</a>(f);</div>
 <div class="line">    </div>
-<div class="line">    TEST_ASSERT_EQUAL(<a name="a16"></a><a class="code" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509addb4be6b1cc25112defabef75f73427a">TYPE_STRING</a>, tag);</div>
+<div class="line">    TEST_ASSERT_EQUAL(<a name="a14"></a><a class="code" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509addb4be6b1cc25112defabef75f73427a">TYPE_STRING</a>, tag);</div>
 <div class="line">    TEST_ASSERT_EQUAL(0xffffffff, size);</div>
 <div class="line"></div>
 <div class="line">    TEST_ASSERT_EQUAL(strlen(<span class="stringliteral">&quot;Greeting&quot;</span>), len);</div>
 <div class="line">    TEST_ASSERT_EQUAL_STRING_LEN(<span class="stringliteral">&quot;Greeting&quot;</span>, name, len);</div>
 <div class="line">    TEST_ASSERT_EQUAL_STRING_LEN(<span class="stringliteral">&quot;Greeting&quot;</span>, name, len);</div>
 <div class="line"></div>
-<div class="line">    TEST_ASSERT_FALSE(<a name="a17"></a><a class="code" href="group__blink__parser.html#ga19f360c6fe5d0b8e9dcb660c79c23e5a">BLINK_FieldIsOptional</a>(f));</div>
+<div class="line">    TEST_ASSERT_FALSE(<a name="a15"></a><a class="code" href="group__blink__parser.html#ga19f360c6fe5d0b8e9dcb660c79c23e5a">BLINK_FieldIsOptional</a>(f));</div>
 <div class="line"></div>
 <div class="line">    TEST_ASSERT_TRUE(<a class="code" href="group__blink__parser.html#gaf617560c11740101c623af82a7318a9e">BLINK_NextField</a>(&amp;iter) == NULL);</div>
 <div class="line">}</div>
@@ -158,7 +158,33 @@ $(document).ready(function(){initNavTree('tc_BLINK_Parse_8c-example.html','');})
 <div class="line">    TEST_ASSERT_EQUAL_PTR(NULL, <a class="code" href="group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f">BLINK_Parse</a>(&amp;ctxt, input, <span class="keyword">sizeof</span>(input)));    </div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_Parse_duplicate_type_definition(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;test = u8 test = u16&quot;</span>;</div>
 <div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL_PTR(NULL, <a class="code" href="group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f">BLINK_Parse</a>(&amp;ctxt, input, <span class="keyword">sizeof</span>(input)));    </div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_Parse_duplicate_type_group_definition(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;test = u8 test -&gt; u16 field&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL_PTR(NULL, <a class="code" href="group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f">BLINK_Parse</a>(&amp;ctxt, input, <span class="keyword">sizeof</span>(input)));    </div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_Parse_duplicate_group_definition(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;test -&gt; u8 field test -&gt; u16 field&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL_PTR(NULL, <a class="code" href="group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f">BLINK_Parse</a>(&amp;ctxt, input, <span class="keyword">sizeof</span>(input)));    </div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_Parse_duplicate_enum_definition(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;test = | bla test = | bla&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL_PTR(NULL, <a class="code" href="group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f">BLINK_Parse</a>(&amp;ctxt, input, <span class="keyword">sizeof</span>(input)));    </div>
+<div class="line">}</div>
 <div class="line"></div>
 <div class="line"></div>
 <div class="line"></div>

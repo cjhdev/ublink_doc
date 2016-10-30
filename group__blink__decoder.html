@@ -88,17 +88,17 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gac187a701c05b301b95ace28663df6a25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac187a701c05b301b95ace28663df6a25"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gac187a701c05b301b95ace28663df6a25">begin_static_group_fn_t</a> )(void *, const struct <a class="el" href="group__blink__parser.html#structblink__group">blink_group</a> *)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gac187a701c05b301b95ace28663df6a25">begin_static_group_fn_t</a> )(void *, const struct blink_group *)</td></tr>
 <tr class="memdesc:gac187a701c05b301b95ace28663df6a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">forward declaration <br/></td></tr>
 <tr class="separator:gac187a701c05b301b95ace28663df6a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga03cc951ccaffdc0dac4dd3af8f3bc3f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga03cc951ccaffdc0dac4dd3af8f3bc3f6"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>end_static_group_fn_t</b> )(void *, const struct <a class="el" href="group__blink__parser.html#structblink__group">blink_group</a> *)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>end_static_group_fn_t</b> )(void *, const struct blink_group *)</td></tr>
 <tr class="separator:ga03cc951ccaffdc0dac4dd3af8f3bc3f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7ac8ff8985c39a34bc91fc88f54ad099"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7ac8ff8985c39a34bc91fc88f54ad099"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>begin_dynamic_group_fn_t</b> )(void *, const struct <a class="el" href="group__blink__parser.html#structblink__group">blink_group</a> *)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>begin_dynamic_group_fn_t</b> )(void *, const struct blink_group *)</td></tr>
 <tr class="separator:ga7ac8ff8985c39a34bc91fc88f54ad099"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0dbb10d56558235de2a565c5b7db66e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0dbb10d56558235de2a565c5b7db66e4"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>end_dynamic_group_fn_t</b> )(void *, const struct <a class="el" href="group__blink__parser.html#structblink__group">blink_group</a> *)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>end_dynamic_group_fn_t</b> )(void *, const struct blink_group *)</td></tr>
 <tr class="separator:ga0dbb10d56558235de2a565c5b7db66e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga06425a805ebaee3b6d7b65167537e623"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga06425a805ebaee3b6d7b65167537e623"></a>
 typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>begin_sequence_fn_t</b> )(void *)</td></tr>
@@ -201,14 +201,7 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </div><div class="memdoc">
 <div class="textblock"><p>Function pointers are called in response to events. </p>
 <dl class="section note"><dt>Note</dt><dd>a function pointer may be NULL if the corresponding event is never handled </dd></dl>
-</div><div class="dynheader">
-Collaboration diagram for blink_decoder_events:</div>
-<div class="dyncontent">
-<div class="center"><img src="structblink__decoder__events__coll__graph.png" border="0" usemap="#blink__decoder__events_coll__map" alt="Collaboration graph"/></div>
-<map name="blink__decoder__events_coll__map" id="blink__decoder__events_coll__map">
-<area shape="rect" id="node2" href="group__blink__parser.html#structblink__group" title="group " alt="" coords="35,188,123,215"/><area shape="rect" id="node3" href="group__blink__parser.html#structblink__field" title="field " alt="" coords="39,96,117,123"/><area shape="rect" id="node4" href="group__blink__parser.html#structblink__type" title="type " alt="" coords="38,5,119,32"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
+</div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="ad25f184acaa56fda6dcb9ebf95d6e3da"></a>begin_dynamic_group_fn_t</td>
@@ -379,7 +372,7 @@ Collaboration diagram for blink_decoder:</div>
 <div class="dyncontent">
 <div class="center"><img src="structblink__decoder__coll__graph.png" border="0" usemap="#blink__decoder_coll__map" alt="Collaboration graph"/></div>
 <map name="blink__decoder_coll__map" id="blink__decoder_coll__map">
-<area shape="rect" id="node2" href="group__blink__decoder.html#structblink__decoder__events" title="Function pointers are called in response to events. " alt="" coords="5,384,152,411"/><area shape="rect" id="node3" href="group__blink__parser.html#structblink__group" title="group " alt="" coords="67,199,155,225"/><area shape="rect" id="node7" href="group__blink__parser.html#structblink__namespace" title="namespace " alt="" coords="168,333,291,360"/><area shape="rect" id="node4" href="group__blink__parser.html#structblink__field" title="field " alt="" coords="71,96,149,123"/><area shape="rect" id="node5" href="group__blink__parser.html#structblink__type" title="type " alt="" coords="153,5,233,32"/><area shape="rect" id="node8" href="group__blink__parser.html#structblink__type__def" title="type definition " alt="" coords="188,147,295,173"/><area shape="rect" id="node6" href="group__blink__parser.html#structblink__schema" title="schema " alt="" coords="159,435,261,461"/><area shape="rect" id="node9" href="group__blink__parser.html#structblink__enum" title="enumeration " alt="" coords="331,199,419,225"/><area shape="rect" id="node10" href="group__blink__parser.html#structblink__symbol" title="enumeration symbol " alt="" coords="329,96,428,123"/></map>
+<area shape="rect" id="node2" href="group__blink__decoder.html#structblink__decoder__events" title="Function pointers are called in response to events. " alt="" coords="5,5,152,32"/><area shape="rect" id="node3" href="group__blink__parser.html#structblink__schema" title="schema " alt="" coords="177,5,279,32"/></map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>

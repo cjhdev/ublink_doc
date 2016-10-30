@@ -136,6 +136,26 @@ $(document).ready(function(){initNavTree('tc_BLINK_Encode_8c-example.html','');}
 <div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_EncodeU8_127(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    uint8_t in = 127;    </div>
+<div class="line">    <span class="keyword">const</span> uint8_t expectedOut[] = {0x7f};</div>
+<div class="line">    uint8_t out[<span class="keyword">sizeof</span>(expectedOut)];</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(expectedOut), <a class="code" href="group__blink__compact__form.html#ga791d68dcded1b38b30e1e9bb998e51a1">BLINK_EncodeU8</a>(in, out, <span class="keyword">sizeof</span>(out)));</div>
+<div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_EncodeU8_128(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    uint8_t in = 128;    </div>
+<div class="line">    <span class="keyword">const</span> uint8_t expectedOut[] = {0x80,0x02};</div>
+<div class="line">    uint8_t out[<span class="keyword">sizeof</span>(expectedOut)];</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(expectedOut), <a class="code" href="group__blink__compact__form.html#ga791d68dcded1b38b30e1e9bb998e51a1">BLINK_EncodeU8</a>(in, out, <span class="keyword">sizeof</span>(out)));</div>
+<div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
+<div class="line">}</div>
+<div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_EncodeU16_max(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    uint16_t in = UINT16_MAX;    </div>
@@ -166,13 +186,53 @@ $(document).ready(function(){initNavTree('tc_BLINK_Encode_8c-example.html','');}
 <div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_EncodeI8_63(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    int8_t in = 63;    </div>
+<div class="line">    <span class="keyword">const</span> uint8_t expectedOut[] = {0x3f};</div>
+<div class="line">    uint8_t out[<span class="keyword">sizeof</span>(expectedOut)];</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(expectedOut), <a name="a7"></a><a class="code" href="group__blink__compact__form.html#ga84f31e05256aa345004d4d600ece86e3">BLINK_EncodeI8</a>(in, out, <span class="keyword">sizeof</span>(out)));</div>
+<div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_EncodeI8_64(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    int8_t in = 64;    </div>
+<div class="line">    <span class="keyword">const</span> uint8_t expectedOut[] = {0x80, 0x01};</div>
+<div class="line">    uint8_t out[<span class="keyword">sizeof</span>(expectedOut)];</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(expectedOut), <a class="code" href="group__blink__compact__form.html#ga84f31e05256aa345004d4d600ece86e3">BLINK_EncodeI8</a>(in, out, <span class="keyword">sizeof</span>(out)));</div>
+<div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_EncodeI8_minus64(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    int8_t in = -64;    </div>
+<div class="line">    <span class="keyword">const</span> uint8_t expectedOut[] = {0x40};</div>
+<div class="line">    uint8_t out[<span class="keyword">sizeof</span>(expectedOut)];</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(expectedOut), <a class="code" href="group__blink__compact__form.html#ga84f31e05256aa345004d4d600ece86e3">BLINK_EncodeI8</a>(in, out, <span class="keyword">sizeof</span>(out)));</div>
+<div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_EncodeI8_minus65(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    int8_t in = -65;    </div>
+<div class="line">    <span class="keyword">const</span> uint8_t expectedOut[] = {0xbf, 0xfe};</div>
+<div class="line">    uint8_t out[<span class="keyword">sizeof</span>(expectedOut)];</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(expectedOut), <a class="code" href="group__blink__compact__form.html#ga84f31e05256aa345004d4d600ece86e3">BLINK_EncodeI8</a>(in, out, <span class="keyword">sizeof</span>(out)));</div>
+<div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
+<div class="line">}</div>
+<div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_EncodeI8_min(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    int8_t in = INT8_MIN;    </div>
 <div class="line">    <span class="keyword">const</span> uint8_t expectedOut[] = {0x80,0xfe};</div>
 <div class="line">    uint8_t out[<span class="keyword">sizeof</span>(expectedOut)];</div>
 <div class="line"></div>
-<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(expectedOut), <a name="a7"></a><a class="code" href="group__blink__compact__form.html#ga84f31e05256aa345004d4d600ece86e3">BLINK_EncodeI8</a>(in, out, <span class="keyword">sizeof</span>(out)));</div>
+<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(expectedOut), <a class="code" href="group__blink__compact__form.html#ga84f31e05256aa345004d4d600ece86e3">BLINK_EncodeI8</a>(in, out, <span class="keyword">sizeof</span>(out)));</div>
 <div class="line">    TEST_ASSERT_EQUAL_MEMORY(expectedOut, out, <span class="keyword">sizeof</span>(expectedOut));</div>
 <div class="line">}</div>
 <div class="line"></div>
