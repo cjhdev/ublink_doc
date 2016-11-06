@@ -66,13 +66,13 @@ $(document).ready(function(){initNavTree('index.html','');});
 <p>uBlink is a C99 implementation of <a href="http://www.blinkprotocol.org/" title="The Blink Protocol">The Blink Protocol</a> suitable for integrating into larger applications.</p>
 <p>This project is currently under development and not very useful.</p>
 <h2>Examples</h2>
-<h3>Create a <a class="el" href="group__blink__parser.html#structblink__schema" title="schema ">blink_schema</a> object from a single schema definition</h3>
+<h3>Create a <a class="el" href="group__blink__parser.html#structblink__schema" title="forward declaration ">blink_schema</a> object from a single schema definition</h3>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;blink_parser.h&quot;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> syntax[] = <span class="stringliteral">&quot;Hello/0 -&gt; string greeting&quot;</span>;</div>
 <div class="line"></div>
 <div class="line"><span class="keyword">struct </span><a class="code" href="group__blink__parser.html#structblink__schema">blink_schema</a> s;</div>
-<div class="line"><a class="code" href="group__blink__parser.html#gae88ba931f7b1772f36db957f0f7a193a">BLINK_NewSchema</a>(&amp;s);</div>
+<div class="line"><a class="code" href="group__blink__parser.html#gad1989c8c0bd33b57863205b4422d7033">BLINK_InitSchema</a>(&amp;s);</div>
 <div class="line"><a class="code" href="group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f">BLINK_Parse</a>(&amp;s, syntax, <span class="keyword">sizeof</span>(syntax));</div>
 <div class="line"><a class="code" href="group__blink__parser.html#gaad736fcf94e77f4c8921bc49811446a4">BLINK_DestroySchema</a>(&amp;s);</div>
 </div><!-- fragment --><h2>Compile Time Options</h2>

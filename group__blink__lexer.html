@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>uBlink: Lexer</title>
+<title>uBlink: Blink_lexer</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(document).ready(function(){initNavTree('group__blink__lexer.html','');});
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">Lexer</div>  </div>
+<div class="title">Blink_lexer</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -163,7 +163,14 @@ Enumerations</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>Some tokens have a value returned by <a class="el" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1" title="Return next token from syntax. ">BLINK_GetToken</a>. </p>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_GetToken_8c-example.html#_a0">tc_BLINK_GetToken.c</a>.</dd>
-</dl></div><table class="fieldtable">
+</dl></div><div class="dynheader">
+Collaboration diagram for blink_token_value:</div>
+<div class="dyncontent">
+<div class="center"><img src="unionblink__token__value__coll__graph.png" border="0" usemap="#blink__token__value_coll__map" alt="Collaboration graph"/></div>
+<map name="blink__token__value_coll__map" id="blink__token__value_coll__map">
+</map>
+</div>
+<table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a36da41552cd84c5de97843148ac5e5b3"></a>struct <a class="el" href="group__blink__lexer.html#structblink__token__value_8literal">blink_token_value</a></td>
@@ -191,7 +198,14 @@ Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186d
       </table>
 </div><div class="memdoc">
 <div class="textblock"><p>Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a2521ed04c163bb1cbdd6af6a3674cb8f" title="[\\]?[A-Za-z_][A-Za-z_0-9]+ ">TOK_NAME</a>, <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a3f4a4b22d6e16dfdf6048f791d16784f" title="[A-Za-z_][A-Za-z_0-9]+:[A-Za-z_][A-Za-z_0-9] ">TOK_CNAME</a>, and <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f" title="a string within double or single quotation marks ">TOK_LITERAL</a>. </p>
-</div><table class="fieldtable">
+</div><div class="dynheader">
+Collaboration diagram for blink_token_value.literal:</div>
+<div class="dyncontent">
+<div class="center"><img src="structblink__token__value_8literal__coll__graph.png" border="0" usemap="#blink__token__value_8literal_coll__map" alt="Collaboration graph"/></div>
+<map name="blink__token__value_8literal_coll__map" id="blink__token__value_8literal_coll__map">
+</map>
+</div>
+<table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="af5a8e923f8cd24b56b3bab32358cc58a"></a>size_t</td>
@@ -218,7 +232,14 @@ pointer to printable string </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
+<div class="textblock"></div><div class="dynheader">
+Collaboration diagram for blink_token_location:</div>
+<div class="dyncontent">
+<div class="center"><img src="structblink__token__location__coll__graph.png" border="0" usemap="#blink__token__location_coll__map" alt="Collaboration graph"/></div>
+<map name="blink__token__location_coll__map" id="blink__token__location_coll__map">
+</map>
+</div>
+<table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="acf932a67c395e2b636e440263a86d77e"></a>size_t</td>
@@ -477,10 +498,10 @@ row</td>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>const char *</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to token string</dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">NULL</td><td>(no string exists for this token) </td></tr>
+    <tr><td class="paramname">NULL</td><td>no string exists for this token </td></tr>
   </table>
   </dd>
 </dl>

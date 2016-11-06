@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>uBlink: Event Driven Decoder</title>
+<title>uBlink: Blink_event_decoder</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -54,7 +54,7 @@
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('group__blink__decoder.html','');});
+$(document).ready(function(){initNavTree('group__blink__event__decoder.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
@@ -63,32 +63,29 @@ $(document).ready(function(){initNavTree('group__blink__decoder.html','');});
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">Event Driven Decoder</div>  </div>
+<div class="title">Blink_event_decoder</div>  </div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga2b1b7eee7e08e79cf03cd8743eb15d1f"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group__blink__decoder.html#structblink__decoder">blink_decoder</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga2b1b7eee7e08e79cf03cd8743eb15d1f">BLINK_NewEventDecoder</a> (struct <a class="el" href="group__blink__decoder.html#structblink__decoder">blink_decoder</a> *self, void *user, const struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *schema, const struct <a class="el" href="group__blink__decoder.html#structblink__decoder__events">blink_decoder_events</a> *events)</td></tr>
-<tr class="memdesc:ga2b1b7eee7e08e79cf03cd8743eb15d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new event driven decoder.  <a href="#ga2b1b7eee7e08e79cf03cd8743eb15d1f">More...</a><br/></td></tr>
-<tr class="separator:ga2b1b7eee7e08e79cf03cd8743eb15d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf7bbf82b153883e0745fa801d3adda07"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gaf7bbf82b153883e0745fa801d3adda07">BLINK_EventDecoderDecode</a> (struct <a class="el" href="group__blink__decoder.html#structblink__decoder">blink_decoder</a> *self, const uint8_t *in, uint32_t inLen)</td></tr>
-<tr class="memdesc:gaf7bbf82b153883e0745fa801d3adda07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a top-level compact form group.  <a href="#gaf7bbf82b153883e0745fa801d3adda07">More...</a><br/></td></tr>
+<tr class="memitem:ga50d25c9342c37957d36fd23e98ecf50d"><td class="memItemLeft" align="right" valign="top">struct blink_decoder *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga50d25c9342c37957d36fd23e98ecf50d">BLINK_InitEventDecoder</a> (struct blink_decoder *decoder, void *user, const struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *schema, const struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder__events">blink_decoder_events</a> *events)</td></tr>
+<tr class="memdesc:ga50d25c9342c37957d36fd23e98ecf50d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise an event driven decoder.  <a href="#ga50d25c9342c37957d36fd23e98ecf50d">More...</a><br/></td></tr>
+<tr class="separator:ga50d25c9342c37957d36fd23e98ecf50d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf7bbf82b153883e0745fa801d3adda07"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gaf7bbf82b153883e0745fa801d3adda07">BLINK_EventDecoderDecode</a> (struct blink_decoder *self, const uint8_t *in, uint32_t inLen)</td></tr>
+<tr class="memdesc:gaf7bbf82b153883e0745fa801d3adda07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a compact form group.  <a href="#gaf7bbf82b153883e0745fa801d3adda07">More...</a><br/></td></tr>
 <tr class="separator:gaf7bbf82b153883e0745fa801d3adda07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:structblink__decoder__events"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#structblink__decoder__events">blink_decoder_events</a></td></tr>
-<tr class="memdesc:structblink__decoder__events"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointers are called in response to events.  <a href="group__blink__decoder.html#structblink__decoder__events">More...</a><br/></td></tr>
+<tr class="memitem:structblink__decoder__events"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#structblink__decoder__events">blink_decoder_events</a></td></tr>
+<tr class="memdesc:structblink__decoder__events"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function pointers are called in response to events.  <a href="group__blink__event__decoder.html#structblink__decoder__events">More...</a><br/></td></tr>
 <tr class="separator:structblink__decoder__events"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structblink__decoder"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#structblink__decoder">blink_decoder</a></td></tr>
-<tr class="memdesc:structblink__decoder"><td class="mdescLeft">&#160;</td><td class="mdescRight">decoder state  <a href="group__blink__decoder.html#structblink__decoder">More...</a><br/></td></tr>
-<tr class="separator:structblink__decoder"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gac187a701c05b301b95ace28663df6a25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac187a701c05b301b95ace28663df6a25"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gac187a701c05b301b95ace28663df6a25">begin_static_group_fn_t</a> )(void *, const struct blink_group *)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gac187a701c05b301b95ace28663df6a25">begin_static_group_fn_t</a> )(void *, const struct blink_group *)</td></tr>
 <tr class="memdesc:gac187a701c05b301b95ace28663df6a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">forward declaration <br/></td></tr>
 <tr class="separator:gac187a701c05b301b95ace28663df6a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga03cc951ccaffdc0dac4dd3af8f3bc3f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga03cc951ccaffdc0dac4dd3af8f3bc3f6"></a>
@@ -100,90 +97,90 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>begin_dynam
 <tr class="memitem:ga0dbb10d56558235de2a565c5b7db66e4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0dbb10d56558235de2a565c5b7db66e4"></a>
 typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>end_dynamic_group_fn_t</b> )(void *, const struct blink_group *)</td></tr>
 <tr class="separator:ga0dbb10d56558235de2a565c5b7db66e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga06425a805ebaee3b6d7b65167537e623"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga06425a805ebaee3b6d7b65167537e623"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>begin_sequence_fn_t</b> )(void *)</td></tr>
-<tr class="separator:ga06425a805ebaee3b6d7b65167537e623"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0cace238c086195030c8a4735b473f02"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0cace238c086195030c8a4735b473f02"></a>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>begin_sequence_fn_t</b> )(void *, uint32_t)</td></tr>
+<tr class="separator:ga0cace238c086195030c8a4735b473f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae7aa2ac355becc3c0073b46a7ea10c5a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae7aa2ac355becc3c0073b46a7ea10c5a"></a>
 typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><b>end_sequence_fn_t</b> )(void *)</td></tr>
 <tr class="separator:gae7aa2ac355becc3c0073b46a7ea10c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6feef77c8878710e0c87853154f5ed4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga6feef77c8878710e0c87853154f5ed4b"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga6feef77c8878710e0c87853154f5ed4b">string_fn_t</a> )(void *, const uint8_t *, uint32_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga6feef77c8878710e0c87853154f5ed4b">string_fn_t</a> )(void *, const uint8_t *, uint32_t)</td></tr>
 <tr class="memdesc:ga6feef77c8878710e0c87853154f5ed4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>string</code> <br/></td></tr>
 <tr class="separator:ga6feef77c8878710e0c87853154f5ed4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga86e949dc6eddbbba5ea1ee2b452a1eea"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga86e949dc6eddbbba5ea1ee2b452a1eea"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga86e949dc6eddbbba5ea1ee2b452a1eea">binary_fn_t</a> )(void *, const uint8_t *, uint32_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga86e949dc6eddbbba5ea1ee2b452a1eea">binary_fn_t</a> )(void *, const uint8_t *, uint32_t)</td></tr>
 <tr class="memdesc:ga86e949dc6eddbbba5ea1ee2b452a1eea"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>binary</code> <br/></td></tr>
 <tr class="separator:ga86e949dc6eddbbba5ea1ee2b452a1eea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga92307fafc96822fedd876b0d7dfaafe4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga92307fafc96822fedd876b0d7dfaafe4"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga92307fafc96822fedd876b0d7dfaafe4">fixed_fn_t</a> )(void *, const uint8_t *, uint32_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga92307fafc96822fedd876b0d7dfaafe4">fixed_fn_t</a> )(void *, const uint8_t *, uint32_t)</td></tr>
 <tr class="memdesc:ga92307fafc96822fedd876b0d7dfaafe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>fixed</code> <br/></td></tr>
 <tr class="separator:ga92307fafc96822fedd876b0d7dfaafe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab2b8388d77eb81ed6574112f2a7ae05c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab2b8388d77eb81ed6574112f2a7ae05c"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gab2b8388d77eb81ed6574112f2a7ae05c">bool_fn_t</a> )(void *, bool)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gab2b8388d77eb81ed6574112f2a7ae05c">bool_fn_t</a> )(void *, bool)</td></tr>
 <tr class="memdesc:gab2b8388d77eb81ed6574112f2a7ae05c"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>bool</code> <br/></td></tr>
 <tr class="separator:gab2b8388d77eb81ed6574112f2a7ae05c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga25d7bdc6e226282f142bc572687eb5bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga25d7bdc6e226282f142bc572687eb5bc"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga25d7bdc6e226282f142bc572687eb5bc">u8_fn_t</a> )(void *, uint8_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga25d7bdc6e226282f142bc572687eb5bc">u8_fn_t</a> )(void *, uint8_t)</td></tr>
 <tr class="memdesc:ga25d7bdc6e226282f142bc572687eb5bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>u8</code> <br/></td></tr>
 <tr class="separator:ga25d7bdc6e226282f142bc572687eb5bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae46d89f44d70dc162a49da89be670f10"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae46d89f44d70dc162a49da89be670f10"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gae46d89f44d70dc162a49da89be670f10">u16_fn_t</a> )(void *, uint16_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gae46d89f44d70dc162a49da89be670f10">u16_fn_t</a> )(void *, uint16_t)</td></tr>
 <tr class="memdesc:gae46d89f44d70dc162a49da89be670f10"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>u16</code> <br/></td></tr>
 <tr class="separator:gae46d89f44d70dc162a49da89be670f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa9e08f348143c412aae62168f3ae1753"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa9e08f348143c412aae62168f3ae1753"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gaa9e08f348143c412aae62168f3ae1753">u32_fn_t</a> )(void *, uint32_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gaa9e08f348143c412aae62168f3ae1753">u32_fn_t</a> )(void *, uint32_t)</td></tr>
 <tr class="memdesc:gaa9e08f348143c412aae62168f3ae1753"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>u32</code> <br/></td></tr>
 <tr class="separator:gaa9e08f348143c412aae62168f3ae1753"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae4e2097fc0863ace66d8c6cf83d6c607"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae4e2097fc0863ace66d8c6cf83d6c607"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gae4e2097fc0863ace66d8c6cf83d6c607">u64_fn_t</a> )(void *, uint64_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gae4e2097fc0863ace66d8c6cf83d6c607">u64_fn_t</a> )(void *, uint64_t)</td></tr>
 <tr class="memdesc:gae4e2097fc0863ace66d8c6cf83d6c607"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>u64</code> <br/></td></tr>
 <tr class="separator:gae4e2097fc0863ace66d8c6cf83d6c607"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga565558b764cea5fc028200d7b73903cd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga565558b764cea5fc028200d7b73903cd"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga565558b764cea5fc028200d7b73903cd">i8_fn_t</a> )(void *, int8_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga565558b764cea5fc028200d7b73903cd">i8_fn_t</a> )(void *, int8_t)</td></tr>
 <tr class="memdesc:ga565558b764cea5fc028200d7b73903cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>u8</code> <br/></td></tr>
 <tr class="separator:ga565558b764cea5fc028200d7b73903cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad4c1ed130471c83bd21399924b2ab96e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad4c1ed130471c83bd21399924b2ab96e"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gad4c1ed130471c83bd21399924b2ab96e">i16_fn_t</a> )(void *, int16_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gad4c1ed130471c83bd21399924b2ab96e">i16_fn_t</a> )(void *, int16_t)</td></tr>
 <tr class="memdesc:gad4c1ed130471c83bd21399924b2ab96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle an <code>i16</code> <br/></td></tr>
 <tr class="separator:gad4c1ed130471c83bd21399924b2ab96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga23d50361a3dbe2ffbd1fe46a550b54df"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga23d50361a3dbe2ffbd1fe46a550b54df"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga23d50361a3dbe2ffbd1fe46a550b54df">i32_fn_t</a> )(void *, int32_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga23d50361a3dbe2ffbd1fe46a550b54df">i32_fn_t</a> )(void *, int32_t)</td></tr>
 <tr class="memdesc:ga23d50361a3dbe2ffbd1fe46a550b54df"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle an <code>i32</code> <br/></td></tr>
 <tr class="separator:ga23d50361a3dbe2ffbd1fe46a550b54df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga0b44f11de4fc53304d91c213f8da05d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0b44f11de4fc53304d91c213f8da05d4"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga0b44f11de4fc53304d91c213f8da05d4">i64_fn_t</a> )(void *, int64_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga0b44f11de4fc53304d91c213f8da05d4">i64_fn_t</a> )(void *, int64_t)</td></tr>
 <tr class="memdesc:ga0b44f11de4fc53304d91c213f8da05d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle an <code>i64</code> <br/></td></tr>
 <tr class="separator:ga0b44f11de4fc53304d91c213f8da05d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9fdd5102188a5c5793d9ea936c1a6366"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9fdd5102188a5c5793d9ea936c1a6366"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga9fdd5102188a5c5793d9ea936c1a6366">float_fn_t</a> )(void *, double)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga9fdd5102188a5c5793d9ea936c1a6366">float_fn_t</a> )(void *, double)</td></tr>
 <tr class="memdesc:ga9fdd5102188a5c5793d9ea936c1a6366"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle an <code>f64</code> <br/></td></tr>
 <tr class="separator:ga9fdd5102188a5c5793d9ea936c1a6366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga428c65fb208235048e89af34f8fb526d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga428c65fb208235048e89af34f8fb526d"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga428c65fb208235048e89af34f8fb526d">decimal_fn_t</a> )(void *, int64_t, int8_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga428c65fb208235048e89af34f8fb526d">decimal_fn_t</a> )(void *, int64_t, int8_t)</td></tr>
 <tr class="memdesc:ga428c65fb208235048e89af34f8fb526d"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>decimal</code> <br/></td></tr>
 <tr class="separator:ga428c65fb208235048e89af34f8fb526d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae04bf326a8b48c9a210b7747c6b356a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae04bf326a8b48c9a210b7747c6b356a6"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gae04bf326a8b48c9a210b7747c6b356a6">enum_fn_t</a> )(void *, const char *, uint16_t, uint64_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gae04bf326a8b48c9a210b7747c6b356a6">enum_fn_t</a> )(void *, const char *, uint16_t, uint64_t)</td></tr>
 <tr class="memdesc:gae04bf326a8b48c9a210b7747c6b356a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle an <code>enum</code> <br/></td></tr>
 <tr class="separator:gae04bf326a8b48c9a210b7747c6b356a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae0cb1a9e0753a8aa67da9407df87e3ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae0cb1a9e0753a8aa67da9407df87e3ae"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gae0cb1a9e0753a8aa67da9407df87e3ae">milli_time_fn_t</a> )(void *, int64_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gae0cb1a9e0753a8aa67da9407df87e3ae">milli_time_fn_t</a> )(void *, int64_t)</td></tr>
 <tr class="memdesc:gae0cb1a9e0753a8aa67da9407df87e3ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>millitime</code> <br/></td></tr>
 <tr class="separator:gae0cb1a9e0753a8aa67da9407df87e3ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga417e07c117320bb0c549688ad565331f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga417e07c117320bb0c549688ad565331f"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga417e07c117320bb0c549688ad565331f">nano_time_fn_t</a> )(void *, int64_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga417e07c117320bb0c549688ad565331f">nano_time_fn_t</a> )(void *, int64_t)</td></tr>
 <tr class="memdesc:ga417e07c117320bb0c549688ad565331f"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>nanotime</code> <br/></td></tr>
 <tr class="separator:ga417e07c117320bb0c549688ad565331f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gace5a3c8d0d010b2d1a1a3dcdbf306c25"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gace5a3c8d0d010b2d1a1a3dcdbf306c25"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#gace5a3c8d0d010b2d1a1a3dcdbf306c25">milli_timeofday_fn_t</a> )(void *, uint32_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gace5a3c8d0d010b2d1a1a3dcdbf306c25">milli_timeofday_fn_t</a> )(void *, uint32_t)</td></tr>
 <tr class="memdesc:gace5a3c8d0d010b2d1a1a3dcdbf306c25"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>timeOfDayMilli</code> <br/></td></tr>
 <tr class="separator:gace5a3c8d0d010b2d1a1a3dcdbf306c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1cf1a7986777b80c56d6feff633af0ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1cf1a7986777b80c56d6feff633af0ce"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga1cf1a7986777b80c56d6feff633af0ce">nano_timeofday_fn_t</a> )(void *, uint64_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga1cf1a7986777b80c56d6feff633af0ce">nano_timeofday_fn_t</a> )(void *, uint64_t)</td></tr>
 <tr class="memdesc:ga1cf1a7986777b80c56d6feff633af0ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>timeOfDayNano</code> <br/></td></tr>
 <tr class="separator:ga1cf1a7986777b80c56d6feff633af0ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga31ac196659d44ceb910d2c576c894923"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga31ac196659d44ceb910d2c576c894923"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__decoder.html#ga31ac196659d44ceb910d2c576c894923">date_fn_t</a> )(void *, int64_t)</td></tr>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga31ac196659d44ceb910d2c576c894923">date_fn_t</a> )(void *, int64_t)</td></tr>
 <tr class="memdesc:ga31ac196659d44ceb910d2c576c894923"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle a <code>date</code> <br/></td></tr>
 <tr class="separator:ga31ac196659d44ceb910d2c576c894923"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -201,7 +198,14 @@ typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" 
 </div><div class="memdoc">
 <div class="textblock"><p>Function pointers are called in response to events. </p>
 <dl class="section note"><dt>Note</dt><dd>a function pointer may be NULL if the corresponding event is never handled </dd></dl>
-</div><table class="fieldtable">
+</div><div class="dynheader">
+Collaboration diagram for blink_decoder_events:</div>
+<div class="dyncontent">
+<div class="center"><img src="structblink__decoder__events__coll__graph.png" border="0" usemap="#blink__decoder__events_coll__map" alt="Collaboration graph"/></div>
+<map name="blink__decoder__events_coll__map" id="blink__decoder__events_coll__map">
+</map>
+</div>
+<table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="ad25f184acaa56fda6dcb9ebf95d6e3da"></a>begin_dynamic_group_fn_t</td>
@@ -216,31 +220,31 @@ beginSequence</td>
 <td class="fielddoc">
 handler for beginning of a sequence </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="aabb33fe50e3e44ddf302150324770fa0"></a><a class="el" href="group__blink__decoder.html#gac187a701c05b301b95ace28663df6a25">begin_static_group_fn_t</a></td>
+<a class="anchor" id="aabb33fe50e3e44ddf302150324770fa0"></a><a class="el" href="group__blink__event__decoder.html#gac187a701c05b301b95ace28663df6a25">begin_static_group_fn_t</a></td>
 <td class="fieldname">
 beginStaticGroup</td>
 <td class="fielddoc">
 handler for beginning of a static group </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="ad1599be9820fe3a59394cc26c747e21d"></a><a class="el" href="group__blink__decoder.html#ga86e949dc6eddbbba5ea1ee2b452a1eea">binary_fn_t</a></td>
+<a class="anchor" id="ad1599be9820fe3a59394cc26c747e21d"></a><a class="el" href="group__blink__event__decoder.html#ga86e949dc6eddbbba5ea1ee2b452a1eea">binary_fn_t</a></td>
 <td class="fieldname">
 binary</td>
 <td class="fielddoc">
 <code>binary</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a8da34c2ba5982858ebeaac5fa7b99499"></a><a class="el" href="group__blink__decoder.html#gab2b8388d77eb81ed6574112f2a7ae05c">bool_fn_t</a></td>
+<a class="anchor" id="a8da34c2ba5982858ebeaac5fa7b99499"></a><a class="el" href="group__blink__event__decoder.html#gab2b8388d77eb81ed6574112f2a7ae05c">bool_fn_t</a></td>
 <td class="fieldname">
 bool</td>
 <td class="fielddoc">
 <code>bool</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="ab0821f5ee127f802edab389cd5accc1a"></a><a class="el" href="group__blink__decoder.html#ga31ac196659d44ceb910d2c576c894923">date_fn_t</a></td>
+<a class="anchor" id="ab0821f5ee127f802edab389cd5accc1a"></a><a class="el" href="group__blink__event__decoder.html#ga31ac196659d44ceb910d2c576c894923">date_fn_t</a></td>
 <td class="fieldname">
 date</td>
 <td class="fielddoc">
 <code>date</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a2a272db35c5fdb519a8cd20f91693342"></a><a class="el" href="group__blink__decoder.html#ga428c65fb208235048e89af34f8fb526d">decimal_fn_t</a></td>
+<a class="anchor" id="a2a272db35c5fdb519a8cd20f91693342"></a><a class="el" href="group__blink__event__decoder.html#ga428c65fb208235048e89af34f8fb526d">decimal_fn_t</a></td>
 <td class="fieldname">
 decimal</td>
 <td class="fielddoc">
@@ -264,136 +268,95 @@ endStaticGroup</td>
 <td class="fielddoc">
 handler for end of a static group </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="abdc9cfa71df87ebd2724f07d14ae59ab"></a><a class="el" href="group__blink__decoder.html#ga9fdd5102188a5c5793d9ea936c1a6366">float_fn_t</a></td>
+<a class="anchor" id="abdc9cfa71df87ebd2724f07d14ae59ab"></a><a class="el" href="group__blink__event__decoder.html#ga9fdd5102188a5c5793d9ea936c1a6366">float_fn_t</a></td>
 <td class="fieldname">
 f64</td>
 <td class="fielddoc">
 <code>f64</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="af3ff5e5593cf964c1d2a1200f977a7f5"></a><a class="el" href="group__blink__decoder.html#ga92307fafc96822fedd876b0d7dfaafe4">fixed_fn_t</a></td>
+<a class="anchor" id="af3ff5e5593cf964c1d2a1200f977a7f5"></a><a class="el" href="group__blink__event__decoder.html#ga92307fafc96822fedd876b0d7dfaafe4">fixed_fn_t</a></td>
 <td class="fieldname">
 fixed</td>
 <td class="fielddoc">
 <code>fixed</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a10c6f0a76226ae9fa598f084caae4c83"></a><a class="el" href="group__blink__decoder.html#gad4c1ed130471c83bd21399924b2ab96e">i16_fn_t</a></td>
+<a class="anchor" id="a10c6f0a76226ae9fa598f084caae4c83"></a><a class="el" href="group__blink__event__decoder.html#gad4c1ed130471c83bd21399924b2ab96e">i16_fn_t</a></td>
 <td class="fieldname">
 i16</td>
 <td class="fielddoc">
 <code>i16</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="aa8e9186f3083edb323414eee5a433586"></a><a class="el" href="group__blink__decoder.html#ga23d50361a3dbe2ffbd1fe46a550b54df">i32_fn_t</a></td>
+<a class="anchor" id="aa8e9186f3083edb323414eee5a433586"></a><a class="el" href="group__blink__event__decoder.html#ga23d50361a3dbe2ffbd1fe46a550b54df">i32_fn_t</a></td>
 <td class="fieldname">
 i32</td>
 <td class="fielddoc">
 <code>i32</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="abcf950f9df546523d92f5d83d91a31e9"></a><a class="el" href="group__blink__decoder.html#ga0b44f11de4fc53304d91c213f8da05d4">i64_fn_t</a></td>
+<a class="anchor" id="abcf950f9df546523d92f5d83d91a31e9"></a><a class="el" href="group__blink__event__decoder.html#ga0b44f11de4fc53304d91c213f8da05d4">i64_fn_t</a></td>
 <td class="fieldname">
 i64</td>
 <td class="fielddoc">
 <code>i64</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a09c85287d20e1c764e465865c815cd2e"></a><a class="el" href="group__blink__decoder.html#ga565558b764cea5fc028200d7b73903cd">i8_fn_t</a></td>
+<a class="anchor" id="a09c85287d20e1c764e465865c815cd2e"></a><a class="el" href="group__blink__event__decoder.html#ga565558b764cea5fc028200d7b73903cd">i8_fn_t</a></td>
 <td class="fieldname">
 i8</td>
 <td class="fielddoc">
 <code>i8</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a1d2a579d3e01c667234dc7b65a96f579"></a><a class="el" href="group__blink__decoder.html#gae0cb1a9e0753a8aa67da9407df87e3ae">milli_time_fn_t</a></td>
+<a class="anchor" id="a1d2a579d3e01c667234dc7b65a96f579"></a><a class="el" href="group__blink__event__decoder.html#gae0cb1a9e0753a8aa67da9407df87e3ae">milli_time_fn_t</a></td>
 <td class="fieldname">
 millitime</td>
 <td class="fielddoc">
 <code>millitime</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a4262e2c0ad9f0cf2345d8c527b6e0906"></a><a class="el" href="group__blink__decoder.html#ga417e07c117320bb0c549688ad565331f">nano_time_fn_t</a></td>
+<a class="anchor" id="a4262e2c0ad9f0cf2345d8c527b6e0906"></a><a class="el" href="group__blink__event__decoder.html#ga417e07c117320bb0c549688ad565331f">nano_time_fn_t</a></td>
 <td class="fieldname">
 nanotime</td>
 <td class="fielddoc">
 <code>nanotime</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a9c5e2e2bd293b8cc97f9fc3156980219"></a><a class="el" href="group__blink__decoder.html#ga6feef77c8878710e0c87853154f5ed4b">string_fn_t</a></td>
+<a class="anchor" id="a9c5e2e2bd293b8cc97f9fc3156980219"></a><a class="el" href="group__blink__event__decoder.html#ga6feef77c8878710e0c87853154f5ed4b">string_fn_t</a></td>
 <td class="fieldname">
 string</td>
 <td class="fielddoc">
 <code>string</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a48ae5b2539591c279c4a2e2c024d4d07"></a><a class="el" href="group__blink__decoder.html#gae0cb1a9e0753a8aa67da9407df87e3ae">milli_time_fn_t</a></td>
+<a class="anchor" id="a48ae5b2539591c279c4a2e2c024d4d07"></a><a class="el" href="group__blink__event__decoder.html#gae0cb1a9e0753a8aa67da9407df87e3ae">milli_time_fn_t</a></td>
 <td class="fieldname">
 timeOfDayMilli</td>
 <td class="fielddoc">
 <code>timeOfDayMilli</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a1cf75b065816a0f8e8daded9ce8dcaef"></a><a class="el" href="group__blink__decoder.html#ga417e07c117320bb0c549688ad565331f">nano_time_fn_t</a></td>
+<a class="anchor" id="a1cf75b065816a0f8e8daded9ce8dcaef"></a><a class="el" href="group__blink__event__decoder.html#ga417e07c117320bb0c549688ad565331f">nano_time_fn_t</a></td>
 <td class="fieldname">
 timeOfDayNano</td>
 <td class="fielddoc">
 <code>timeOfDayNano</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a44f79c844124eba9fec346a0b0e9b1e0"></a><a class="el" href="group__blink__decoder.html#gae46d89f44d70dc162a49da89be670f10">u16_fn_t</a></td>
+<a class="anchor" id="a44f79c844124eba9fec346a0b0e9b1e0"></a><a class="el" href="group__blink__event__decoder.html#gae46d89f44d70dc162a49da89be670f10">u16_fn_t</a></td>
 <td class="fieldname">
 u16</td>
 <td class="fielddoc">
 <code>u16</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a2d401c72a5e98220bdf66e9fb137ac21"></a><a class="el" href="group__blink__decoder.html#gaa9e08f348143c412aae62168f3ae1753">u32_fn_t</a></td>
+<a class="anchor" id="a2d401c72a5e98220bdf66e9fb137ac21"></a><a class="el" href="group__blink__event__decoder.html#gaa9e08f348143c412aae62168f3ae1753">u32_fn_t</a></td>
 <td class="fieldname">
 u32</td>
 <td class="fielddoc">
 <code>u32</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a6a704d1ce0f09fbb77ba85394230522f"></a><a class="el" href="group__blink__decoder.html#gae4e2097fc0863ace66d8c6cf83d6c607">u64_fn_t</a></td>
+<a class="anchor" id="a6a704d1ce0f09fbb77ba85394230522f"></a><a class="el" href="group__blink__event__decoder.html#gae4e2097fc0863ace66d8c6cf83d6c607">u64_fn_t</a></td>
 <td class="fieldname">
 u64</td>
 <td class="fielddoc">
 <code>u64</code> handler </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a022f77fc4ffa9fe513cd6f0fccf29654"></a><a class="el" href="group__blink__decoder.html#ga25d7bdc6e226282f142bc572687eb5bc">u8_fn_t</a></td>
+<a class="anchor" id="a022f77fc4ffa9fe513cd6f0fccf29654"></a><a class="el" href="group__blink__event__decoder.html#ga25d7bdc6e226282f142bc572687eb5bc">u8_fn_t</a></td>
 <td class="fieldname">
 u8</td>
 <td class="fielddoc">
 <code>u8</code> handler </td></tr>
-</table>
-
-</div>
-</div>
-<a name="structblink__decoder" id="structblink__decoder"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct blink_decoder</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><p>decoder state </p>
-</div><div class="dynheader">
-Collaboration diagram for blink_decoder:</div>
-<div class="dyncontent">
-<div class="center"><img src="structblink__decoder__coll__graph.png" border="0" usemap="#blink__decoder_coll__map" alt="Collaboration graph"/></div>
-<map name="blink__decoder_coll__map" id="blink__decoder_coll__map">
-<area shape="rect" id="node2" href="group__blink__decoder.html#structblink__decoder__events" title="Function pointers are called in response to events. " alt="" coords="5,5,152,32"/><area shape="rect" id="node3" href="group__blink__parser.html#structblink__schema" title="schema " alt="" coords="177,5,279,32"/></map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
-<table class="fieldtable">
-<tr><th colspan="3">Data Fields</th></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a84e32b762d537bf23a00ba30440b11c3"></a>struct <a class="el" href="group__blink__decoder.html#structblink__decoder__events">blink_decoder_events</a></td>
-<td class="fieldname">
-events</td>
-<td class="fielddoc">
-event callbacks </td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a6707e7d0af08d9bfc88fd3200e2e6e13"></a>const struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *</td>
-<td class="fieldname">
-schema</td>
-<td class="fielddoc">
-schema to decode against </td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="a9193d8c2175ada97a95ec0ea77215440"></a>void *</td>
-<td class="fieldname">
-user</td>
-<td class="fielddoc">
-optional pointer to user state </td></tr>
 </table>
 
 </div>
@@ -406,7 +369,7 @@ optional pointer to user state </td></tr>
         <tr>
           <td class="memname">uint32_t BLINK_EventDecoderDecode </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="group__blink__decoder.html#structblink__decoder">blink_decoder</a> *&#160;</td>
+          <td class="paramtype">struct blink_decoder *&#160;</td>
           <td class="paramname"><em>self</em>, </td>
         </tr>
         <tr>
@@ -429,34 +392,34 @@ optional pointer to user state </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Decode a top-level compact form group. </p>
+<p>Decode a compact form group. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>decoder instance </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>receiver </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>compact form string </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>uint32_t</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>number of bytes successfully read from <code>in</code> </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">0..0xffffffff</td><td>(bytes successfully read from <code>in</code>) </td></tr>
+    <tr><td class="paramname">0..0xffffffff</td><td></td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="ga2b1b7eee7e08e79cf03cd8743eb15d1f"></a>
+<a class="anchor" id="ga50d25c9342c37957d36fd23e98ecf50d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">struct <a class="el" href="group__blink__decoder.html#structblink__decoder">blink_decoder</a>* BLINK_NewEventDecoder </td>
+          <td class="memname">struct blink_decoder* BLINK_InitEventDecoder </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="group__blink__decoder.html#structblink__decoder">blink_decoder</a> *&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramtype">struct blink_decoder *&#160;</td>
+          <td class="paramname"><em>decoder</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -473,7 +436,7 @@ optional pointer to user state </td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="group__blink__decoder.html#structblink__decoder__events">blink_decoder_events</a> *&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder__events">blink_decoder_events</a> *&#160;</td>
           <td class="paramname"><em>events</em>&#160;</td>
         </tr>
         <tr>
@@ -484,20 +447,20 @@ optional pointer to user state </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Create a new event driven decoder. </p>
+<p>Initialise an event driven decoder. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>decoder instance </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">decoder</td><td></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td>optional user state passed to event handlers </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">schema</td><td>schema to decode against </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">events</td><td>event handlers to be copied into <code>self</code></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>struct <a class="el" href="group__blink__decoder.html#structblink__decoder" title="decoder state ">blink_decoder</a> *</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>pointer to initialised decoder </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">NULL</td><td>(decoder could not be initialised) </td></tr>
+    <tr><td class="paramname">NULL</td><td>decoder could not be initialised </td></tr>
   </table>
   </dd>
 </dl>
