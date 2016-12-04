@@ -555,16 +555,28 @@ $(document).ready(function(){initNavTree('tc_BLINK_GetToken_8c-example.html','')
 <div class="line">    TEST_ASSERT_EQUAL(strlen(input), read);</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> test_BLINK_GetToken_number(<span class="keywordtype">void</span>)</div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_GetToken_unsigned_number(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keywordtype">size_t</span> read;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;42&quot;</span>;</div>
 <div class="line">    <span class="keyword">union </span><a class="code" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> value;</div>
-<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a40"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433acdae166ca0040147b5e2225cb23184d5">TOK_NUMBER</a>;</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a40"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6">TOK_UINT</a>;</div>
 <div class="line"></div>
 <div class="line">    TEST_ASSERT_EQUAL(expected, <a class="code" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1">BLINK_GetToken</a>(input, <span class="keyword">sizeof</span>(input), &amp;read, &amp;value, NULL));</div>
 <div class="line">    TEST_ASSERT_EQUAL(strlen(input), read);</div>
 <div class="line">    TEST_ASSERT_EQUAL(42, value.number);</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_GetToken_signed_number(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordtype">size_t</span> read;</div>
+<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;-42&quot;</span>;</div>
+<div class="line">    <span class="keyword">union </span><a class="code" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> value;</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a41"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae31763c23645e878553de1322dcb8d49">TOK_INT</a>;</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL(expected, <a class="code" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1">BLINK_GetToken</a>(input, <span class="keyword">sizeof</span>(input), &amp;read, &amp;value, NULL));</div>
+<div class="line">    TEST_ASSERT_EQUAL(strlen(input), read);</div>
+<div class="line">    TEST_ASSERT_EQUAL(-42, value.signedNumber);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_GetToken_hex_number(<span class="keywordtype">void</span>)</div>
@@ -572,7 +584,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_GetToken_8c-example.html','')
 <div class="line">    <span class="keywordtype">size_t</span> read;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;0x2A&quot;</span>;</div>
 <div class="line">    <span class="keyword">union </span><a class="code" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> value;</div>
-<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433acdae166ca0040147b5e2225cb23184d5">TOK_NUMBER</a>;</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6">TOK_UINT</a>;</div>
 <div class="line"></div>
 <div class="line">    TEST_ASSERT_EQUAL(expected, <a class="code" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1">BLINK_GetToken</a>(input, <span class="keyword">sizeof</span>(input), &amp;read, &amp;value, NULL));</div>
 <div class="line">    TEST_ASSERT_EQUAL(strlen(input), read);</div>
@@ -584,7 +596,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_GetToken_8c-example.html','')
 <div class="line">    <span class="keywordtype">size_t</span> read;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;0x10000000000000000&quot;</span>;</div>
 <div class="line">    <span class="keyword">union </span><a class="code" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> value;</div>
-<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a41"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a7d71d1596897e780f46f5c34b7e51ece">TOK_UNKNOWN</a>;</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a42"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a7d71d1596897e780f46f5c34b7e51ece">TOK_UNKNOWN</a>;</div>
 <div class="line"></div>
 <div class="line">    TEST_ASSERT_EQUAL(expected, <a class="code" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1">BLINK_GetToken</a>(input, <span class="keyword">sizeof</span>(input), &amp;read, &amp;value, NULL));</div>
 <div class="line">}</div>
@@ -594,7 +606,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_GetToken_8c-example.html','')
 <div class="line">    <span class="keywordtype">size_t</span> read;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;# this is a comment&quot;</span>;</div>
 <div class="line">    <span class="keyword">union </span><a class="code" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> value;</div>
-<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a42"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8">TOK_EOF</a>;</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a43"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8">TOK_EOF</a>;</div>
 <div class="line"></div>
 <div class="line">    TEST_ASSERT_EQUAL(expected, <a class="code" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1">BLINK_GetToken</a>(input, <span class="keyword">sizeof</span>(input), &amp;read, &amp;value, NULL));</div>
 <div class="line">}</div>
@@ -614,7 +626,7 @@ $(document).ready(function(){initNavTree('tc_BLINK_GetToken_8c-example.html','')
 <div class="line">    <span class="keywordtype">size_t</span> read;</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;\&quot;this is a literal\&quot;&quot;</span>;</div>
 <div class="line">    <span class="keyword">union </span><a class="code" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> value;</div>
-<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a43"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f">TOK_LITERAL</a>;</div>
+<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> expected = <a name="a44"></a><a class="code" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f">TOK_LITERAL</a>;</div>
 <div class="line"></div>
 <div class="line">    TEST_ASSERT_EQUAL(expected, <a class="code" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1">BLINK_GetToken</a>(input, <span class="keyword">sizeof</span>(input), &amp;read, &amp;value, NULL));</div>
 <div class="line">    TEST_ASSERT_EQUAL(strlen(input), read);</div>

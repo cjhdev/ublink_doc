@@ -68,10 +68,12 @@ $(document).ready(function(){initNavTree('group__blink__parser.html','');});
 <div class="title">Blink_parser</div>  </div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Use this interface to convert a string into a <a class="el" href="group__blink__parser.html#structblink__schema" title="forward declaration ">blink_schema</a> instance. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gad1989c8c0bd33b57863205b4422d7033"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gad1989c8c0bd33b57863205b4422d7033">BLINK_InitSchema</a> (struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *schema, <a class="el" href="group__blink__parser.html#gaa00ea24fa82793ec21dbf2e588f3e435">fn_blink_calloc_t</a> calloc, <a class="el" href="group__blink__parser.html#ga7c256c11a35d84bd71890992ae24b9da">fn_blink_free_t</a> free)</td></tr>
+<tr class="memitem:gad1989c8c0bd33b57863205b4422d7033"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gad1989c8c0bd33b57863205b4422d7033">BLINK_InitSchema</a> (struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *schema, <a class="el" href="group__blink__parser.html#ga78bc32baa760de3157e4a4430035fde4">fn_blink_calloc_t</a> calloc, <a class="el" href="group__blink__parser.html#gac62db5208bacb4455b5a91e9ffffe763">fn_blink_free_t</a> free)</td></tr>
 <tr class="memdesc:gad1989c8c0bd33b57863205b4422d7033"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a schema object.  <a href="#gad1989c8c0bd33b57863205b4422d7033">More...</a><br/></td></tr>
 <tr class="separator:gad1989c8c0bd33b57863205b4422d7033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaad736fcf94e77f4c8921bc49811446a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gaad736fcf94e77f4c8921bc49811446a4">BLINK_DestroySchema</a> (struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *self)</td></tr>
@@ -86,24 +88,20 @@ Functions</h2></td></tr>
 <tr class="memitem:ga51ae8879a21939c7ed348da0a079febc"><td class="memItemLeft" align="right" valign="top">const struct blink_group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga51ae8879a21939c7ed348da0a079febc">BLINK_GetGroupByID</a> (struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *self, uint64_t id)</td></tr>
 <tr class="memdesc:ga51ae8879a21939c7ed348da0a079febc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a group by ID.  <a href="#ga51ae8879a21939c7ed348da0a079febc">More...</a><br/></td></tr>
 <tr class="separator:ga51ae8879a21939c7ed348da0a079febc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga24e0ef1f46561755ac4c4a72bc4ea05e"><td class="memItemLeft" align="right" valign="top">const struct <a class="el" href="group__blink__parser.html#structblink__field__iterator">blink_field_iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga24e0ef1f46561755ac4c4a72bc4ea05e">BLINK_InitFieldIterator</a> (struct <a class="el" href="group__blink__parser.html#structblink__field__iterator">blink_field_iterator</a> *iter, const struct blink_group *group)</td></tr>
-<tr class="memdesc:ga24e0ef1f46561755ac4c4a72bc4ea05e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a field iterator.  <a href="#ga24e0ef1f46561755ac4c4a72bc4ea05e">More...</a><br/></td></tr>
-<tr class="separator:ga24e0ef1f46561755ac4c4a72bc4ea05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga81a8bc03fb4cf33ba44bdebfc9376581"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga81a8bc03fb4cf33ba44bdebfc9376581">BLINK_InitFieldIterator</a> (struct <a class="el" href="group__blink__parser.html#structblink__field__iterator">blink_field_iterator</a> *iter, const struct blink_group *group)</td></tr>
+<tr class="memdesc:ga81a8bc03fb4cf33ba44bdebfc9376581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a field iterator.  <a href="#ga81a8bc03fb4cf33ba44bdebfc9376581">More...</a><br/></td></tr>
+<tr class="separator:ga81a8bc03fb4cf33ba44bdebfc9376581"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaff8c06a005bb2657b2b5d7aa81ba7b46"><td class="memItemLeft" align="right" valign="top">const struct blink_field *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gaff8c06a005bb2657b2b5d7aa81ba7b46">BLINK_NextField</a> (struct <a class="el" href="group__blink__parser.html#structblink__field__iterator">blink_field_iterator</a> *self)</td></tr>
 <tr class="memdesc:gaff8c06a005bb2657b2b5d7aa81ba7b46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get next field from an iterator.  <a href="#gaff8c06a005bb2657b2b5d7aa81ba7b46">More...</a><br/></td></tr>
 <tr class="separator:gaff8c06a005bb2657b2b5d7aa81ba7b46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1f145622f2dd3ffd48bf1187fed3146a"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga1f145622f2dd3ffd48bf1187fed3146a">BLINK_GetGroupName</a> (const struct blink_group *self, size_t *nameLen)</td></tr>
 <tr class="memdesc:ga1f145622f2dd3ffd48bf1187fed3146a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of a group.  <a href="#ga1f145622f2dd3ffd48bf1187fed3146a">More...</a><br/></td></tr>
 <tr class="separator:ga1f145622f2dd3ffd48bf1187fed3146a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga44edd6e9ca1195b388cbec80a89a4b9b"><td class="memItemLeft" align="right" valign="top">const struct blink_group *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga44edd6e9ca1195b388cbec80a89a4b9b">BLINK_GetSuperGroup</a> (const struct blink_group *self)</td></tr>
-<tr class="memdesc:ga44edd6e9ca1195b388cbec80a89a4b9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the super group definition for this group.  <a href="#ga44edd6e9ca1195b388cbec80a89a4b9b">More...</a><br/></td></tr>
-<tr class="separator:ga44edd6e9ca1195b388cbec80a89a4b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae54bc07792e13aa1f1391ae52152b3f3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gae54bc07792e13aa1f1391ae52152b3f3">BLINK_GetFieldName</a> (const struct blink_field *self, size_t *nameLen)</td></tr>
 <tr class="memdesc:gae54bc07792e13aa1f1391ae52152b3f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name of this field.  <a href="#gae54bc07792e13aa1f1391ae52152b3f3">More...</a><br/></td></tr>
 <tr class="separator:gae54bc07792e13aa1f1391ae52152b3f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga162cb68fd032636fb64e875ff1fa37c8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga162cb68fd032636fb64e875ff1fa37c8">BLINK_FieldIsOptional</a> (const struct blink_field *self)</td></tr>
-<tr class="memdesc:ga162cb68fd032636fb64e875ff1fa37c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is this field optional?  <a href="#ga162cb68fd032636fb64e875ff1fa37c8">More...</a><br/></td></tr>
-<tr class="separator:ga162cb68fd032636fb64e875ff1fa37c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaab362dd08d2cc41c5a79c57e03bc541e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gaab362dd08d2cc41c5a79c57e03bc541e">BLINK_GetFieldIsOptional</a> (const struct blink_field *self)</td></tr>
+<tr class="separator:gaab362dd08d2cc41c5a79c57e03bc541e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac5b941b4f21d9bd4a3e0a11286138b53"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__blink__parser.html#ga3c752bf7f68879c88427adabf3778509">blink_type_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gac5b941b4f21d9bd4a3e0a11286138b53">BLINK_GetFieldType</a> (const struct blink_field *self)</td></tr>
 <tr class="memdesc:gac5b941b4f21d9bd4a3e0a11286138b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of this field.  <a href="#gac5b941b4f21d9bd4a3e0a11286138b53">More...</a><br/></td></tr>
 <tr class="separator:gac5b941b4f21d9bd4a3e0a11286138b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -117,9 +115,6 @@ Functions</h2></td></tr>
 <tr class="separator:ga81db911a34a6b49b3304b67aaa4a30e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga58876b80e2a703e13ade76c3807334ed"><td class="memItemLeft" align="right" valign="top">const struct blink_symbol *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga58876b80e2a703e13ade76c3807334ed">BLINK_GetSymbolName</a> (const struct blink_enum *self, int32_t value, const char **name, size_t *nameLen)</td></tr>
 <tr class="separator:ga58876b80e2a703e13ade76c3807334ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1ef2f32e780943673050ca84b27466e"><td class="memItemLeft" align="right" valign="top">const struct blink_type *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gab1ef2f32e780943673050ca84b27466e">BLINK_GetType</a> (const struct blink_field *self)</td></tr>
-<tr class="memdesc:gab1ef2f32e780943673050ca84b27466e"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns field type  <a href="#gab1ef2f32e780943673050ca84b27466e">More...</a><br/></td></tr>
-<tr class="separator:gab1ef2f32e780943673050ca84b27466e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -139,54 +134,49 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gaa00ea24fa82793ec21dbf2e588f3e435"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa00ea24fa82793ec21dbf2e588f3e435"></a>
-typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gaa00ea24fa82793ec21dbf2e588f3e435">fn_blink_calloc_t</a> )(size_t, size_t)</td></tr>
-<tr class="memdesc:gaa00ea24fa82793ec21dbf2e588f3e435"><td class="mdescLeft">&#160;</td><td class="mdescRight">a calloc-like function <br/></td></tr>
-<tr class="separator:gaa00ea24fa82793ec21dbf2e588f3e435"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7c256c11a35d84bd71890992ae24b9da"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7c256c11a35d84bd71890992ae24b9da"></a>
-typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga7c256c11a35d84bd71890992ae24b9da">fn_blink_free_t</a> )(void *)</td></tr>
-<tr class="memdesc:ga7c256c11a35d84bd71890992ae24b9da"><td class="mdescLeft">&#160;</td><td class="mdescRight">a free-like function <br/></td></tr>
-<tr class="separator:ga7c256c11a35d84bd71890992ae24b9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga78bc32baa760de3157e4a4430035fde4"><td class="memItemLeft" align="right" valign="top">typedef void *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga78bc32baa760de3157e4a4430035fde4">fn_blink_calloc_t</a> )(size_t nelem, size_t elsize)</td></tr>
+<tr class="memdesc:ga78bc32baa760de3157e4a4430035fde4"><td class="mdescLeft">&#160;</td><td class="mdescRight">A calloc-like function.  <a href="#ga78bc32baa760de3157e4a4430035fde4">More...</a><br/></td></tr>
+<tr class="separator:ga78bc32baa760de3157e4a4430035fde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac62db5208bacb4455b5a91e9ffffe763"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#gac62db5208bacb4455b5a91e9ffffe763">fn_blink_free_t</a> )(void *ptr)</td></tr>
+<tr class="memdesc:gac62db5208bacb4455b5a91e9ffffe763"><td class="mdescLeft">&#160;</td><td class="mdescRight">A free-like function.  <a href="#gac62db5208bacb4455b5a91e9ffffe763">More...</a><br/></td></tr>
+<tr class="separator:gac62db5208bacb4455b5a91e9ffffe763"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga3c752bf7f68879c88427adabf3778509"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__parser.html#ga3c752bf7f68879c88427adabf3778509">blink_type_tag</a> { <br/>
-&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509addb4be6b1cc25112defabef75f73427a">TYPE_STRING</a> = 0, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509aa5ffcdf7807a1bb2607a525a08682304">TYPE_BINARY</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a6dfb719f8c305d986ff202d56eeee6d1">TYPE_FIXED</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a3e0f738756c5205d71c69d955603f46c">TYPE_BOOL</a>, 
+&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509af8f28e5646c6d26f54343460f53f8aad">BLINK_TYPE_STRING</a> = 0, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a7005c11fbfb8f35ddc7edb74763f2501">BLINK_TYPE_BINARY</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a19f67e0060f2aeee69c683fd5f5ce7bd">BLINK_TYPE_FIXED</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ac7769e68502f2833fe76da639e3d7dd5">BLINK_TYPE_BOOL</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a4ffe2e7789b386a00d8c7d4db3b26ea1">TYPE_U8</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a8596236fab67ee5063eb157899b518f4">TYPE_U16</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a9727de420e0b9c249da040949489481e">TYPE_U32</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a34701599b9f022f253542a9739139de0">TYPE_U64</a>, 
+&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a1692bc58b4f7300021cea0fa4139048f">BLINK_TYPE_U8</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a856e88bcd937104e9db66db79de85df9">BLINK_TYPE_U16</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a2a09baf0e947e9a655ba21859c6c4302">BLINK_TYPE_U32</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a7068938ab1623c887a9061e5c7c2ad8c">BLINK_TYPE_U64</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509acfa7098bd7a6ae77e35dc74e7ce7413b">TYPE_I8</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a53aad119b5a256579dfa5290485de039">TYPE_I16</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ac7934ca10ab7b05c96f1eea440e28793">TYPE_I32</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a64b38adc375312ef1c6502095501d652">TYPE_I64</a>, 
+&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a09a92b6276eda946067beb5f1cdbb224">BLINK_TYPE_I8</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509af4d9db35411805859a29969676e1b6ca">BLINK_TYPE_I16</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509af22127840f98cc4ff9cc3c6812b9d043">BLINK_TYPE_I32</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ae7643995e0e26fbe8427a0e8daa45f06">BLINK_TYPE_I64</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a53fe97e5cd809f8c663be3b1b318ec41">TYPE_F64</a>, 
-<b>TYPE_DATE</b>, 
-<b>TYPE_TIME_OF_DAY_MILLI</b>, 
-<b>TYPE_TIME_OF_DAY_NANO</b>, 
+&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a36916415192410b69e5997adc6d2120a">BLINK_TYPE_F64</a>, 
+<b>BLINK_TYPE_DATE</b>, 
+<b>BLINK_TYPE_TIME_OF_DAY_MILLI</b>, 
+<b>BLINK_TYPE_TIME_OF_DAY_NANO</b>, 
 <br/>
-&#160;&#160;<b>TYPE_NANO_TIME</b>, 
-<b>TYPE_MILLI_TIME</b>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ac80ed02ff29fa334158b601181f5ae28">TYPE_DECIMAL</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a43aef6302e2b8ee4efdd9ca87636d7c8">TYPE_OBJECT</a>, 
+&#160;&#160;<b>BLINK_TYPE_NANO_TIME</b>, 
+<b>BLINK_TYPE_MILLI_TIME</b>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509aa19c71244ca252e08e5895af664d7f6b">BLINK_TYPE_DECIMAL</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a54b7dccb332ad3304a1680e21343a3da">BLINK_TYPE_OBJECT</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a156a7eedfef32c6e58187646502f7815">TYPE_ENUM</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ab25e3007adfa6aaac1d847bfe02db13a">TYPE_REF</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a49fc69bb81f08a371c2bd1614041ebba">TYPE_STATIC_GROUP</a>, 
-<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a278d2b22bd41a561873350151311d44b">TYPE_DYNAMIC_REF</a>
+&#160;&#160;<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509aa34158790b22e7238d2927ac40e5d3f6">BLINK_TYPE_ENUM</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ae918d0e12c00604c414b480d17a2843d">BLINK_TYPE_STATIC_GROUP</a>, 
+<a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a8dc1f2ef40cf00c0d11e36b08165b93a">BLINK_TYPE_DYNAMIC_GROUP</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:ga3c752bf7f68879c88427adabf3778509"><td class="mdescLeft">&#160;</td><td class="mdescRight">A field shall represent one of the following types.  <a href="group__blink__parser.html#ga3c752bf7f68879c88427adabf3778509">More...</a><br/></td></tr>
 <tr class="separator:ga3c752bf7f68879c88427adabf3778509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Convert tokens to a schema. </p>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="structblink__schema" id="structblink__schema"></a>
 <div class="memitem">
@@ -210,11 +200,17 @@ Collaboration diagram for blink_schema:</div>
 <table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="adec782fadef06117a046cb03d5b2f11f"></a><a class="el" href="group__blink__parser.html#gaa00ea24fa82793ec21dbf2e588f3e435">fn_blink_calloc_t</a></td>
+<a class="anchor" id="adec782fadef06117a046cb03d5b2f11f"></a><a class="el" href="group__blink__parser.html#ga78bc32baa760de3157e4a4430035fde4">fn_blink_calloc_t</a></td>
 <td class="fieldname">
 calloc</td>
 <td class="fielddoc">
 pointer to a calloc-like function </td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8d0d384b9cdd6d297b017061c060afa9"></a>struct blink_element *</td>
+<td class="fieldname">
+elements</td>
+<td class="fielddoc">
+used to keep track of everything allocated </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a82fbba6e303905d684bcc70d2a4c2035"></a>bool</td>
 <td class="fieldname">
@@ -222,7 +218,7 @@ finalised</td>
 <td class="fielddoc">
 when true no more schema definitions can be appended </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a678f94402ceefc1a61adf652de15a98a"></a><a class="el" href="group__blink__parser.html#ga7c256c11a35d84bd71890992ae24b9da">fn_blink_free_t</a></td>
+<a class="anchor" id="a678f94402ceefc1a61adf652de15a98a"></a><a class="el" href="group__blink__parser.html#gac62db5208bacb4455b5a91e9ffffe763">fn_blink_free_t</a></td>
 <td class="fieldname">
 free</td>
 <td class="fielddoc">
@@ -264,12 +260,61 @@ depth</td>
 <td class="fielddoc">
 current depth in <code>field</code> </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="ae0b4cd98b6ab31c2f4df9221d6c8763a"></a>const struct blink_list_element *</td>
+<a class="anchor" id="ae190d746d9ba2ce2d642688992254c07"></a>struct blink_list_element *</td>
 <td class="fieldname">
 field[<a class="el" href="group__blink__parser.html#ga14131866a7eba6a0b1e64d9eab1a3f2c">BLINK_INHERIT_DEPTH</a>]</td>
 <td class="fielddoc">
-stack of pointers to fields within groups (inheritence is limited to MAX_DEPTH) </td></tr>
+stack of pointers to fields within groups </td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a class="anchor" id="ga78bc32baa760de3157e4a4430035fde4"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void*(*  fn_blink_calloc_t)(size_t nelem, size_t elsize)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A calloc-like function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nelem</td><td>number of elements </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">elsize</td><td>byte size of an element </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a pointer to the allocated memory </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">NULL</td><td>allocation failed </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="gac62db5208bacb4455b5a91e9ffffe763"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef void(*  fn_blink_free_t)(void *ptr)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A free-like function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ptr</td><td>pointer to memory previously allocated </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -286,62 +331,59 @@ stack of pointers to fields within groups (inheritence is limited to MAX_DEPTH) 
 
 <p>A field shall represent one of the following types. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509addb4be6b1cc25112defabef75f73427a"></a>TYPE_STRING</em>&#160;</td><td class="fielddoc">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509af8f28e5646c6d26f54343460f53f8aad"></a>BLINK_TYPE_STRING</em>&#160;</td><td class="fielddoc">
 <p>UTF8 encoded string. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509aa5ffcdf7807a1bb2607a525a08682304"></a>TYPE_BINARY</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a7005c11fbfb8f35ddc7edb74763f2501"></a>BLINK_TYPE_BINARY</em>&#160;</td><td class="fielddoc">
 <p>octet string </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a6dfb719f8c305d986ff202d56eeee6d1"></a>TYPE_FIXED</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a19f67e0060f2aeee69c683fd5f5ce7bd"></a>BLINK_TYPE_FIXED</em>&#160;</td><td class="fielddoc">
 <p>fixed size string </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a3e0f738756c5205d71c69d955603f46c"></a>TYPE_BOOL</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509ac7769e68502f2833fe76da639e3d7dd5"></a>BLINK_TYPE_BOOL</em>&#160;</td><td class="fielddoc">
 <p>boolean </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a4ffe2e7789b386a00d8c7d4db3b26ea1"></a>TYPE_U8</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a1692bc58b4f7300021cea0fa4139048f"></a>BLINK_TYPE_U8</em>&#160;</td><td class="fielddoc">
 <p>8 bit unsigned integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a8596236fab67ee5063eb157899b518f4"></a>TYPE_U16</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a856e88bcd937104e9db66db79de85df9"></a>BLINK_TYPE_U16</em>&#160;</td><td class="fielddoc">
 <p>16 bit unsigned integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a9727de420e0b9c249da040949489481e"></a>TYPE_U32</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a2a09baf0e947e9a655ba21859c6c4302"></a>BLINK_TYPE_U32</em>&#160;</td><td class="fielddoc">
 <p>32 bit unsigned integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a34701599b9f022f253542a9739139de0"></a>TYPE_U64</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a7068938ab1623c887a9061e5c7c2ad8c"></a>BLINK_TYPE_U64</em>&#160;</td><td class="fielddoc">
 <p>64 bit unsigned integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509acfa7098bd7a6ae77e35dc74e7ce7413b"></a>TYPE_I8</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a09a92b6276eda946067beb5f1cdbb224"></a>BLINK_TYPE_I8</em>&#160;</td><td class="fielddoc">
 <p>8 bit signed integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a53aad119b5a256579dfa5290485de039"></a>TYPE_I16</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509af4d9db35411805859a29969676e1b6ca"></a>BLINK_TYPE_I16</em>&#160;</td><td class="fielddoc">
 <p>16 bit signed integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509ac7934ca10ab7b05c96f1eea440e28793"></a>TYPE_I32</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509af22127840f98cc4ff9cc3c6812b9d043"></a>BLINK_TYPE_I32</em>&#160;</td><td class="fielddoc">
 <p>32 bit signed integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a64b38adc375312ef1c6502095501d652"></a>TYPE_I64</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509ae7643995e0e26fbe8427a0e8daa45f06"></a>BLINK_TYPE_I64</em>&#160;</td><td class="fielddoc">
 <p>64 bit signed integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a53fe97e5cd809f8c663be3b1b318ec41"></a>TYPE_F64</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a36916415192410b69e5997adc6d2120a"></a>BLINK_TYPE_F64</em>&#160;</td><td class="fielddoc">
 <p>IEEE 754 double. </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509ac80ed02ff29fa334158b601181f5ae28"></a>TYPE_DECIMAL</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509aa19c71244ca252e08e5895af664d7f6b"></a>BLINK_TYPE_DECIMAL</em>&#160;</td><td class="fielddoc">
 <p>8 bit signed integer exponent, 64 bit signed integer mantissa </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a43aef6302e2b8ee4efdd9ca87636d7c8"></a>TYPE_OBJECT</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a54b7dccb332ad3304a1680e21343a3da"></a>BLINK_TYPE_OBJECT</em>&#160;</td><td class="fielddoc">
 <p>any group encoded as dynamic group </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a156a7eedfef32c6e58187646502f7815"></a>TYPE_ENUM</em>&#160;</td><td class="fielddoc">
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509aa34158790b22e7238d2927ac40e5d3f6"></a>BLINK_TYPE_ENUM</em>&#160;</td><td class="fielddoc">
 <p>32 bit signed integer </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509ab25e3007adfa6aaac1d847bfe02db13a"></a>TYPE_REF</em>&#160;</td><td class="fielddoc">
-<p>reference </p>
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509ae918d0e12c00604c414b480d17a2843d"></a>BLINK_TYPE_STATIC_GROUP</em>&#160;</td><td class="fielddoc">
+<p>static group </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a49fc69bb81f08a371c2bd1614041ebba"></a>TYPE_STATIC_GROUP</em>&#160;</td><td class="fielddoc">
-<p>static reference to a group </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a278d2b22bd41a561873350151311d44b"></a>TYPE_DYNAMIC_REF</em>&#160;</td><td class="fielddoc">
-<p>dynamic reference to a group </p>
+<tr><td class="fieldname"><em><a class="anchor" id="gga3c752bf7f68879c88427adabf3778509a8dc1f2ef40cf00c0d11e36b08165b93a"></a>BLINK_TYPE_DYNAMIC_GROUP</em>&#160;</td><td class="fielddoc">
+<p>dynamic group </p>
 </td></tr>
 </table>
 
@@ -374,12 +416,12 @@ stack of pointers to fields within groups (inheritence is limited to MAX_DEPTH) 
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga162cb68fd032636fb64e875ff1fa37c8"></a>
+<a class="anchor" id="gaab362dd08d2cc41c5a79c57e03bc541e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool BLINK_FieldIsOptional </td>
+          <td class="memname">bool BLINK_GetFieldIsOptional </td>
           <td>(</td>
           <td class="paramtype">const struct blink_field *&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
@@ -387,15 +429,13 @@ stack of pointers to fields within groups (inheritence is limited to MAX_DEPTH) 
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Is this field optional? </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>receiver</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>receiver </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>optional?</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Is this field optional? </dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
     <tr><td class="paramname">true</td><td></td></tr>
@@ -469,7 +509,7 @@ stack of pointers to fields within groups (inheritence is limited to MAX_DEPTH) 
 </div><div class="memdoc">
 
 <p>Get the type referencestring of this field (if applicable) </p>
-<dl class="section note"><dt>Note</dt><dd>applicable if <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ab25e3007adfa6aaac1d847bfe02db13a" title="reference ">TYPE_REF</a> or <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a278d2b22bd41a561873350151311d44b" title="dynamic reference to a group ">TYPE_DYNAMIC_REF</a></dd></dl>
+<dl class="section note"><dt>Note</dt><dd>applicable if #BLINK_TYPE_REF or #BLINK_TYPE_DYNAMIC_REF</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>receiver </td></tr>
@@ -480,7 +520,7 @@ stack of pointers to fields within groups (inheritence is limited to MAX_DEPTH) 
 <dl class="section return"><dt>Returns</dt><dd>pointer to reference string</dd></dl>
 <dl class="retval"><dt>Return values</dt><dd>
   <table class="retval">
-    <tr><td class="paramname">NULL</td><td>this field is not a <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509ab25e3007adfa6aaac1d847bfe02db13a" title="reference ">TYPE_REF</a> or <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a278d2b22bd41a561873350151311d44b" title="dynamic reference to a group ">TYPE_DYNAMIC_REF</a> </td></tr>
+    <tr><td class="paramname">NULL</td><td>this field is not a <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a8dc1f2ef40cf00c0d11e36b08165b93a" title="dynamic group ">BLINK_TYPE_DYNAMIC_GROUP</a> or #BLINK_TYPE_DYNAMIC_REF </td></tr>
   </table>
   </dd>
 </dl>
@@ -502,9 +542,9 @@ stack of pointers to fields within groups (inheritence is limited to MAX_DEPTH) 
 </div><div class="memdoc">
 
 <p>Get the size of this field (if applicable) </p>
-<dl class="section note"><dt>Note</dt><dd>applicable if <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a6dfb719f8c305d986ff202d56eeee6d1" title="fixed size string ">TYPE_FIXED</a>, <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509aa5ffcdf7807a1bb2607a525a08682304" title="octet string ">TYPE_BINARY</a>, or <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509addb4be6b1cc25112defabef75f73427a" title="UTF8 encoded string. ">TYPE_STRING</a> </dd>
+<dl class="section note"><dt>Note</dt><dd>applicable if <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a19f67e0060f2aeee69c683fd5f5ce7bd" title="fixed size string ">BLINK_TYPE_FIXED</a>, <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a7005c11fbfb8f35ddc7edb74763f2501" title="octet string ">BLINK_TYPE_BINARY</a>, or <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509af8f28e5646c6d26f54343460f53f8aad" title="UTF8 encoded string. ">BLINK_TYPE_STRING</a> </dd>
 <dd>
-for <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509addb4be6b1cc25112defabef75f73427a" title="UTF8 encoded string. ">TYPE_STRING</a> and <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509aa5ffcdf7807a1bb2607a525a08682304" title="octet string ">TYPE_BINARY</a> size means maximum size</dd></dl>
+for <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509af8f28e5646c6d26f54343460f53f8aad" title="UTF8 encoded string. ">BLINK_TYPE_STRING</a> and <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf3778509a7005c11fbfb8f35ddc7edb74763f2501" title="octet string ">BLINK_TYPE_BINARY</a> size means maximum size</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>receiver</td></tr>
@@ -671,37 +711,6 @@ for <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf37
 
 </div>
 </div>
-<a class="anchor" id="ga44edd6e9ca1195b388cbec80a89a4b9b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const struct blink_group* BLINK_GetSuperGroup </td>
-          <td>(</td>
-          <td class="paramtype">const struct blink_group *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the super group definition for this group. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>receiver</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>pointer to super group</dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">NULL</td><td>super group does not exist </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="ga58876b80e2a703e13ade76c3807334ed"></a>
 <div class="memitem">
 <div class="memproto">
@@ -810,37 +819,12 @@ for <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf37
 
 </div>
 </div>
-<a class="anchor" id="gab1ef2f32e780943673050ca84b27466e"></a>
+<a class="anchor" id="ga81a8bc03fb4cf33ba44bdebfc9376581"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const struct blink_type* BLINK_GetType </td>
-          <td>(</td>
-          <td class="paramtype">const struct blink_field *&#160;</td>
-          <td class="paramname"><em>self</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>returns field type </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>receiver</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>type of field </dd></dl>
-
-</div>
-</div>
-<a class="anchor" id="ga24e0ef1f46561755ac4c4a72bc4ea05e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const struct <a class="el" href="group__blink__parser.html#structblink__field__iterator">blink_field_iterator</a>* BLINK_InitFieldIterator </td>
+          <td class="memname">void BLINK_InitFieldIterator </td>
           <td>(</td>
           <td class="paramtype">struct <a class="el" href="group__blink__parser.html#structblink__field__iterator">blink_field_iterator</a> *&#160;</td>
           <td class="paramname"><em>iter</em>, </td>
@@ -863,14 +847,7 @@ for <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf37
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">iter</td><td>iterator </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>group to iterate</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>pointer to initialised field iterator</dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">NULL</td><td>could not initialise field iterator </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>group to iterate </td></tr>
   </table>
   </dd>
 </dl>
@@ -891,13 +868,13 @@ for <a class="el" href="group__blink__parser.html#gga3c752bf7f68879c88427adabf37
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__blink__parser.html#gaa00ea24fa82793ec21dbf2e588f3e435">fn_blink_calloc_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__parser.html#ga78bc32baa760de3157e4a4430035fde4">fn_blink_calloc_t</a>&#160;</td>
           <td class="paramname"><em>calloc</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__blink__parser.html#ga7c256c11a35d84bd71890992ae24b9da">fn_blink_free_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__parser.html#gac62db5208bacb4455b5a91e9ffffe763">fn_blink_free_t</a>&#160;</td>
           <td class="paramname"><em>free</em>&#160;</td>
         </tr>
         <tr>

@@ -2,7 +2,8 @@ var group__blink__lexer =
 [
     [ "blink_token_value", "group__blink__lexer.html#unionblink__token__value", [
       [ "literal", "group__blink__lexer.html#a36da41552cd84c5de97843148ac5e5b3", null ],
-      [ "number", "group__blink__lexer.html#a62ba9bd23910c8839d2e46db2eb740c6", null ]
+      [ "number", "group__blink__lexer.html#a62ba9bd23910c8839d2e46db2eb740c6", null ],
+      [ "signedNumber", "group__blink__lexer.html#a6f9b3157af6c45eb4e4261d7fcebdb3b", null ]
     ] ],
     [ "blink_token_value.literal", "group__blink__lexer.html#structblink__token__value_8literal", [
       [ "len", "group__blink__lexer.html#af5a8e923f8cd24b56b3bab32358cc58a", null ],
@@ -53,7 +54,8 @@ var group__blink__lexer =
       [ "TOK_NAMESPACE", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a67300e14a17e8179e463eacd517ba844", null ],
       [ "TOK_SCHEMA", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a03d63d0a0ef4a5439e4b27b7e5919a96", null ],
       [ "TOK_TYPE", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a7455bce9ab563e25b2e477de57ef8eaf", null ],
-      [ "TOK_NUMBER", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433acdae166ca0040147b5e2225cb23184d5", null ],
+      [ "TOK_UINT", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6", null ],
+      [ "TOK_INT", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae31763c23645e878553de1322dcb8d49", null ],
       [ "TOK_LITERAL", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f", null ],
       [ "TOK_UNKNOWN", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a7d71d1596897e780f46f5c34b7e51ece", null ],
       [ "TOK_EOF", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8", null ]

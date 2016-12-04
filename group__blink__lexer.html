@@ -66,6 +66,8 @@ $(document).ready(function(){initNavTree('group__blink__lexer.html','');});
 <div class="title">Blink_lexer</div>  </div>
 </div><!--header-->
 <div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Convert syntax to a token. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -140,17 +142,17 @@ Enumerations</h2></td></tr>
 <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a03d63d0a0ef4a5439e4b27b7e5919a96">TOK_SCHEMA</a>, 
 <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a7455bce9ab563e25b2e477de57ef8eaf">TOK_TYPE</a>, 
 <br/>
-&#160;&#160;<a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433acdae166ca0040147b5e2225cb23184d5">TOK_NUMBER</a>, 
+&#160;&#160;<a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6">TOK_UINT</a>, 
+<a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae31763c23645e878553de1322dcb8d49">TOK_INT</a>, 
 <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f">TOK_LITERAL</a>, 
 <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a7d71d1596897e780f46f5c34b7e51ece">TOK_UNKNOWN</a>, 
-<a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8">TOK_EOF</a>
+<br/>
+&#160;&#160;<a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8">TOK_EOF</a>
 <br/>
  }</td></tr>
 <tr class="memdesc:gab2e6f8e36a3f186df5aa613a03e05433"><td class="mdescLeft">&#160;</td><td class="mdescRight">The following tokens are returned by <a class="el" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1" title="Return next token from syntax. ">BLINK_GetToken</a>.  <a href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">More...</a><br/></td></tr>
 <tr class="separator:gab2e6f8e36a3f186df5aa613a03e05433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<p>Convert syntax to a token. </p>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
 <a name="unionblink__token__value" id="unionblink__token__value"></a>
 <div class="memitem">
@@ -183,7 +185,13 @@ Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186d
 <td class="fieldname">
 number</td>
 <td class="fielddoc">
-Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433acdae166ca0040147b5e2225cb23184d5" title="0x[0-9a-fA-F][0-9a-fA-F]+ | [0-9]+ ">TOK_NUMBER</a>. </td></tr>
+Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6" title="[0][x][0-9a-fA-F][0-9a-fA-F]+ | [0-9]+ ">TOK_UINT</a>. </td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a6f9b3157af6c45eb4e4261d7fcebdb3b"></a>int64_t</td>
+<td class="fieldname">
+signedNumber</td>
+<td class="fielddoc">
+Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae31763c23645e878553de1322dcb8d49" title="[-][1-9][0-9]* ">TOK_INT</a>. </td></tr>
 </table>
 
 </div>
@@ -343,7 +351,7 @@ row</td>
 <p><code>,</code> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433af3e3fdea476f5ccf30af328edbe6178e"></a>TOK_PERIOD</em>&#160;</td><td class="fielddoc">
-<p>period </p>
+<p>&lt;period&gt; </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433af1fbfa82e162df111b4c4bd1040471ee"></a>TOK_QUESTION</em>&#160;</td><td class="fielddoc">
 <p><code>?</code> </p>
@@ -390,8 +398,11 @@ row</td>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433a7455bce9ab563e25b2e477de57ef8eaf"></a>TOK_TYPE</em>&#160;</td><td class="fielddoc">
 <p><code>type</code> </p>
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433acdae166ca0040147b5e2225cb23184d5"></a>TOK_NUMBER</em>&#160;</td><td class="fielddoc">
-<p><code>0x[0-9a-fA-F][0-9a-fA-F]+ | [0-9]+</code> </p>
+<tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6"></a>TOK_UINT</em>&#160;</td><td class="fielddoc">
+<p><code>[0][x][0-9a-fA-F][0-9a-fA-F]+ | [0-9]+</code> </p>
+</td></tr>
+<tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433ae31763c23645e878553de1322dcb8d49"></a>TOK_INT</em>&#160;</td><td class="fielddoc">
+<p><code>[-][1-9][0-9]*</code> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f"></a>TOK_LITERAL</em>&#160;</td><td class="fielddoc">
 <p>a string within double or single quotation marks </p>

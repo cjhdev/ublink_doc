@@ -63,19 +63,16 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://travis-ci.org/cjhdev/ublink">![Build Status](https://travis-ci.org/cjhdev/ublink.svg?branch=master)</a></p>
-<p>uBlink is a C99 implementation of <a href="http://www.blinkprotocol.org/" title="The Blink Protocol">The Blink Protocol</a> suitable for integrating into larger applications.</p>
-<p>This project is currently under development and not very useful.</p>
-<h2>Examples</h2>
-<h3>Create a <a class="el" href="group__blink__parser.html#structblink__schema" title="forward declaration ">blink_schema</a> object from a single schema definition</h3>
-<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;blink_parser.h&quot;</span></div>
-<div class="line"></div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> syntax[] = <span class="stringliteral">&quot;Hello/0 -&gt; string greeting&quot;</span>;</div>
-<div class="line"></div>
-<div class="line"><span class="keyword">struct </span><a class="code" href="group__blink__parser.html#structblink__schema">blink_schema</a> s;</div>
-<div class="line"><a class="code" href="group__blink__parser.html#gad1989c8c0bd33b57863205b4422d7033">BLINK_InitSchema</a>(&amp;s);</div>
-<div class="line"><a class="code" href="group__blink__parser.html#ga45f45a65be4686f647be7238b3d3ab2f">BLINK_Parse</a>(&amp;s, syntax, <span class="keyword">sizeof</span>(syntax));</div>
-<div class="line"><a class="code" href="group__blink__parser.html#gaad736fcf94e77f4c8921bc49811446a4">BLINK_DestroySchema</a>(&amp;s);</div>
-</div><!-- fragment --><h2>Compile Time Options</h2>
+<p>uBlink is a C99 implementation of <a href="http://www.blinkprotocol.org/" title="The Blink Protocol">The Blink Protocol</a> suitable for embedded applications.</p>
+<h2>Highlights</h2>
+<ul>
+<li>Compact form encode/decode primitives</li>
+<li>Hand coded schema parser and lexer</li>
+<li>Allocate-only malloc minimum requirement (i.e. you can use a simple heap that is reset instead of calling free)</li>
+<li>Tests and coverage statistics</li>
+<li>Linted to MISRA 2012</li>
+</ul>
+<h2>Compile Time Options</h2>
 <div class="fragment"><div class="line"><span class="comment">// remove asserts (default: not defined)</span></div>
 <div class="line"><span class="preprocessor">#define NDEBUG</span></div>
 <div class="line"><span class="preprocessor"></span></div>
@@ -84,7 +81,13 @@ $(document).ready(function(){initNavTree('index.html','');});
 <div class="line"><span class="preprocessor"></span></div>
 <div class="line"><span class="comment">// define the maximum number of references allowed in a chain (default: 10)</span></div>
 <div class="line"><span class="preprocessor">#define BLINK_LINK_DEPTH    10</span></div>
-</div><!-- fragment --><h2>See Also</h2>
+</div><!-- fragment --><h2>Todo</h2>
+<ul>
+<li>Overflow protection for parsing signed and unsigned integers in blink_lexer.c</li>
+<li>Location support in blink_parser.c</li>
+<li>Event driven decoder</li>
+</ul>
+<h2>See Also</h2>
 <p><a href="https://github.com/cjhdev/slow_blink" title="SlowBlink">SlowBlink</a>: Blink Protocol in Ruby</p>
 <h2>License</h2>
 <p>uBlink has an MIT license.</p>
