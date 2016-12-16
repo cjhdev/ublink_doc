@@ -387,6 +387,17 @@ $(document).ready(function(){initNavTree('tc_BLINK_Decode_8c-example.html','');}
 <div class="line">    TEST_ASSERT_EQUAL(0, <a class="code" href="group__blink__compact__form.html#ga9288b41b835fc965e71aa9cf3716604e">BLINK_DecodeBinary</a>(in, <span class="keyword">sizeof</span>(in), &amp;out, &amp;outLen, &amp;isNull));    </div>
 <div class="line">}</div>
 <div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeBinary_null(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">const</span> uint8_t in[] = {0xc0};</div>
+<div class="line">    <span class="keyword">const</span> uint8_t *out;</div>
+<div class="line">    uint32_t outLen;</div>
+<div class="line">    <span class="keywordtype">bool</span> isNull = <span class="keyword">true</span>;</div>
+<div class="line"></div>
+<div class="line">    TEST_ASSERT_EQUAL(<span class="keyword">sizeof</span>(in), <a class="code" href="group__blink__compact__form.html#ga9288b41b835fc965e71aa9cf3716604e">BLINK_DecodeBinary</a>(in, <span class="keyword">sizeof</span>(in), &amp;out, &amp;outLen, &amp;isNull));    </div>
+<div class="line">    TEST_ASSERT_TRUE(isNull);    </div>
+<div class="line">}</div>
+<div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_DecodeFixed(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> uint8_t in[] = {<span class="charliteral">&#39;h&#39;</span>,<span class="charliteral">&#39;e&#39;</span>,<span class="charliteral">&#39;l&#39;</span>,<span class="charliteral">&#39;l&#39;</span>,<span class="charliteral">&#39;o&#39;</span>};    </div>

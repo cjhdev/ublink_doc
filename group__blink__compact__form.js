@@ -10,6 +10,7 @@ var group__blink__compact__form =
     [ "BLINK_DecodeI64", "group__blink__compact__form.html#ga2e838ef0b6e5963280d66148610259c4", null ],
     [ "BLINK_DecodeI8", "group__blink__compact__form.html#ga0d903e072ee921e8f46bdb64f5952e74", null ],
     [ "BLINK_DecodeOptionalFixed", "group__blink__compact__form.html#gafeecc37660552bc1361ac4f94087679e", null ],
+    [ "BLINK_DecodePresent", "group__blink__compact__form.html#ga51bb2253a3476db94ba5d60df8806e5f", null ],
     [ "BLINK_DecodeString", "group__blink__compact__form.html#ga218c850ec723e9f7e74491714c6f5e33", null ],
     [ "BLINK_DecodeU16", "group__blink__compact__form.html#ga37702a7e0493014b2ebe84e85c363e33", null ],
     [ "BLINK_DecodeU32", "group__blink__compact__form.html#gace74e5b22c0fe3155cae1af7fde6b48b", null ],

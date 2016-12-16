@@ -132,6 +132,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga6630b8f2aeaf160234171ba4f8fbc734"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga6630b8f2aeaf160234171ba4f8fbc734">BLINK_DecodeF64</a> (const uint8_t *in, uint32_t inLen, double *out, bool *isNull)</td></tr>
 <tr class="memdesc:ga6630b8f2aeaf160234171ba4f8fbc734"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode <code>f64</code>  <a href="#ga6630b8f2aeaf160234171ba4f8fbc734">More...</a><br/></td></tr>
 <tr class="separator:ga6630b8f2aeaf160234171ba4f8fbc734"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga51bb2253a3476db94ba5d60df8806e5f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#ga51bb2253a3476db94ba5d60df8806e5f">BLINK_DecodePresent</a> (const uint8_t *in, uint32_t inLen, bool *out)</td></tr>
+<tr class="memdesc:ga51bb2253a3476db94ba5d60df8806e5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode a present field.  <a href="#ga51bb2253a3476db94ba5d60df8806e5f">More...</a><br/></td></tr>
+<tr class="separator:ga51bb2253a3476db94ba5d60df8806e5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad799858a3d7795e8344819352dea5003"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact__form.html#gad799858a3d7795e8344819352dea5003">BLINK_EncodeBool</a> (bool in, uint8_t *out, uint32_t outMax)</td></tr>
 <tr class="memdesc:gad799858a3d7795e8344819352dea5003"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode <code>bool</code>  <a href="#gad799858a3d7795e8344819352dea5003">More...</a><br/></td></tr>
 <tr class="separator:gad799858a3d7795e8344819352dea5003"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -768,6 +771,55 @@ Functions</h2></td></tr>
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_Decode_8c-example.html#a13">tc_BLINK_Decode.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="ga51bb2253a3476db94ba5d60df8806e5f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_DecodePresent </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>inLen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Decode a present field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">out</td><td>set to <code>true</code> if present</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of bytes successfully read from <code>in</code> </dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">0..1</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a class="anchor" id="ga218c850ec723e9f7e74491714c6f5e33"></a>

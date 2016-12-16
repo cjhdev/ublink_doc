@@ -6,13 +6,14 @@ var group__blink__event__decoder =
       [ "beginSequence", "group__blink__event__decoder.html#ae77977e03f1a256f4e6f43640992c876", null ],
       [ "beginStaticGroup", "group__blink__event__decoder.html#a81c4ba7da6621e76a4a98996e3c96a52", null ],
       [ "binary", "group__blink__event__decoder.html#a9e1d8c17f345912bbc51277a903e3244", null ],
-      [ "bool", "group__blink__event__decoder.html#ae2a05270bc7c1fe11d0a4383d9ef9f93", null ],
+      [ "boolean", "group__blink__event__decoder.html#aac6458b244f1d5513974e4fadfbec62a", null ],
       [ "date", "group__blink__event__decoder.html#a55012d8769717dc5514a291835958095", null ],
       [ "decimal", "group__blink__event__decoder.html#ac8db554002a556d7b21aa06bcf66bdfa", null ],
       [ "endDynamicGroup", "group__blink__event__decoder.html#a794d14e62d6c9e6f696861459505fc65", null ],
       [ "endField", "group__blink__event__decoder.html#a2bb238be972c5a5d231f2657b52a20eb", null ],
       [ "endSequence", "group__blink__event__decoder.html#acb1a2c51c4144240aac08c07d564ff66", null ],
       [ "endStaticGroup", "group__blink__event__decoder.html#a046c754d9f131f40077761b2262892bf", null ],
+      [ "enumeration", "group__blink__event__decoder.html#a08b86328aacde9fcd7960718c66f4bc9", null ],
       [ "f64", "group__blink__event__decoder.html#ac6af104f30311531716b546529b541ed", null ],
       [ "fixed", "group__blink__event__decoder.html#a2c9b70e90253163eb7aca4072f6e6419", null ],
       [ "i16", "group__blink__event__decoder.html#a7da0a656a3dbc1370a79acafbfb1bafe", null ],
@@ -22,8 +23,8 @@ var group__blink__event__decoder =
       [ "millitime", "group__blink__event__decoder.html#a6ef5f494b0d681ec4d7efb85362b9903", null ],
       [ "nanotime", "group__blink__event__decoder.html#a338f5b02255da306b5c4a11078b7e76b", null ],
       [ "string", "group__blink__event__decoder.html#a721f1d78a986ededfceea81fc769deb2", null ],
-      [ "timeOfDayMilli", "group__blink__event__decoder.html#a06c5bd2eff3f2ca91cbab9f0de827a2e", null ],
-      [ "timeOfDayNano", "group__blink__event__decoder.html#a86ae0c5cbef034f2026b2373ecfcfdaf", null ],
+      [ "timeOfDayMilli", "group__blink__event__decoder.html#a18d2943dedc22a4edf81a8380ac55471", null ],
+      [ "timeOfDayNano", "group__blink__event__decoder.html#aff83e8e4479c0a97aea32730d352d1b7", null ],
       [ "u16", "group__blink__event__decoder.html#a7a41552f1dc51c86b88968c700473dd4", null ],
       [ "u32", "group__blink__event__decoder.html#a78e714008960140501876ac9875778a1", null ],
       [ "u64", "group__blink__event__decoder.html#a77cd9020c5117a485bb0dafc2da9fa68", null ],
@@ -63,5 +64,5 @@ var group__blink__event__decoder =
     [ "blink_u64_fn_t", "group__blink__event__decoder.html#gae71f9f32e6f5355dac773803d3bc6f44", null ],
     [ "blink_u8_fn_t", "group__blink__event__decoder.html#gabdc0c286441e741621996233d733cb26", null ],
     [ "BLINK_EventDecoderDecode", "group__blink__event__decoder.html#gaf7bbf82b153883e0745fa801d3adda07", null ],
-    [ "BLINK_InitEventDecoder", "group__blink__event__decoder.html#ga50d25c9342c37957d36fd23e98ecf50d", null ]
+    [ "BLINK_EventDecoderInit", "group__blink__event__decoder.html#ga103bfaa4ef0671243bac9c48e7b677c5", null ]
 ];
