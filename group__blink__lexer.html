@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>uBlink: Blink_lexer</title>
+<title>uBlink: blink_lexer</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,28 +63,26 @@ $(document).ready(function(){initNavTree('group__blink__lexer.html','');});
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
-<div class="title">Blink_lexer</div>  </div>
+<div class="title">blink_lexer<div class="ingroups"><a class="el" href="group__ublink.html">ublink</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
-<p>Convert syntax to a token. </p>
+<p>Internal dependency required by <a class="el" href="group__blink__schema__internal.html#structblink__schema" title="schema ">blink_schema</a> for converting schema syntax into tokens. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gae759c8ac9a918ff55de6ef882e2901b1"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1">BLINK_GetToken</a> (const char *in, size_t inLen, size_t *read, union <a class="el" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> *value, struct <a class="el" href="group__blink__lexer.html#structblink__token__location">blink_token_location</a> *location)</td></tr>
-<tr class="memdesc:gae759c8ac9a918ff55de6ef882e2901b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return next token from syntax.  <a href="#gae759c8ac9a918ff55de6ef882e2901b1">More...</a><br/></td></tr>
-<tr class="separator:gae759c8ac9a918ff55de6ef882e2901b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf479cf134400cd5ad09b84694f41da4e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__lexer.html#gaf479cf134400cd5ad09b84694f41da4e">BLINK_TokenToString</a> (enum <a class="el" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> token, size_t *len)</td></tr>
-<tr class="memdesc:gaf479cf134400cd5ad09b84694f41da4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to convert a token to its string representation.  <a href="#gaf479cf134400cd5ad09b84694f41da4e">More...</a><br/></td></tr>
-<tr class="separator:gaf479cf134400cd5ad09b84694f41da4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga56bcdbef3723a5c72f380b5089180385"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__lexer.html#ga56bcdbef3723a5c72f380b5089180385">BLINK_Lexer_getToken</a> (const char *in, size_t inLen, size_t *read, union <a class="el" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> *value, struct <a class="el" href="group__blink__lexer.html#structblink__token__location">blink_token_location</a> *location)</td></tr>
+<tr class="memdesc:ga56bcdbef3723a5c72f380b5089180385"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use this function to convert an octet string into a token.  <a href="#ga56bcdbef3723a5c72f380b5089180385">More...</a><br/></td></tr>
+<tr class="separator:ga56bcdbef3723a5c72f380b5089180385"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacafe52ce981c8912c13e7ed3515a643b"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__lexer.html#gacafe52ce981c8912c13e7ed3515a643b">BLINK_Lexer_tokenToString</a> (enum <a class="el" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> token)</td></tr>
+<tr class="memdesc:gacafe52ce981c8912c13e7ed3515a643b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a token enum to a string representation.  <a href="#gacafe52ce981c8912c13e7ed3515a643b">More...</a><br/></td></tr>
+<tr class="separator:gacafe52ce981c8912c13e7ed3515a643b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:unionblink__token__value"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a></td></tr>
-<tr class="memdesc:unionblink__token__value"><td class="mdescLeft">&#160;</td><td class="mdescRight">Some tokens have a value returned by <a class="el" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1" title="Return next token from syntax. ">BLINK_GetToken</a>.  <a href="group__blink__lexer.html#unionblink__token__value">More...</a><br/></td></tr>
 <tr class="separator:unionblink__token__value"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structblink__token__value_8literal"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__lexer.html#structblink__token__value_8literal">blink_token_value.literal</a></td></tr>
-<tr class="memdesc:structblink__token__value_8literal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a2521ed04c163bb1cbdd6af6a3674cb8f" title="[\\]?[A-Za-z_][A-Za-z_0-9]+ ">TOK_NAME</a>, <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a3f4a4b22d6e16dfdf6048f791d16784f" title="[A-Za-z_][A-Za-z_0-9]+:[A-Za-z_][A-Za-z_0-9] ">TOK_CNAME</a>, and <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f" title="a string within double or single quotation marks ">TOK_LITERAL</a>.  <a href="group__blink__lexer.html#structblink__token__value_8literal">More...</a><br/></td></tr>
 <tr class="separator:structblink__token__value_8literal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structblink__token__location"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__lexer.html#structblink__token__location">blink_token_location</a></td></tr>
 <tr class="separator:structblink__token__location"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -150,7 +148,6 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8">TOK_EOF</a>
 <br/>
  }</td></tr>
-<tr class="memdesc:gab2e6f8e36a3f186df5aa613a03e05433"><td class="mdescLeft">&#160;</td><td class="mdescRight">The following tokens are returned by <a class="el" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1" title="Return next token from syntax. ">BLINK_GetToken</a>.  <a href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">More...</a><br/></td></tr>
 <tr class="separator:gab2e6f8e36a3f186df5aa613a03e05433"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/><h2 class="groupheader">Data Structure Documentation</h2>
@@ -163,35 +160,27 @@ Enumerations</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Some tokens have a value returned by <a class="el" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1" title="Return next token from syntax. ">BLINK_GetToken</a>. </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_GetToken_8c-example.html#_a0">tc_BLINK_GetToken.c</a>.</dd>
-</dl></div><div class="dynheader">
-Collaboration diagram for blink_token_value:</div>
-<div class="dyncontent">
-<div class="center"><img src="unionblink__token__value__coll__graph.png" border="0" usemap="#blink__token__value_coll__map" alt="Collaboration graph"/></div>
-<map name="blink__token__value_coll__map" id="blink__token__value_coll__map">
-</map>
-</div>
-<table class="fieldtable">
+<div class="textblock"><dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_lexer_gettoken_8c-example.html#_a0">tc_blink_lexer_gettoken.c</a>.</dd>
+</dl></div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a36da41552cd84c5de97843148ac5e5b3"></a>struct <a class="el" href="group__blink__lexer.html#structblink__token__value_8literal">blink_token_value</a></td>
 <td class="fieldname">
 literal</td>
 <td class="fielddoc">
-Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a2521ed04c163bb1cbdd6af6a3674cb8f" title="[\\]?[A-Za-z_][A-Za-z_0-9]+ ">TOK_NAME</a>, <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a3f4a4b22d6e16dfdf6048f791d16784f" title="[A-Za-z_][A-Za-z_0-9]+:[A-Za-z_][A-Za-z_0-9] ">TOK_CNAME</a>, and <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f" title="a string within double or single quotation marks ">TOK_LITERAL</a>. </td></tr>
+</td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a62ba9bd23910c8839d2e46db2eb740c6"></a>uint64_t</td>
 <td class="fieldname">
 number</td>
 <td class="fielddoc">
-Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6" title="[0][x][0-9a-fA-F][0-9a-fA-F]+ | [0-9]+ ">TOK_UINT</a>. </td></tr>
+Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6" title="&lt;uint&gt; [0][x][0-9a-fA-F][0-9a-fA-F]+ | [0-9]+ ">TOK_UINT</a>. </td></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a6f9b3157af6c45eb4e4261d7fcebdb3b"></a>int64_t</td>
 <td class="fieldname">
 signedNumber</td>
 <td class="fielddoc">
-Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae31763c23645e878553de1322dcb8d49" title="[-][1-9][0-9]* ">TOK_INT</a>. </td></tr>
+Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae31763c23645e878553de1322dcb8d49" title="&lt;int&gt; [-][1-9][0-9]* ">TOK_INT</a>. </td></tr>
 </table>
 
 </div>
@@ -205,15 +194,7 @@ Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186d
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"><p>Initialised for <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a2521ed04c163bb1cbdd6af6a3674cb8f" title="[\\]?[A-Za-z_][A-Za-z_0-9]+ ">TOK_NAME</a>, <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a3f4a4b22d6e16dfdf6048f791d16784f" title="[A-Za-z_][A-Za-z_0-9]+:[A-Za-z_][A-Za-z_0-9] ">TOK_CNAME</a>, and <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f" title="a string within double or single quotation marks ">TOK_LITERAL</a>. </p>
-</div><div class="dynheader">
-Collaboration diagram for blink_token_value.literal:</div>
-<div class="dyncontent">
-<div class="center"><img src="structblink__token__value_8literal__coll__graph.png" border="0" usemap="#blink__token__value_8literal_coll__map" alt="Collaboration graph"/></div>
-<map name="blink__token__value_8literal_coll__map" id="blink__token__value_8literal_coll__map">
-</map>
-</div>
-<table class="fieldtable">
+<div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="af5a8e923f8cd24b56b3bab32358cc58a"></a>size_t</td>
@@ -240,14 +221,7 @@ pointer to printable string </td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock"></div><div class="dynheader">
-Collaboration diagram for blink_token_location:</div>
-<div class="dyncontent">
-<div class="center"><img src="structblink__token__location__coll__graph.png" border="0" usemap="#blink__token__location_coll__map" alt="Collaboration graph"/></div>
-<map name="blink__token__location_coll__map" id="blink__token__location_coll__map">
-</map>
-</div>
-<table class="fieldtable">
+<div class="textblock"></div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="acf932a67c395e2b636e440263a86d77e"></a>size_t</td>
@@ -275,8 +249,6 @@ row</td>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>The following tokens are returned by <a class="el" href="group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1" title="Return next token from syntax. ">BLINK_GetToken</a>. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433a6aed8afdbbec5110277334eba1c8d1ef"></a>TOK_STRING</em>&#160;</td><td class="fielddoc">
 <p><code>string</code> </p>
@@ -399,31 +371,31 @@ row</td>
 <p><code>type</code> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433ae70e809afeaca9afb12c095525604ae6"></a>TOK_UINT</em>&#160;</td><td class="fielddoc">
-<p><code>[0][x][0-9a-fA-F][0-9a-fA-F]+ | [0-9]+</code> </p>
+<p>&lt;uint&gt; <code>[0][x][0-9a-fA-F][0-9a-fA-F]+ | [0-9]+</code> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433ae31763c23645e878553de1322dcb8d49"></a>TOK_INT</em>&#160;</td><td class="fielddoc">
-<p><code>[-][1-9][0-9]*</code> </p>
+<p>&lt;int&gt; <code>[-][1-9][0-9]*</code> </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433ae15891c4023fde2b5a1e375cacb9278f"></a>TOK_LITERAL</em>&#160;</td><td class="fielddoc">
-<p>a string within double or single quotation marks </p>
+<p>&lt;literal&gt; a string within double or single quotation marks </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433a7d71d1596897e780f46f5c34b7e51ece"></a>TOK_UNKNOWN</em>&#160;</td><td class="fielddoc">
-<p>no match </p>
+<p>&lt;unknown&gt; no match </p>
 </td></tr>
 <tr><td class="fieldname"><em><a class="anchor" id="ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8"></a>TOK_EOF</em>&#160;</td><td class="fielddoc">
-<p>end of file </p>
+<p>&lt;eof&gt; end of file </p>
 </td></tr>
 </table>
 
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="gae759c8ac9a918ff55de6ef882e2901b1"></a>
+<a class="anchor" id="ga56bcdbef3723a5c72f380b5089180385"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> BLINK_GetToken </td>
+          <td class="memname">enum <a class="el" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> BLINK_Lexer_getToken </td>
           <td>(</td>
           <td class="paramtype">const char *&#160;</td>
           <td class="paramname"><em>in</em>, </td>
@@ -460,62 +432,50 @@ row</td>
       </table>
 </div><div class="memdoc">
 
-<p>Return next token from syntax. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Use this function to convert an octet string into a token. </p>
+<div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;emptyGroup&quot;</span>;</div>
+<div class="line"><span class="keywordtype">size_t</span> read;</div>
+<div class="line"><span class="keyword">union </span><a class="code" href="group__blink__lexer.html#unionblink__token__value">blink_token_value</a> value;</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// will return TOK_NAME</span></div>
+<div class="line"><span class="keyword">enum</span> <a class="code" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a> tok = BLINK_GetToken(input, <span class="keyword">sizeof</span>(input), &amp;read, &amp;value, NULL);</div>
+</div><!-- fragment --><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of <code>in</code> </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">read</td><td>bytes read from <code>in</code> </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>value of token (only initialised for TOK_NAME, TOK_CNAME, TOK_NUMBER) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input to convert into a token </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">inLen</td><td>byte length of input </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">read</td><td>bytes read from input </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>value of token (only initialised for TOK_NAME, TOK_CNAME, TOK_UINT, TOK_INT, TOK_LITERAL) </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">location</td><td>optional location information</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>enum <a class="el" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433" title="The following tokens are returned by BLINK_GetToken. ">blink_token</a> </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_GetToken_8c-example.html#a2">tc_BLINK_GetToken.c</a>.</dd>
+<dl class="section return"><dt>Returns</dt><dd>token </dd></dl>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_lexer_gettoken_8c-example.html#a2">tc_blink_lexer_gettoken.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="gaf479cf134400cd5ad09b84694f41da4e"></a>
+<a class="anchor" id="gacafe52ce981c8912c13e7ed3515a643b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const char* BLINK_TokenToString </td>
+          <td class="memname">const char* BLINK_Lexer_tokenToString </td>
           <td>(</td>
           <td class="paramtype">enum <a class="el" href="group__blink__lexer.html#gab2e6f8e36a3f186df5aa613a03e05433">blink_token</a>&#160;</td>
-          <td class="paramname"><em>token</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>token</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Try to convert a token to its string representation. </p>
-<dl class="section note"><dt>Note</dt><dd>not all tokens can be converted to strings (e.g. <a class="el" href="group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8" title="end of file ">TOK_EOF</a>)</dd></dl>
+<p>Convert a token enum to a string representation. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">token</td><td>token to convert to string </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">len</td><td>byte length of string</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>pointer to token string</dd></dl>
-<dl class="retval"><dt>Return values</dt><dd>
-  <table class="retval">
-    <tr><td class="paramname">NULL</td><td>no string exists for this token </td></tr>
-  </table>
-  </dd>
-</dl>
+<dl class="section return"><dt>Returns</dt><dd>null terminated string </dd></dl>
 
 </div>
 </div>

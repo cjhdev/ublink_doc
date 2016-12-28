@@ -63,34 +63,52 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://travis-ci.org/cjhdev/ublink">![Build Status](https://travis-ci.org/cjhdev/ublink.svg?branch=master)</a></p>
-<p>uBlink is a C99 implementation of <a href="http://www.blinkprotocol.org/" title="The Blink Protocol">The Blink Protocol</a> suitable for embedded applications.</p>
+<p>UBlink is C library for building compact binary messages according to Blink Protocol schemas.</p>
 <h2>Highlights</h2>
 <ul>
-<li>Compact form encode/decode primitives</li>
 <li>Hand coded schema parser and lexer</li>
-<li>Allocate-only malloc minimum requirement (i.e. you can use a simple heap that is reset instead of calling free)</li>
-<li>Tests and coverage statistics</li>
+<li>Compact form encode/decode primitives</li>
+<li>allocate/reset pool based allocator</li>
+<li>message input/output streams</li>
+<li>Tests</li>
 <li>Linted to MISRA 2012</li>
 </ul>
-<h2>Compile Time Options</h2>
-<div class="fragment"><div class="line"><span class="comment">// remove asserts (default: not defined)</span></div>
-<div class="line"><span class="preprocessor">#define NDEBUG</span></div>
+<h2>Example</h2>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;ublink.h&quot;</span></div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor">#define ARBITRARY_HEAP_SIZE 1024U</span></div>
 <div class="line"><span class="preprocessor"></span></div>
-<div class="line"><span class="comment">// define the maximum inheritence depth (default: 10)</span></div>
-<div class="line"><span class="preprocessor">#define BLINK_INHERIT_DEPTH 10</span></div>
-<div class="line"><span class="preprocessor"></span></div>
-<div class="line"><span class="comment">// define the maximum number of references allowed in a chain (default: 10)</span></div>
-<div class="line"><span class="preprocessor">#define BLINK_LINK_DEPTH    10</span></div>
-<div class="line"><span class="preprocessor"></span></div>
-<div class="line"><span class="comment">// define the maximum number of nested groups in a message (default: 10)</span></div>
-<div class="line"><span class="preprocessor">#define BLINK_NEST_DEPTH    10</span></div>
-</div><!-- fragment --><h2>Todo</h2>
-<ul>
-<li>Overflow protection for parsing signed and unsigned integers in blink_lexer.c</li>
-<li>Location support in blink_parser.c</li>
-<li>Event driven decoder</li>
-</ul>
-<h2>See Also</h2>
+<div class="line"><span class="comment">//initialise a pool for the schema</span></div>
+<div class="line">uint8_t schemaHeap[ARBITRARY_HEAP_SIZE];</div>
+<div class="line"><span class="keyword">struct </span><a class="code" href="group__blink__pool.html#structblink__pool">blink_pool</a> schemaPool;</div>
+<div class="line">(void)<a class="code" href="group__blink__pool.html#ga692f3297cb513a3894de23c8c57efabe">BLINK_Pool_init</a>(&amp;schemaPool, schemaHeap, <span class="keyword">sizeof</span>(schemaHeap));</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> syntax[] =</div>
+<div class="line">    <span class="stringliteral">&quot;InsertOrder/1 -&gt;\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;   string Symbol,\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;   string OrderId,\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;   u32 Price,\n&quot;</span></div>
+<div class="line">    <span class="stringliteral">&quot;   u32 Quantity\n&quot;</span>;</div>
+<div class="line"></div>
+<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema = <a class="code" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a>(&amp;schemaPool, syntax, <span class="keyword">sizeof</span>(syntax));</div>
+</div><!-- fragment --><h2>Integrating With Your Project</h2>
+<p>Example makefile snippet:</p>
+<div class="fragment"><div class="line">INCLUDES += $(DIR_UBLINK)/include</div>
+<div class="line"></div>
+<div class="line">VPATH += $(DIR_UBLINK)/src</div>
+<div class="line"></div>
+<div class="line">SRC += $(wildcard $(DIR_UBLINK)/src<span class="comment">/*.c)</span></div>
+<div class="line"><span class="comment"></span></div>
+<div class="line"><span class="comment">OBJECTS += $(SRC:.c=.o)</span></div>
+</div><!-- fragment --><p>Add <code>#include "ublink.h"</code> to source files that use the UBlink API.</p>
+<h3>Compile Time Options</h3>
+<p>The following options can be defined at compile time.</p>
+<div class="fragment"><div class="line"><span class="preprocessor"># remove asserts (default: not defined)</span></div>
+<div class="line"><span class="preprocessor"></span>DEFINES += -DNDEBUG</div>
+<div class="line"></div>
+<div class="line"><span class="preprocessor"># define the maximum number of references allowed in a chain (default: 10)</span></div>
+<div class="line"><span class="preprocessor">DEFINES += -DBLINK_LINK_DEPTH=10</span></div>
+</div><!-- fragment --><h2>See Also</h2>
 <p><a href="https://github.com/cjhdev/slow_blink" title="SlowBlink">SlowBlink</a>: Blink Protocol in Ruby</p>
 <h2>License</h2>
 <p>uBlink has an MIT license.</p>

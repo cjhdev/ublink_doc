@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>uBlink: Blink_event_decoder</title>
+<title>uBlink: blink_event_decoder</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(document).ready(function(){initNavTree('group__blink__event__decoder.html','')
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">Blink_event_decoder</div>  </div>
+<div class="title">blink_event_decoder<div class="ingroups"><a class="el" href="group__ublink.html">ublink</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
@@ -71,7 +71,7 @@ $(document).ready(function(){initNavTree('group__blink__event__decoder.html','')
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga103bfaa4ef0671243bac9c48e7b677c5"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder">blink_decoder</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga103bfaa4ef0671243bac9c48e7b677c5">BLINK_EventDecoderInit</a> (struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder">blink_decoder</a> *decoder, void *user, const struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *schema, const struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder__events">blink_decoder_events</a> *events)</td></tr>
+<tr class="memitem:ga103bfaa4ef0671243bac9c48e7b677c5"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder">blink_decoder</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga103bfaa4ef0671243bac9c48e7b677c5">BLINK_EventDecoderInit</a> (struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder">blink_decoder</a> *decoder, void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema</a> *schema, const struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder__events">blink_decoder_events</a> *events)</td></tr>
 <tr class="memdesc:ga103bfaa4ef0671243bac9c48e7b677c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise an event driven decoder.  <a href="#ga103bfaa4ef0671243bac9c48e7b677c5">More...</a><br/></td></tr>
 <tr class="separator:ga103bfaa4ef0671243bac9c48e7b677c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf7bbf82b153883e0745fa801d3adda07"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gaf7bbf82b153883e0745fa801d3adda07">BLINK_EventDecoderDecode</a> (struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder">blink_decoder</a> *self, const uint8_t *in, uint32_t inLen)</td></tr>
@@ -89,16 +89,20 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gac950615b08db8f9127fba67f488e6e30"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gac950615b08db8f9127fba67f488e6e30">blink_begin_static_group_fn_t</a> )(void *user, const struct blink_group *group)</td></tr>
-<tr class="memdesc:gac950615b08db8f9127fba67f488e6e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">forward declaration  <a href="#gac950615b08db8f9127fba67f488e6e30">More...</a><br/></td></tr>
+<tr class="memitem:ga1d0aba17be96ec88a00c6843caa5782e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga1d0aba17be96ec88a00c6843caa5782e"></a>
+typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga1d0aba17be96ec88a00c6843caa5782e">blink_error_fn_t</a> )(void *user, uint32_t offset, const char *reason)</td></tr>
+<tr class="memdesc:ga1d0aba17be96ec88a00c6843caa5782e"><td class="mdescLeft">&#160;</td><td class="mdescRight">forward declaration <br/></td></tr>
+<tr class="separator:ga1d0aba17be96ec88a00c6843caa5782e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac950615b08db8f9127fba67f488e6e30"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gac950615b08db8f9127fba67f488e6e30">blink_begin_static_group_fn_t</a> )(void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *group)</td></tr>
+<tr class="memdesc:gac950615b08db8f9127fba67f488e6e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">beginning of static group event handler  <a href="#gac950615b08db8f9127fba67f488e6e30">More...</a><br/></td></tr>
 <tr class="separator:gac950615b08db8f9127fba67f488e6e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad1da74c4bdb4aee7aba2198d8b23bb88"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gad1da74c4bdb4aee7aba2198d8b23bb88">blink_end_static_group_fn_t</a> )(void *user, const struct blink_group *group)</td></tr>
+<tr class="memitem:gad1da74c4bdb4aee7aba2198d8b23bb88"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gad1da74c4bdb4aee7aba2198d8b23bb88">blink_end_static_group_fn_t</a> )(void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *group)</td></tr>
 <tr class="memdesc:gad1da74c4bdb4aee7aba2198d8b23bb88"><td class="mdescLeft">&#160;</td><td class="mdescRight">end of static group event handler  <a href="#gad1da74c4bdb4aee7aba2198d8b23bb88">More...</a><br/></td></tr>
 <tr class="separator:gad1da74c4bdb4aee7aba2198d8b23bb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gacb3ce96c3424e175555b3df78c910d5b"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gacb3ce96c3424e175555b3df78c910d5b">blink_begin_dynamic_group_fn_t</a> )(void *user, const struct blink_group *group)</td></tr>
+<tr class="memitem:gacb3ce96c3424e175555b3df78c910d5b"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gacb3ce96c3424e175555b3df78c910d5b">blink_begin_dynamic_group_fn_t</a> )(void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *group)</td></tr>
 <tr class="memdesc:gacb3ce96c3424e175555b3df78c910d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">beginning of dynamic group event handler  <a href="#gacb3ce96c3424e175555b3df78c910d5b">More...</a><br/></td></tr>
 <tr class="separator:gacb3ce96c3424e175555b3df78c910d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad6c0e687d6d43fd60bf3073c71e27d35"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gad6c0e687d6d43fd60bf3073c71e27d35">blink_end_dynamic_group_fn_t</a> )(void *user, const struct blink_group *group)</td></tr>
+<tr class="memitem:gad6c0e687d6d43fd60bf3073c71e27d35"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gad6c0e687d6d43fd60bf3073c71e27d35">blink_end_dynamic_group_fn_t</a> )(void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *group)</td></tr>
 <tr class="memdesc:gad6c0e687d6d43fd60bf3073c71e27d35"><td class="mdescLeft">&#160;</td><td class="mdescRight">end of dynamic group event handler  <a href="#gad6c0e687d6d43fd60bf3073c71e27d35">More...</a><br/></td></tr>
 <tr class="separator:gad6c0e687d6d43fd60bf3073c71e27d35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga711c3ed39e1dc8da74c61dd027684c36"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga711c3ed39e1dc8da74c61dd027684c36">blink_begin_sequence_fn_t</a> )(void *user, uint32_t numberOfElements)</td></tr>
@@ -107,12 +111,12 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga71653f3e4b9106ee1fd2b3914280ca79"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga71653f3e4b9106ee1fd2b3914280ca79">blink_end_sequence_fn_t</a> )(void *user)</td></tr>
 <tr class="memdesc:ga71653f3e4b9106ee1fd2b3914280ca79"><td class="mdescLeft">&#160;</td><td class="mdescRight">end of sequence handler  <a href="#ga71653f3e4b9106ee1fd2b3914280ca79">More...</a><br/></td></tr>
 <tr class="separator:ga71653f3e4b9106ee1fd2b3914280ca79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf0ff1ada109ea9477049b7acb8792666"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gaf0ff1ada109ea9477049b7acb8792666">blink_begin_field_fn_t</a> )(void *user, const char *name, size_t nameLen, bool optional)</td></tr>
-<tr class="memdesc:gaf0ff1ada109ea9477049b7acb8792666"><td class="mdescLeft">&#160;</td><td class="mdescRight">beginning of field handler  <a href="#gaf0ff1ada109ea9477049b7acb8792666">More...</a><br/></td></tr>
-<tr class="separator:gaf0ff1ada109ea9477049b7acb8792666"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab62d6194e65cf0f0a9bc5d43e676fb9d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gab62d6194e65cf0f0a9bc5d43e676fb9d">blink_end_field_fn_t</a> )(void *user, const char *name, size_t nameLen)</td></tr>
-<tr class="memdesc:gab62d6194e65cf0f0a9bc5d43e676fb9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">end of field handler  <a href="#gab62d6194e65cf0f0a9bc5d43e676fb9d">More...</a><br/></td></tr>
-<tr class="separator:gab62d6194e65cf0f0a9bc5d43e676fb9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad0a53b1cc3391e4151a1cf0795787def"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gad0a53b1cc3391e4151a1cf0795787def">blink_begin_field_fn_t</a> )(void *user, const char *name, bool optional)</td></tr>
+<tr class="memdesc:gad0a53b1cc3391e4151a1cf0795787def"><td class="mdescLeft">&#160;</td><td class="mdescRight">beginning of field handler  <a href="#gad0a53b1cc3391e4151a1cf0795787def">More...</a><br/></td></tr>
+<tr class="separator:gad0a53b1cc3391e4151a1cf0795787def"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga90aa1744587126dbab711d28ad417b1d"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga90aa1744587126dbab711d28ad417b1d">blink_end_field_fn_t</a> )(void *user, const char *name)</td></tr>
+<tr class="memdesc:ga90aa1744587126dbab711d28ad417b1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">end of field handler  <a href="#ga90aa1744587126dbab711d28ad417b1d">More...</a><br/></td></tr>
+<tr class="separator:ga90aa1744587126dbab711d28ad417b1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5f6b1d986059b44c8bd3f9b84ff6fc83"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga5f6b1d986059b44c8bd3f9b84ff6fc83">blink_string_fn_t</a> )(void *user, const uint8_t *value, uint32_t valueLen)</td></tr>
 <tr class="separator:ga5f6b1d986059b44c8bd3f9b84ff6fc83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2e0c2f7573b5261dc74a9e9906fe3eea"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga2e0c2f7573b5261dc74a9e9906fe3eea">blink_binary_fn_t</a> )(void *user, const uint8_t *value, uint32_t valueLen)</td></tr>
@@ -142,9 +146,9 @@ Typedefs</h2></td></tr>
 <tr class="memitem:ga1cc30160ea61ae99daa36a988474fda4"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga1cc30160ea61ae99daa36a988474fda4">blink_decimal_fn_t</a> )(void *user, int64_t mantissa, int8_t exponent)</td></tr>
 <tr class="memdesc:ga1cc30160ea61ae99daa36a988474fda4"><td class="mdescLeft">&#160;</td><td class="mdescRight">value = mantissa x 10 ^ exponent  <a href="#ga1cc30160ea61ae99daa36a988474fda4">More...</a><br/></td></tr>
 <tr class="separator:ga1cc30160ea61ae99daa36a988474fda4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga460f0b6bb08bba34fe3593ab7cf804aa"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga460f0b6bb08bba34fe3593ab7cf804aa">blink_enum_fn_t</a> )(void *user, const char *name, size_t nameLen)</td></tr>
-<tr class="memdesc:ga460f0b6bb08bba34fe3593ab7cf804aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle an <code>enum</code>  <a href="#ga460f0b6bb08bba34fe3593ab7cf804aa">More...</a><br/></td></tr>
-<tr class="separator:ga460f0b6bb08bba34fe3593ab7cf804aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadb5df6944eb996f8797e2c37f202b432"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gadb5df6944eb996f8797e2c37f202b432">blink_enum_fn_t</a> )(void *user, const char *name)</td></tr>
+<tr class="memdesc:gadb5df6944eb996f8797e2c37f202b432"><td class="mdescLeft">&#160;</td><td class="mdescRight">handle an <code>enum</code>  <a href="#gadb5df6944eb996f8797e2c37f202b432">More...</a><br/></td></tr>
+<tr class="separator:gadb5df6944eb996f8797e2c37f202b432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad34df2dd87eb996cae754f90b45a8fe4"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#gad34df2dd87eb996cae754f90b45a8fe4">blink_milli_time_fn_t</a> )(void *user, int64_t time)</td></tr>
 <tr class="separator:gad34df2dd87eb996cae754f90b45a8fe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga53ab21aad0b6e9942855de636c203d60"><td class="memItemLeft" align="right" valign="top">typedef void(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__event__decoder.html#ga53ab21aad0b6e9942855de636c203d60">blink_nano_time_fn_t</a> )(void *user, int64_t time)</td></tr>
@@ -168,14 +172,7 @@ Typedefs</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>Function pointers are called in response to events. </p>
 <dl class="section note"><dt>Note</dt><dd>a function pointer may be NULL if the corresponding event is never handled </dd></dl>
-</div><div class="dynheader">
-Collaboration diagram for blink_decoder_events:</div>
-<div class="dyncontent">
-<div class="center"><img src="structblink__decoder__events__coll__graph.png" border="0" usemap="#blink__decoder__events_coll__map" alt="Collaboration graph"/></div>
-<map name="blink__decoder__events_coll__map" id="blink__decoder__events_coll__map">
-</map>
-</div>
-<table class="fieldtable">
+</div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a748462b457a0429b40f8683cd3a547c2"></a><a class="el" href="group__blink__event__decoder.html#gacb3ce96c3424e175555b3df78c910d5b">blink_begin_dynamic_group_fn_t</a></td>
@@ -184,7 +181,7 @@ beginDynamicGroup</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a8959c8e189203124164fadc8b91513a6"></a><a class="el" href="group__blink__event__decoder.html#gaf0ff1ada109ea9477049b7acb8792666">blink_begin_field_fn_t</a></td>
+<a class="anchor" id="a8959c8e189203124164fadc8b91513a6"></a><a class="el" href="group__blink__event__decoder.html#gad0a53b1cc3391e4151a1cf0795787def">blink_begin_field_fn_t</a></td>
 <td class="fieldname">
 beginField</td>
 <td class="fielddoc">
@@ -232,7 +229,7 @@ endDynamicGroup</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a2bb238be972c5a5d231f2657b52a20eb"></a><a class="el" href="group__blink__event__decoder.html#gab62d6194e65cf0f0a9bc5d43e676fb9d">blink_end_field_fn_t</a></td>
+<a class="anchor" id="a2bb238be972c5a5d231f2657b52a20eb"></a><a class="el" href="group__blink__event__decoder.html#ga90aa1744587126dbab711d28ad417b1d">blink_end_field_fn_t</a></td>
 <td class="fieldname">
 endField</td>
 <td class="fielddoc">
@@ -250,7 +247,7 @@ endStaticGroup</td>
 <td class="fielddoc">
 </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a08b86328aacde9fcd7960718c66f4bc9"></a><a class="el" href="group__blink__event__decoder.html#ga460f0b6bb08bba34fe3593ab7cf804aa">blink_enum_fn_t</a></td>
+<a class="anchor" id="a08b86328aacde9fcd7960718c66f4bc9"></a><a class="el" href="group__blink__event__decoder.html#gadb5df6944eb996f8797e2c37f202b432">blink_enum_fn_t</a></td>
 <td class="fieldname">
 enumeration</td>
 <td class="fielddoc">
@@ -359,15 +356,7 @@ u8</td>
       </table>
 </div><div class="memdoc">
 <div class="textblock"><p>decoder state </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_EventDecoderDecode_8c-example.html#_a6">tc_BLINK_EventDecoderDecode.c</a>.</dd>
-</dl></div><div class="dynheader">
-Collaboration diagram for blink_decoder:</div>
-<div class="dyncontent">
-<div class="center"><img src="structblink__decoder__coll__graph.png" border="0" usemap="#blink__decoder_coll__map" alt="Collaboration graph"/></div>
-<map name="blink__decoder_coll__map" id="blink__decoder_coll__map">
-<area shape="rect" id="node2" href="group__blink__event__decoder.html#structblink__decoder__events" title="Function pointers are called in response to events. " alt="" coords="5,5,152,229"/><area shape="rect" id="node3" href="group__blink__parser.html#structblink__schema" title="forward declaration " alt="" coords="177,49,279,185"/></map>
-</div>
-<table class="fieldtable">
+</div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
 <a class="anchor" id="a84e32b762d537bf23a00ba30440b11c3"></a>struct <a class="el" href="group__blink__event__decoder.html#structblink__decoder__events">blink_decoder_events</a></td>
@@ -376,7 +365,7 @@ events</td>
 <td class="fielddoc">
 event callbacks </td></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a6707e7d0af08d9bfc88fd3200e2e6e13"></a>const struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *</td>
+<a class="anchor" id="a6707e7d0af08d9bfc88fd3200e2e6e13"></a>const struct <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema</a> *</td>
 <td class="fieldname">
 schema</td>
 <td class="fielddoc">
@@ -397,7 +386,7 @@ optional pointer to user state </td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(*  blink_begin_dynamic_group_fn_t)(void *user, const struct blink_group *group)</td>
+          <td class="memname">typedef void(*  blink_begin_dynamic_group_fn_t)(void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *group)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -413,12 +402,12 @@ optional pointer to user state </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gaf0ff1ada109ea9477049b7acb8792666"></a>
+<a class="anchor" id="gad0a53b1cc3391e4151a1cf0795787def"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(*  blink_begin_field_fn_t)(void *user, const char *name, size_t nameLen, bool optional)</td>
+          <td class="memname">typedef void(*  blink_begin_field_fn_t)(void *user, const char *name, bool optional)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -428,7 +417,6 @@ optional pointer to user state </td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>field name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">nameLen</td><td>byte length of <code>name</code> </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">optional</td><td>true if this field is optional </td></tr>
   </table>
   </dd>
@@ -462,13 +450,12 @@ optional pointer to user state </td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(*  blink_begin_static_group_fn_t)(void *user, const struct blink_group *group)</td>
+          <td class="memname">typedef void(*  blink_begin_static_group_fn_t)(void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *group)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>forward declaration </p>
-<p>beginning of static group event handler</p>
+<p>beginning of static group event handler </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td></td></tr>
@@ -564,7 +551,7 @@ optional pointer to user state </td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(*  blink_end_dynamic_group_fn_t)(void *user, const struct blink_group *group)</td>
+          <td class="memname">typedef void(*  blink_end_dynamic_group_fn_t)(void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *group)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -580,12 +567,12 @@ optional pointer to user state </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gab62d6194e65cf0f0a9bc5d43e676fb9d"></a>
+<a class="anchor" id="ga90aa1744587126dbab711d28ad417b1d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(*  blink_end_field_fn_t)(void *user, const char *name, size_t nameLen)</td>
+          <td class="memname">typedef void(*  blink_end_field_fn_t)(void *user, const char *name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -595,7 +582,6 @@ optional pointer to user state </td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>field name </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">nameLen</td><td>byte length of <code>name</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -627,7 +613,7 @@ optional pointer to user state </td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(*  blink_end_static_group_fn_t)(void *user, const struct blink_group *group)</td>
+          <td class="memname">typedef void(*  blink_end_static_group_fn_t)(void *user, const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *group)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -643,12 +629,12 @@ optional pointer to user state </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga460f0b6bb08bba34fe3593ab7cf804aa"></a>
+<a class="anchor" id="gadb5df6944eb996f8797e2c37f202b432"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef void(*  blink_enum_fn_t)(void *user, const char *name, size_t nameLen)</td>
+          <td class="memname">typedef void(*  blink_enum_fn_t)(void *user, const char *name)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -658,7 +644,6 @@ optional pointer to user state </td></tr>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">user</td><td></td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td><code>enum</code> symbol name string </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">nameLen</td><td>byte length of <code>name</code> </td></tr>
   </table>
   </dd>
 </dl>
@@ -999,8 +984,7 @@ optional pointer to user state </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_EventDecoderDecode_8c-example.html#a8">tc_BLINK_EventDecoderDecode.c</a>.</dd>
-</dl>
+
 </div>
 </div>
 <a class="anchor" id="ga103bfaa4ef0671243bac9c48e7b677c5"></a>
@@ -1022,7 +1006,7 @@ optional pointer to user state </td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const struct <a class="el" href="group__blink__parser.html#structblink__schema">blink_schema</a> *&#160;</td>
+          <td class="paramtype">const struct <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema</a> *&#160;</td>
           <td class="paramname"><em>schema</em>, </td>
         </tr>
         <tr>
@@ -1056,8 +1040,7 @@ optional pointer to user state </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_BLINK_EventDecoderDecode_8c-example.html#a7">tc_BLINK_EventDecoderDecode.c</a>.</dd>
-</dl>
+
 </div>
 </div>
 </div><!-- contents -->

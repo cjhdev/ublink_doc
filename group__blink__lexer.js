@@ -60,6 +60,6 @@ var group__blink__lexer =
       [ "TOK_UNKNOWN", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433a7d71d1596897e780f46f5c34b7e51ece", null ],
       [ "TOK_EOF", "group__blink__lexer.html#ggab2e6f8e36a3f186df5aa613a03e05433aee5e9bd304d0b8dba470b61e1643dcd8", null ]
     ] ],
-    [ "BLINK_GetToken", "group__blink__lexer.html#gae759c8ac9a918ff55de6ef882e2901b1", null ],
-    [ "BLINK_TokenToString", "group__blink__lexer.html#gaf479cf134400cd5ad09b84694f41da4e", null ]
+    [ "BLINK_Lexer_getToken", "group__blink__lexer.html#ga56bcdbef3723a5c72f380b5089180385", null ],
+    [ "BLINK_Lexer_tokenToString", "group__blink__lexer.html#gacafe52ce981c8912c13e7ed3515a643b", null ]
 ];

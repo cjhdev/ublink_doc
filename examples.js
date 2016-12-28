@@ -1,11 +1,13 @@
 var examples =
 [
-    [ "tc_BLINK_Decode.c", "tc_BLINK_Decode_8c-example.html", null ],
-    [ "tc_BLINK_Encode.c", "tc_BLINK_Encode_8c-example.html", null ],
-    [ "tc_BLINK_EventDecoderDecode.c", "tc_BLINK_EventDecoderDecode_8c-example.html", null ],
-    [ "tc_BLINK_EventDecoderInit.c", "tc_BLINK_EventDecoderInit_8c-example.html", null ],
-    [ "tc_BLINK_GetToken.c", "tc_BLINK_GetToken_8c-example.html", null ],
-    [ "tc_BLINK_GroupIsKindOf.c", "tc_BLINK_GroupIsKindOf_8c-example.html", null ],
-    [ "tc_BLINK_SchemaGetGroupByID.c", "tc_BLINK_SchemaGetGroupByID_8c-example.html", null ],
-    [ "tc_BLINK_SchemaParse.c", "tc_BLINK_SchemaParse_8c-example.html", null ]
+    [ "__FILE__", "__FILE__-example.html", null ],
+    [ "tc_blink_compact_decode.c", "tc_blink_compact_decode_8c-example.html", null ],
+    [ "tc_blink_compact_encode.c", "tc_blink_compact_encode_8c-example.html", null ],
+    [ "tc_blink_group_iskindof.c", "tc_blink_group_iskindof_8c-example.html", null ],
+    [ "tc_blink_lexer_gettoken.c", "tc_blink_lexer_gettoken_8c-example.html", null ],
+    [ "tc_blink_pool.c", "tc_blink_pool_8c-example.html", null ],
+    [ "tc_blink_schema_getgroupbyid.c", "tc_blink_schema_getgroupbyid_8c-example.html", null ],
+    [ "tc_blink_schema_new.c", "tc_blink_schema_new_8c-example.html", null ],
+    [ "tc_blink_stream_read.c", "tc_blink_stream_read_8c-example.html", null ],
+    [ "tc_blink_stream_write.c", "tc_blink_stream_write_8c-example.html", null ]
 ];

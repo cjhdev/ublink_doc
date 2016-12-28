@@ -1,0 +1,28 @@
+var group__blink__compact =
+[
+    [ "BLINK_Compact_decodeBool", "group__blink__compact.html#ga8433a26e20a50f236e20293d00349d74", null ],
+    [ "BLINK_Compact_decodeDecimal", "group__blink__compact.html#gaa795570803c07b4b2a549d1187c2572f", null ],
+    [ "BLINK_Compact_decodeF64", "group__blink__compact.html#gac0aa2d2c6594e1e2e85353588667acf5", null ],
+    [ "BLINK_Compact_decodeI16", "group__blink__compact.html#ga0033a2f8d8a97d1590dfe79e130d5874", null ],
+    [ "BLINK_Compact_decodeI32", "group__blink__compact.html#gaabf45227bb07ae94fd2d6da36637128a", null ],
+    [ "BLINK_Compact_decodeI64", "group__blink__compact.html#ga706cea4c36e5cd84640fc483c5ad1b31", null ],
+    [ "BLINK_Compact_decodeI8", "group__blink__compact.html#ga773836cf7a07f95c69a1f6f18d462984", null ],
+    [ "BLINK_Compact_decodePresent", "group__blink__compact.html#gacc698620baaf45ff11afa36612f87716", null ],
+    [ "BLINK_Compact_decodeU16", "group__blink__compact.html#ga6ec232c5ad08153021e44fe6a551135d", null ],
+    [ "BLINK_Compact_decodeU32", "group__blink__compact.html#gab1875efed5ffc6fd7663c4cd555532f3", null ],
+    [ "BLINK_Compact_decodeU64", "group__blink__compact.html#ga40ee1a6d5061399a3280ad4007524ae3", null ],
+    [ "BLINK_Compact_decodeU8", "group__blink__compact.html#ga5f1552b6d63b4d040a421cb4d3ba2774", null ],
+    [ "BLINK_Compact_encodeBool", "group__blink__compact.html#ga0b7a1fe05c5534d0eace8778173f7be0", null ],
+    [ "BLINK_Compact_encodeDecimal", "group__blink__compact.html#ga7fc238ac846e24ef2c34d1257dbde17b", null ],
+    [ "BLINK_Compact_encodeF64", "group__blink__compact.html#gaf56cec7be5a4b84dc5df1122a05a047a", null ],
+    [ "BLINK_Compact_encodeI16", "group__blink__compact.html#gac284c166bacf84edac5741c284b03df6", null ],
+    [ "BLINK_Compact_encodeI32", "group__blink__compact.html#ga51a3b382ea9f9b347d9c7d11af0c78e9", null ],
+    [ "BLINK_Compact_encodeI64", "group__blink__compact.html#ga7a4d9b50150c3018e7a0d57b0846d40d", null ],
+    [ "BLINK_Compact_encodeI8", "group__blink__compact.html#ga67e1113ced5cb7ed21804bdf46563c11", null ],
+    [ "BLINK_Compact_encodeNull", "group__blink__compact.html#ga97901969d6fc8a8c2a79813369df4e0e", null ],
+    [ "BLINK_Compact_encodePresent", "group__blink__compact.html#ga6e3272f912a18b3a1999cd8625f008d5", null ],
+    [ "BLINK_Compact_encodeU16", "group__blink__compact.html#gaa2b4e510573f429c3dfd7af0e83e8089", null ],
+    [ "BLINK_Compact_encodeU32", "group__blink__compact.html#ga223bac9babca393a5b4cb4e4327f59a4", null ],
+    [ "BLINK_Compact_encodeU64", "group__blink__compact.html#gaa5247702af7ef057e923c1e85cbfbc7e", null ],
+    [ "BLINK_Compact_encodeU8", "group__blink__compact.html#ga4877ae12839022ce931ad0bb748e0d9d", null ]
+];
