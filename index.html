@@ -63,34 +63,41 @@ $(document).ready(function(){initNavTree('index.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a href="https://travis-ci.org/cjhdev/ublink">![Build Status](https://travis-ci.org/cjhdev/ublink.svg?branch=master)</a></p>
-<p>UBlink is C library for building compact binary messages according to Blink Protocol schemas.</p>
+<p><a href="http://www.blinkprotocol.org/" title="Blink Protocol">Blink Protocol</a> in C.</p>
 <h2>Highlights</h2>
 <ul>
 <li>Hand coded schema parser and lexer</li>
 <li>Compact form encode/decode primitives</li>
-<li>allocate/reset pool based allocator</li>
-<li>message input/output streams</li>
+<li>Allocate/reset pool based allocator</li>
+<li>Message input/output streams</li>
 <li>Tests</li>
-<li>Linted to MISRA 2012</li>
 </ul>
 <h2>Example</h2>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;ublink.h&quot;</span></div>
 <div class="line"></div>
-<div class="line"><span class="preprocessor">#define ARBITRARY_HEAP_SIZE 1024U</span></div>
-<div class="line"><span class="preprocessor"></span></div>
-<div class="line"><span class="comment">//initialise a pool for the schema</span></div>
-<div class="line">uint8_t schemaHeap[ARBITRARY_HEAP_SIZE];</div>
-<div class="line"><span class="keyword">struct </span><a class="code" href="group__blink__pool.html#structblink__pool">blink_pool</a> schemaPool;</div>
-<div class="line">(void)<a class="code" href="group__blink__pool.html#ga692f3297cb513a3894de23c8c57efabe">BLINK_Pool_init</a>(&amp;schemaPool, schemaHeap, <span class="keyword">sizeof</span>(schemaHeap));</div>
+<div class="line"><a class="code" href="group__blink__pool.html#structblink__pool">blink_pool_t</a> pool;</div>
+<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema;</div>
 <div class="line"></div>
-<div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> syntax[] =</div>
-<div class="line">    <span class="stringliteral">&quot;InsertOrder/1 -&gt;\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;   string Symbol,\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;   string OrderId,\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;   u32 Price,\n&quot;</span></div>
-<div class="line">    <span class="stringliteral">&quot;   u32 Quantity\n&quot;</span>;</div>
+<div class="line"><span class="keyword">static</span> <span class="keywordtype">void</span> setup(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    <span class="keyword">static</span> uint8_t heap[ARBITRARY_HEAP_SIZE];</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">struct </span><a class="code" href="group__blink__pool.html#structblink__pool">blink_pool</a> p;</div>
+<div class="line">    pool = <a class="code" href="group__blink__pool.html#ga692f3297cb513a3894de23c8c57efabe">BLINK_Pool_init</a>(&amp;p, heap, <span class="keyword">sizeof</span>(heap));</div>
 <div class="line"></div>
-<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema = <a class="code" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a>(&amp;schemaPool, syntax, <span class="keyword">sizeof</span>(syntax));</div>
+<div class="line">    <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">char</span> syntax[] =</div>
+<div class="line">        <span class="stringliteral">&quot;InsertOrder/1 -&gt;\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;   string Symbol,\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;   string OrderId,\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;   u32 Price,\n&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;   u32 Quantity\n&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    schema = <a class="code" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a>(pool, syntax, <span class="keyword">sizeof</span>(syntax));</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keywordtype">void</span> example(<span class="keywordtype">void</span>)</div>
+<div class="line">{</div>
+<div class="line">    setup();</div>
+<div class="line">}</div>
 </div><!-- fragment --><h2>Integrating With Your Project</h2>
 <p>Example makefile snippet:</p>
 <div class="fragment"><div class="line">INCLUDES += $(DIR_UBLINK)/include</div>

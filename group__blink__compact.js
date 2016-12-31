@@ -24,5 +24,7 @@ var group__blink__compact =
     [ "BLINK_Compact_encodeU16", "group__blink__compact.html#gaa2b4e510573f429c3dfd7af0e83e8089", null ],
     [ "BLINK_Compact_encodeU32", "group__blink__compact.html#ga223bac9babca393a5b4cb4e4327f59a4", null ],
     [ "BLINK_Compact_encodeU64", "group__blink__compact.html#gaa5247702af7ef057e923c1e85cbfbc7e", null ],
-    [ "BLINK_Compact_encodeU8", "group__blink__compact.html#ga4877ae12839022ce931ad0bb748e0d9d", null ]
+    [ "BLINK_Compact_encodeU8", "group__blink__compact.html#ga4877ae12839022ce931ad0bb748e0d9d", null ],
+    [ "BLINK_Compact_sizeofSigned", "group__blink__compact.html#gaf557e131a71e289279e0b4b4876cf66a", null ],
+    [ "BLINK_Compact_sizeofUnsigned", "group__blink__compact.html#ga73ab269c6685a3784824b01354927cf5", null ]
 ];

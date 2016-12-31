@@ -85,7 +85,6 @@ $(document).ready(function(){initNavTree('tc_blink_schema_new_8c-example.html','
 <div class="line">    <a name="_a2"></a><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema = <a name="a3"></a><a class="code" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a>((<a class="code" href="group__blink__pool.html#structblink__pool">blink_pool_t</a>)(*user), input, <span class="keyword">sizeof</span>(input));</div>
 <div class="line"></div>
 <div class="line">    assert_true(schema != NULL);</div>
-<div class="line">    assert_true(<a name="a4"></a><a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;empty&quot;</span>) != NULL);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_new_emptySuperGroup(<span class="keywordtype">void</span> **user)</div>
@@ -95,9 +94,7 @@ $(document).ready(function(){initNavTree('tc_blink_schema_new_8c-example.html','
 <div class="line">        <span class="stringliteral">&quot;empty : super&quot;</span>;</div>
 <div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema = <a class="code" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a>((<a class="code" href="group__blink__pool.html#structblink__pool">blink_pool_t</a>)(*user), input, <span class="keyword">sizeof</span>(input));</div>
 <div class="line"></div>
-<div class="line">    assert_true(schema != NULL);</div>
-<div class="line">    assert_true(<a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;empty&quot;</span>) != NULL);</div>
-<div class="line">    assert_true(<a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;super&quot;</span>) != NULL);</div>
+<div class="line">    assert_true(schema != NULL);    </div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_new_undefinedSuperGroup(<span class="keywordtype">void</span> **user)</div>
@@ -153,31 +150,7 @@ $(document).ready(function(){initNavTree('tc_blink_schema_new_8c-example.html','
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> input[] = <span class="stringliteral">&quot;Message/0 -&gt; string Greeting&quot;</span>;</div>
 <div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema = <a class="code" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a>((<a class="code" href="group__blink__pool.html#structblink__pool">blink_pool_t</a>)(*user), input, <span class="keyword">sizeof</span>(input));</div>
 <div class="line">    </div>
-<div class="line">    assert_true(schema != NULL);</div>
-<div class="line">    assert_true(<a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;Message&quot;</span>) != NULL);</div>
-<div class="line">    assert_true(<a name="a5"></a><a class="code" href="group__blink__schema.html#ga15d46e9bafcd00168a82b11f8cf85beb">BLINK_Schema_getGroupByID</a>(schema, 0) != NULL);</div>
-<div class="line">    </div>
-<div class="line">    assert_ptr_equal(<a class="code" href="group__blink__schema.html#ga15d46e9bafcd00168a82b11f8cf85beb">BLINK_Schema_getGroupByID</a>(schema, 0), <a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;Message&quot;</span>));</div>
-<div class="line"></div>
-<div class="line">    <span class="keyword">struct </span><a name="_a6"></a><a class="code" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> iter;</div>
-<div class="line">    <a name="a7"></a><a class="code" href="group__blink__schema.html#ga3262cad8453737a4c24b96c360529294">BLINK_FieldIterator_init</a>(&amp;iter, <a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;Message&quot;</span>));</div>
-<div class="line"></div>
-<div class="line">    <a name="_a8"></a><a class="code" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> f = <a name="a9"></a><a class="code" href="group__blink__schema.html#ga5a41212dd663118d01d43c6f14ec413c">BLINK_FieldIterator_next</a>(&amp;iter);</div>
-<div class="line"></div>
-<div class="line">    assert_true(f != NULL);</div>
-<div class="line"></div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> *name = <a name="a10"></a><a class="code" href="group__blink__schema.html#ga08fd178ecba69592359b9125701ee92e">BLINK_Field_getName</a>(f);</div>
-<div class="line">    <span class="keyword">enum</span> <a class="code" href="group__blink__schema.html#ga3c752bf7f68879c88427adabf3778509">blink_type_tag</a> tag = <a name="a11"></a><a class="code" href="group__blink__schema.html#ga87546cc620f0ad4f900431b583c4936b">BLINK_Field_getType</a>(f);</div>
-<div class="line">    uint32_t size = <a name="a12"></a><a class="code" href="group__blink__schema.html#gab661b63edc392faa908c32895e0ef42b">BLINK_Field_getSize</a>(f);</div>
-<div class="line">    </div>
-<div class="line">    assert_int_equal(<a name="a13"></a><a class="code" href="group__blink__schema.html#gga3c752bf7f68879c88427adabf3778509af8f28e5646c6d26f54343460f53f8aad">BLINK_TYPE_STRING</a>, tag);</div>
-<div class="line">    assert_int_equal(0xffffffff, size);</div>
-<div class="line"></div>
-<div class="line">    assert_string_equal(<span class="stringliteral">&quot;Greeting&quot;</span>, name);</div>
-<div class="line"></div>
-<div class="line">    assert_false(<a name="a14"></a><a class="code" href="group__blink__schema.html#ga4d04dc309906b696728464a1d469926f">BLINK_Field_isOptional</a>(f));</div>
-<div class="line"></div>
-<div class="line">    assert_true(<a class="code" href="group__blink__schema.html#ga5a41212dd663118d01d43c6f14ec413c">BLINK_FieldIterator_next</a>(&amp;iter) == NULL);</div>
+<div class="line">    assert_true(schema != NULL);    </div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_new_namespace_emptyGroup(<span class="keywordtype">void</span> **user)</div>
@@ -186,7 +159,6 @@ $(document).ready(function(){initNavTree('tc_blink_schema_new_8c-example.html','
 <div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema = <a class="code" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a>((<a class="code" href="group__blink__pool.html#structblink__pool">blink_pool_t</a>)(*user), input, <span class="keyword">sizeof</span>(input));</div>
 <div class="line"></div>
 <div class="line">    assert_true(schema != NULL);</div>
-<div class="line">    assert_true(<a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;test:empty&quot;</span>) != NULL);</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_new_enum_single(<span class="keywordtype">void</span> **user)</div>

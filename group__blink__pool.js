@@ -7,7 +7,6 @@ var group__blink__pool =
     ] ],
     [ "blink_pool_t", "group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca", null ],
     [ "BLINK_Pool_calloc", "group__blink__pool.html#ga2a94da80f540b9adcc8bf5f609b3ac7d", null ],
-    [ "BLINK_Pool_destroy", "group__blink__pool.html#ga52bce145723f612a00967124eb1933de", null ],
     [ "BLINK_Pool_getFreeSpace", "group__blink__pool.html#gab8d1821b02ccd5ed85e0f04d8a671298", null ],
     [ "BLINK_Pool_init", "group__blink__pool.html#ga692f3297cb513a3894de23c8c57efabe", null ]
 ];

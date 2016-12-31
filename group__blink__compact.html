@@ -145,6 +145,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga7fc238ac846e24ef2c34d1257dbde17b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact.html#ga7fc238ac846e24ef2c34d1257dbde17b">BLINK_Compact_encodeDecimal</a> (int64_t mantissa, int8_t exponent, <a class="el" href="group__blink__stream.html#structblink__stream">blink_stream_t</a> out)</td></tr>
 <tr class="memdesc:ga7fc238ac846e24ef2c34d1257dbde17b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encode <code>decimal</code>  <a href="#ga7fc238ac846e24ef2c34d1257dbde17b">More...</a><br/></td></tr>
 <tr class="separator:ga7fc238ac846e24ef2c34d1257dbde17b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga73ab269c6685a3784824b01354927cf5"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact.html#ga73ab269c6685a3784824b01354927cf5">BLINK_Compact_sizeofUnsigned</a> (uint64_t value)</td></tr>
+<tr class="memdesc:ga73ab269c6685a3784824b01354927cf5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate encoded size of unsigned integer.  <a href="#ga73ab269c6685a3784824b01354927cf5">More...</a><br/></td></tr>
+<tr class="separator:ga73ab269c6685a3784824b01354927cf5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf557e131a71e289279e0b4b4876cf66a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__compact.html#gaf557e131a71e289279e0b4b4876cf66a">BLINK_Compact_sizeofSigned</a> (int64_t value)</td></tr>
+<tr class="memdesc:gaf557e131a71e289279e0b4b4876cf66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate encoded size of signed integer.  <a href="#gaf557e131a71e289279e0b4b4876cf66a">More...</a><br/></td></tr>
+<tr class="separator:gaf557e131a71e289279e0b4b4876cf66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -1319,6 +1325,56 @@ typedef struct <a class="el" href="group__blink__stream.html#structblink__stream
 </dl>
 <dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_compact_encode_8c-example.html#a6">tc_blink_compact_encode.c</a>.</dd>
 </dl>
+</div>
+</div>
+<a class="anchor" id="gaf557e131a71e289279e0b4b4876cf66a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_Compact_sizeofSigned </td>
+          <td>(</td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate encoded size of signed integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>signed integer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>encoded size in bytes </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga73ab269c6685a3784824b01354927cf5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t BLINK_Compact_sizeofUnsigned </td>
+          <td>(</td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate encoded size of unsigned integer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>unsigned integer </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>encoded size in bytes </dd></dl>
+
 </div>
 </div>
 </div><!-- contents -->

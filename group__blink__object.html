@@ -60,80 +60,138 @@ $(document).ready(function(){initNavTree('group__blink__object.html','');});
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#enumval-members">Enumerator</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
 <div class="title">blink_object<div class="ingroups"><a class="el" href="group__ublink.html">ublink</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Description</h2>
+<p>Object model interface (under development) </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga07b42c730d04b421f087ef9c5a458fc2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga07b42c730d04b421f087ef9c5a458fc2"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_encode</b> (blink_object_t self, <a class="el" href="group__blink__stream.html#structblink__stream">blink_stream_t</a> out)</td></tr>
-<tr class="separator:ga07b42c730d04b421f087ef9c5a458fc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7e75a3160b8f4cf31b21ce081095376e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7e75a3160b8f4cf31b21ce081095376e"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newNull</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p)</td></tr>
-<tr class="separator:ga7e75a3160b8f4cf31b21ce081095376e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga72772e7aafd3e55eb9cd29e9dcd306ca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga72772e7aafd3e55eb9cd29e9dcd306ca"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newDecimal</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, int64_t mantissa, int8_t exponent)</td></tr>
-<tr class="separator:ga72772e7aafd3e55eb9cd29e9dcd306ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8af93b6836894b850c462c693585d241"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga8af93b6836894b850c462c693585d241"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newBool</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, bool value)</td></tr>
-<tr class="separator:ga8af93b6836894b850c462c693585d241"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga43b9b87e7bace6669485a9ed04ca597b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga43b9b87e7bace6669485a9ed04ca597b"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newU8</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, uint8_t value)</td></tr>
-<tr class="separator:ga43b9b87e7bace6669485a9ed04ca597b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7523d9ad5b23707c73e2aa089c6a3505"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7523d9ad5b23707c73e2aa089c6a3505"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newU16</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, uint16_t value)</td></tr>
-<tr class="separator:ga7523d9ad5b23707c73e2aa089c6a3505"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga139ff4dec385dd76f221e99e8447c8e8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga139ff4dec385dd76f221e99e8447c8e8"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newU32</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, uint32_t value)</td></tr>
-<tr class="separator:ga139ff4dec385dd76f221e99e8447c8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga36c18db8e1dd96cfb6f309df51bf08ae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga36c18db8e1dd96cfb6f309df51bf08ae"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newU64</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, uint64_t value)</td></tr>
-<tr class="separator:ga36c18db8e1dd96cfb6f309df51bf08ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac67b54f0f8e4dc2454d2d2615ab79279"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac67b54f0f8e4dc2454d2d2615ab79279"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newI8</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, int8_t value)</td></tr>
-<tr class="separator:gac67b54f0f8e4dc2454d2d2615ab79279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9f0ecdb4d8177e4f9e7be1616e0ae5f5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9f0ecdb4d8177e4f9e7be1616e0ae5f5"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newI16</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, int16_t value)</td></tr>
-<tr class="separator:ga9f0ecdb4d8177e4f9e7be1616e0ae5f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae14dad29374cecb26440bf48f15bd21e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gae14dad29374cecb26440bf48f15bd21e"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newI32</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, int32_t value)</td></tr>
-<tr class="separator:gae14dad29374cecb26440bf48f15bd21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad93519da9009d5312977c13793f70696"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gad93519da9009d5312977c13793f70696"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newI64</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, int64_t value)</td></tr>
-<tr class="separator:gad93519da9009d5312977c13793f70696"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7839b8226bcce9b589cbcec2441057be"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7839b8226bcce9b589cbcec2441057be"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newF64</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, double value)</td></tr>
-<tr class="separator:ga7839b8226bcce9b589cbcec2441057be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa4d2fb86090135b1a8e1fa2981c8b16e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa4d2fb86090135b1a8e1fa2981c8b16e"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newString</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, const uint8_t *value, uint32_t valueLen)</td></tr>
-<tr class="separator:gaa4d2fb86090135b1a8e1fa2981c8b16e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga86d9f5748cac53b1002df1ee3beda5e5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga86d9f5748cac53b1002df1ee3beda5e5"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newBinary</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, const uint8_t *value, uint32_t valueLen)</td></tr>
-<tr class="separator:ga86d9f5748cac53b1002df1ee3beda5e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab2b2338e3fe44db8057ee47c6081c65c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab2b2338e3fe44db8057ee47c6081c65c"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newFixed</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, const uint8_t *value, uint32_t valueLen)</td></tr>
-<tr class="separator:gab2b2338e3fe44db8057ee47c6081c65c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa9951bed6e913896accadcbcfbe55859"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa9951bed6e913896accadcbcfbe55859"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newEnum</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, const char *name)</td></tr>
-<tr class="separator:gaa9951bed6e913896accadcbcfbe55859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d2ae996dd6a6b6b0ed23a5f388e36fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga4d2ae996dd6a6b6b0ed23a5f388e36fb"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newGroup</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> def)</td></tr>
-<tr class="separator:ga4d2ae996dd6a6b6b0ed23a5f388e36fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa01af6c27d9c35448d146c3e671ffa54"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa01af6c27d9c35448d146c3e671ffa54"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_newStaticGroup</b> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> p, <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> def)</td></tr>
-<tr class="separator:gaa01af6c27d9c35448d146c3e671ffa54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga7b343b983423acd367f17efe278a3fb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7b343b983423acd367f17efe278a3fb8"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_appendNextFieldValue</b> (blink_object_t self, blink_object_t value)</td></tr>
-<tr class="separator:ga7b343b983423acd367f17efe278a3fb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga9e6cb5e52ac7c4bf952dcfc40abe1d00"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga9e6cb5e52ac7c4bf952dcfc40abe1d00"></a>
-blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><b>BLINK_Object_appendNextExtension</b> (blink_object_t group, blink_object_t group)</td></tr>
-<tr class="separator:ga9e6cb5e52ac7c4bf952dcfc40abe1d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaa734c8c6146282972fa740471562456"><td class="memItemLeft" align="right" valign="top">blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gaaa734c8c6146282972fa740471562456">BLINK_Object_newGroup</a> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> pool, <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> group)</td></tr>
+<tr class="memdesc:gaaa734c8c6146282972fa740471562456"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new group model from a group definition.  <a href="#gaaa734c8c6146282972fa740471562456">More...</a><br/></td></tr>
+<tr class="separator:gaaa734c8c6146282972fa740471562456"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab4d62ea12a33eafe984d8328077d6588"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gab4d62ea12a33eafe984d8328077d6588">BLINK_Object_setNull</a> (blink_object_t group, const char *fieldName)</td></tr>
+<tr class="memdesc:gab4d62ea12a33eafe984d8328077d6588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a group field to NULL.  <a href="#gab4d62ea12a33eafe984d8328077d6588">More...</a><br/></td></tr>
+<tr class="separator:gab4d62ea12a33eafe984d8328077d6588"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga577a77972e95fa7601eab5bbb0891b6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga577a77972e95fa7601eab5bbb0891b6f">BLINK_Object_setEnum</a> (blink_object_t group, const char *fieldName, const char *value)</td></tr>
+<tr class="memdesc:ga577a77972e95fa7601eab5bbb0891b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write enum to field.  <a href="#ga577a77972e95fa7601eab5bbb0891b6f">More...</a><br/></td></tr>
+<tr class="separator:ga577a77972e95fa7601eab5bbb0891b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe86cd6fb4ee19940324a9f07b409ee3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gabe86cd6fb4ee19940324a9f07b409ee3">BLINK_Object_setBool</a> (blink_object_t group, const char *fieldName, bool value)</td></tr>
+<tr class="memdesc:gabe86cd6fb4ee19940324a9f07b409ee3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write boolean to field.  <a href="#gabe86cd6fb4ee19940324a9f07b409ee3">More...</a><br/></td></tr>
+<tr class="separator:gabe86cd6fb4ee19940324a9f07b409ee3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13a8f82da3468e7ca4e8a0b17b1e455d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga13a8f82da3468e7ca4e8a0b17b1e455d">BLINK_Object_setDecimal</a> (blink_object_t group, const char *fieldName, struct <a class="el" href="group__blink__object.html#structblink__decimal">blink_decimal</a> value)</td></tr>
+<tr class="memdesc:ga13a8f82da3468e7ca4e8a0b17b1e455d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write decimal to field.  <a href="#ga13a8f82da3468e7ca4e8a0b17b1e455d">More...</a><br/></td></tr>
+<tr class="separator:ga13a8f82da3468e7ca4e8a0b17b1e455d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8343ad8bb555971721fb051110cada11"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga8343ad8bb555971721fb051110cada11">BLINK_Object_setU8</a> (blink_object_t group, const char *fieldName, uint8_t value)</td></tr>
+<tr class="memdesc:ga8343ad8bb555971721fb051110cada11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write u8 to field.  <a href="#ga8343ad8bb555971721fb051110cada11">More...</a><br/></td></tr>
+<tr class="separator:ga8343ad8bb555971721fb051110cada11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9dc0a3a0f89333a56b1031e4c99ffceb"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga9dc0a3a0f89333a56b1031e4c99ffceb">BLINK_Object_setU16</a> (blink_object_t group, const char *fieldName, uint16_t value)</td></tr>
+<tr class="memdesc:ga9dc0a3a0f89333a56b1031e4c99ffceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write u16 to field.  <a href="#ga9dc0a3a0f89333a56b1031e4c99ffceb">More...</a><br/></td></tr>
+<tr class="separator:ga9dc0a3a0f89333a56b1031e4c99ffceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7d689f0909f50166f64a1585dfc79d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gad7d689f0909f50166f64a1585dfc79d9">BLINK_Object_setU32</a> (blink_object_t group, const char *fieldName, uint32_t value)</td></tr>
+<tr class="memdesc:gad7d689f0909f50166f64a1585dfc79d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write u32 to field.  <a href="#gad7d689f0909f50166f64a1585dfc79d9">More...</a><br/></td></tr>
+<tr class="separator:gad7d689f0909f50166f64a1585dfc79d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a0437c424187ae9dfaf2e8bc7e22d14"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga9a0437c424187ae9dfaf2e8bc7e22d14">BLINK_Object_setU64</a> (blink_object_t group, const char *fieldName, uint64_t value)</td></tr>
+<tr class="memdesc:ga9a0437c424187ae9dfaf2e8bc7e22d14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write u64 to field.  <a href="#ga9a0437c424187ae9dfaf2e8bc7e22d14">More...</a><br/></td></tr>
+<tr class="separator:ga9a0437c424187ae9dfaf2e8bc7e22d14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0f3e4e80a93e84faf4cb6acf77fc0508"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga0f3e4e80a93e84faf4cb6acf77fc0508">BLINK_Object_setI8</a> (blink_object_t group, const char *fieldName, int8_t value)</td></tr>
+<tr class="memdesc:ga0f3e4e80a93e84faf4cb6acf77fc0508"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write i8 to field.  <a href="#ga0f3e4e80a93e84faf4cb6acf77fc0508">More...</a><br/></td></tr>
+<tr class="separator:ga0f3e4e80a93e84faf4cb6acf77fc0508"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae59ecb95f7399641da30cedf5a4e6c41"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gae59ecb95f7399641da30cedf5a4e6c41">BLINK_Object_setI16</a> (blink_object_t group, const char *fieldName, int16_t value)</td></tr>
+<tr class="memdesc:gae59ecb95f7399641da30cedf5a4e6c41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write i16 to field.  <a href="#gae59ecb95f7399641da30cedf5a4e6c41">More...</a><br/></td></tr>
+<tr class="separator:gae59ecb95f7399641da30cedf5a4e6c41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2c61f5d051a537bb3ce226d10b3e6d3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga2c61f5d051a537bb3ce226d10b3e6d3b">BLINK_Object_setI32</a> (blink_object_t group, const char *fieldName, int32_t value)</td></tr>
+<tr class="memdesc:ga2c61f5d051a537bb3ce226d10b3e6d3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write i32 to field.  <a href="#ga2c61f5d051a537bb3ce226d10b3e6d3b">More...</a><br/></td></tr>
+<tr class="separator:ga2c61f5d051a537bb3ce226d10b3e6d3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f6c8749bebcc19646ed6aa33848eb51"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga7f6c8749bebcc19646ed6aa33848eb51">BLINK_Object_setI64</a> (blink_object_t group, const char *fieldName, int64_t value)</td></tr>
+<tr class="memdesc:ga7f6c8749bebcc19646ed6aa33848eb51"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write i64 to field.  <a href="#ga7f6c8749bebcc19646ed6aa33848eb51">More...</a><br/></td></tr>
+<tr class="separator:ga7f6c8749bebcc19646ed6aa33848eb51"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga05f24a64b687eacd85eaa89a7398f73a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga05f24a64b687eacd85eaa89a7398f73a">BLINK_Object_setF64</a> (blink_object_t group, const char *fieldName, double value)</td></tr>
+<tr class="memdesc:ga05f24a64b687eacd85eaa89a7398f73a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write f64 to field.  <a href="#ga05f24a64b687eacd85eaa89a7398f73a">More...</a><br/></td></tr>
+<tr class="separator:ga05f24a64b687eacd85eaa89a7398f73a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga413ad1d1a2f7b21493e060e14341c5df"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga413ad1d1a2f7b21493e060e14341c5df">BLINK_Object_setString</a> (blink_object_t group, const char *fieldName, struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> value)</td></tr>
+<tr class="memdesc:ga413ad1d1a2f7b21493e060e14341c5df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write string to field.  <a href="#ga413ad1d1a2f7b21493e060e14341c5df">More...</a><br/></td></tr>
+<tr class="separator:ga413ad1d1a2f7b21493e060e14341c5df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga87cc8c5849e22fa6bc5e8e3ba59ddd10"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga87cc8c5849e22fa6bc5e8e3ba59ddd10">BLINK_Object_setBinary</a> (blink_object_t group, const char *fieldName, struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> value)</td></tr>
+<tr class="memdesc:ga87cc8c5849e22fa6bc5e8e3ba59ddd10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write binary to field.  <a href="#ga87cc8c5849e22fa6bc5e8e3ba59ddd10">More...</a><br/></td></tr>
+<tr class="separator:ga87cc8c5849e22fa6bc5e8e3ba59ddd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae52f9d7dccc54a3f0fbe136de2c45067"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gae52f9d7dccc54a3f0fbe136de2c45067">BLINK_Object_setFixed</a> (blink_object_t group, const char *fieldName, struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> value)</td></tr>
+<tr class="memdesc:gae52f9d7dccc54a3f0fbe136de2c45067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write fixed to field.  <a href="#gae52f9d7dccc54a3f0fbe136de2c45067">More...</a><br/></td></tr>
+<tr class="separator:gae52f9d7dccc54a3f0fbe136de2c45067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7b8d5c68cbc44de5d4d416ec102292f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga7b8d5c68cbc44de5d4d416ec102292f9">BLINK_Object_setGroup</a> (blink_object_t group, const char *fieldName, blink_object_t value)</td></tr>
+<tr class="memdesc:ga7b8d5c68cbc44de5d4d416ec102292f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write group to field.  <a href="#ga7b8d5c68cbc44de5d4d416ec102292f9">More...</a><br/></td></tr>
+<tr class="separator:ga7b8d5c68cbc44de5d4d416ec102292f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa5cbf30f764a803aecee5395f6c0e608"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gaa5cbf30f764a803aecee5395f6c0e608">BLINK_Object_fieldIsNull</a> (blink_object_t group, const char *fieldName)</td></tr>
+<tr class="memdesc:gaa5cbf30f764a803aecee5395f6c0e608"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if field value is NULL.  <a href="#gaa5cbf30f764a803aecee5395f6c0e608">More...</a><br/></td></tr>
+<tr class="separator:gaa5cbf30f764a803aecee5395f6c0e608"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafef861eb44616ddb4525522095e28d05"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gafef861eb44616ddb4525522095e28d05">BLINK_Object_getEnum</a> (blink_object_t group, const char *fieldName, const char **value, size_t *valueLen)</td></tr>
+<tr class="memdesc:gafef861eb44616ddb4525522095e28d05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read enum from field.  <a href="#gafef861eb44616ddb4525522095e28d05">More...</a><br/></td></tr>
+<tr class="separator:gafef861eb44616ddb4525522095e28d05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae91b1f69216c83318ec71d23768eab06"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gae91b1f69216c83318ec71d23768eab06">BLINK_Object_getBool</a> (blink_object_t group, const char *fieldName, bool *value)</td></tr>
+<tr class="memdesc:gae91b1f69216c83318ec71d23768eab06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read boolean from field.  <a href="#gae91b1f69216c83318ec71d23768eab06">More...</a><br/></td></tr>
+<tr class="separator:gae91b1f69216c83318ec71d23768eab06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaec978972733bd8ee50535f6bedff49c0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gaec978972733bd8ee50535f6bedff49c0">BLINK_Object_getDecimal</a> (blink_object_t group, const char *fieldName, struct <a class="el" href="group__blink__object.html#structblink__decimal">blink_decimal</a> *value)</td></tr>
+<tr class="memdesc:gaec978972733bd8ee50535f6bedff49c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read decimal from field.  <a href="#gaec978972733bd8ee50535f6bedff49c0">More...</a><br/></td></tr>
+<tr class="separator:gaec978972733bd8ee50535f6bedff49c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8a6e63b6a2d5fe78df7d149c97bbbad3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga8a6e63b6a2d5fe78df7d149c97bbbad3">BLINK_Object_getU8</a> (blink_object_t group, const char *fieldName, uint8_t *value)</td></tr>
+<tr class="memdesc:ga8a6e63b6a2d5fe78df7d149c97bbbad3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read u8 from field.  <a href="#ga8a6e63b6a2d5fe78df7d149c97bbbad3">More...</a><br/></td></tr>
+<tr class="separator:ga8a6e63b6a2d5fe78df7d149c97bbbad3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7fd4b5279b210e299eb6e73771c6842d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga7fd4b5279b210e299eb6e73771c6842d">BLINK_Object_getU16</a> (blink_object_t group, const char *fieldName, uint16_t *value)</td></tr>
+<tr class="memdesc:ga7fd4b5279b210e299eb6e73771c6842d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read u16 from field.  <a href="#ga7fd4b5279b210e299eb6e73771c6842d">More...</a><br/></td></tr>
+<tr class="separator:ga7fd4b5279b210e299eb6e73771c6842d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5280246efe4e9073b53033fb4202ff17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga5280246efe4e9073b53033fb4202ff17">BLINK_Object_getU32</a> (blink_object_t group, const char *fieldName, uint32_t *value)</td></tr>
+<tr class="memdesc:ga5280246efe4e9073b53033fb4202ff17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read u32 from field.  <a href="#ga5280246efe4e9073b53033fb4202ff17">More...</a><br/></td></tr>
+<tr class="separator:ga5280246efe4e9073b53033fb4202ff17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacd175c7126a4a4eba75d4b86608f52c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gacd175c7126a4a4eba75d4b86608f52c9">BLINK_Object_getU64</a> (blink_object_t group, const char *fieldName, uint64_t *value)</td></tr>
+<tr class="memdesc:gacd175c7126a4a4eba75d4b86608f52c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read u64 from field.  <a href="#gacd175c7126a4a4eba75d4b86608f52c9">More...</a><br/></td></tr>
+<tr class="separator:gacd175c7126a4a4eba75d4b86608f52c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga831b4fe1ac02856bb8858977b6a13d0e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga831b4fe1ac02856bb8858977b6a13d0e">BLINK_Object_getI8</a> (blink_object_t group, const char *fieldName, int8_t *value)</td></tr>
+<tr class="memdesc:ga831b4fe1ac02856bb8858977b6a13d0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read i8 from field.  <a href="#ga831b4fe1ac02856bb8858977b6a13d0e">More...</a><br/></td></tr>
+<tr class="separator:ga831b4fe1ac02856bb8858977b6a13d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae5dce0a025b17b027ac3ea93351fb7d2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gae5dce0a025b17b027ac3ea93351fb7d2">BLINK_Object_getI16</a> (blink_object_t group, const char *fieldName, int16_t *value)</td></tr>
+<tr class="memdesc:gae5dce0a025b17b027ac3ea93351fb7d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read i16 from field.  <a href="#gae5dce0a025b17b027ac3ea93351fb7d2">More...</a><br/></td></tr>
+<tr class="separator:gae5dce0a025b17b027ac3ea93351fb7d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga28454e1b2a9a47dc43a70f31a234b3a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga28454e1b2a9a47dc43a70f31a234b3a5">BLINK_Object_getI32</a> (blink_object_t group, const char *fieldName, int32_t *value)</td></tr>
+<tr class="memdesc:ga28454e1b2a9a47dc43a70f31a234b3a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read i32 from field.  <a href="#ga28454e1b2a9a47dc43a70f31a234b3a5">More...</a><br/></td></tr>
+<tr class="separator:ga28454e1b2a9a47dc43a70f31a234b3a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12f06f1c9ccc17ea33d26556f2fbef7d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga12f06f1c9ccc17ea33d26556f2fbef7d">BLINK_Object_getI64</a> (blink_object_t group, const char *fieldName, int64_t *value)</td></tr>
+<tr class="memdesc:ga12f06f1c9ccc17ea33d26556f2fbef7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read i64 from field.  <a href="#ga12f06f1c9ccc17ea33d26556f2fbef7d">More...</a><br/></td></tr>
+<tr class="separator:ga12f06f1c9ccc17ea33d26556f2fbef7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga475cdd816cb613e24db437072bf26936"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga475cdd816cb613e24db437072bf26936">BLINK_Object_getF64</a> (blink_object_t group, const char *fieldName, double *value)</td></tr>
+<tr class="memdesc:ga475cdd816cb613e24db437072bf26936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read f64 from field.  <a href="#ga475cdd816cb613e24db437072bf26936">More...</a><br/></td></tr>
+<tr class="separator:ga475cdd816cb613e24db437072bf26936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad658be7103858126469374cd9b9013fd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gad658be7103858126469374cd9b9013fd">BLINK_Object_getString</a> (blink_object_t group, const char *fieldName, struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> *value)</td></tr>
+<tr class="memdesc:gad658be7103858126469374cd9b9013fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read string from field.  <a href="#gad658be7103858126469374cd9b9013fd">More...</a><br/></td></tr>
+<tr class="separator:gad658be7103858126469374cd9b9013fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4569c1288b9c46d791ebc0f2f59b3512"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga4569c1288b9c46d791ebc0f2f59b3512">BLINK_Object_getBinary</a> (blink_object_t group, const char *fieldName, struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> *value)</td></tr>
+<tr class="memdesc:ga4569c1288b9c46d791ebc0f2f59b3512"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read binary from field.  <a href="#ga4569c1288b9c46d791ebc0f2f59b3512">More...</a><br/></td></tr>
+<tr class="separator:ga4569c1288b9c46d791ebc0f2f59b3512"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad74df0e747541b9325c239bb1d2d2faa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gad74df0e747541b9325c239bb1d2d2faa">BLINK_Object_getFixed</a> (blink_object_t group, const char *fieldName, struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> *value)</td></tr>
+<tr class="memdesc:gad74df0e747541b9325c239bb1d2d2faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read fixed from field.  <a href="#gad74df0e747541b9325c239bb1d2d2faa">More...</a><br/></td></tr>
+<tr class="separator:gad74df0e747541b9325c239bb1d2d2faa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa44d194192ade55df82ecbe3ec64b4b1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gaa44d194192ade55df82ecbe3ec64b4b1">BLINK_Object_getGroup</a> (blink_object_t group, const char *fieldName, blink_object_t *value)</td></tr>
+<tr class="memdesc:gaa44d194192ade55df82ecbe3ec64b4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read group from field.  <a href="#gaa44d194192ade55df82ecbe3ec64b4b1">More...</a><br/></td></tr>
+<tr class="separator:gaa44d194192ade55df82ecbe3ec64b4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5132b47b5d06a897b67053486fde648f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga5132b47b5d06a897b67053486fde648f">BLINK_Object_getFieldDefinition</a> (blink_object_t group, cont char *fieldName)</td></tr>
+<tr class="memdesc:ga5132b47b5d06a897b67053486fde648f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read field definition from field.  <a href="#ga5132b47b5d06a897b67053486fde648f">More...</a><br/></td></tr>
+<tr class="separator:ga5132b47b5d06a897b67053486fde648f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga548cfea5742cc21c7b211c6325f282d9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#ga548cfea5742cc21c7b211c6325f282d9">BLINK_Object_encodeCompact</a> (blink_object_t group, <a class="el" href="group__blink__stream.html#structblink__stream">blink_stream_t</a> out)</td></tr>
+<tr class="memdesc:ga548cfea5742cc21c7b211c6325f282d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compact encode a group.  <a href="#ga548cfea5742cc21c7b211c6325f282d9">More...</a><br/></td></tr>
+<tr class="separator:ga548cfea5742cc21c7b211c6325f282d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf6a5d1cc6f459cae373c0ce238511c8b"><td class="memItemLeft" align="right" valign="top">blink_object_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gaf6a5d1cc6f459cae373c0ce238511c8b">BLINK_Object_decodeCompact</a> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> pool, <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema, <a class="el" href="group__blink__stream.html#structblink__stream">blink_stream_t</a> in)</td></tr>
+<tr class="memdesc:gaf6a5d1cc6f459cae373c0ce238511c8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compact decode a group.  <a href="#gaf6a5d1cc6f459cae373c0ce238511c8b">More...</a><br/></td></tr>
+<tr class="separator:gaf6a5d1cc6f459cae373c0ce238511c8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:structblink__decimal"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#structblink__decimal">blink_decimal</a></td></tr>
+<tr class="separator:structblink__decimal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:structblink__string"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#structblink__string">blink_string</a></td></tr>
+<tr class="separator:structblink__string"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
@@ -146,108 +204,1643 @@ typedef struct <a class="el" href="group__blink__pool.html#structblink__pool">bl
 <tr class="memitem:ga5e09cc845d2c200bb57d02a0d1690025"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga5e09cc845d2c200bb57d02a0d1690025"></a>
 typedef struct <a class="el" href="group__blink__stream.html#structblink__stream">blink_stream</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_stream_t</b></td></tr>
 <tr class="separator:ga5e09cc845d2c200bb57d02a0d1690025"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:gaab99ec98eb5db10e39880b450f1959df"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__object.html#gaab99ec98eb5db10e39880b450f1959df">blink_object_type</a> { <br/>
-&#160;&#160;<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa436a46bd078008a71efecbbb264c6f5e">BLINK_OBJECT_STRING</a> = 0, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa2cb0eb24d2b92bb4f7ea8222d4c4d841">BLINK_OBJECT_BINARY</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfaeaeebc71f33e471235937f2f90f66766">BLINK_OBJECT_FIXED</a>, 
-<b>BLINK_OBJECT_OPTIONAL_FIXED</b>, 
-<br/>
-&#160;&#160;<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfaf1960db323b966d4efbc4e22f1aad63e">BLINK_OBJECT_BOOL</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfac09891e875d360db3e52f9429093b226">BLINK_OBJECT_U8</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfae148fab45692336e164d0136699501e0">BLINK_OBJECT_U16</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfaa361c61ebe78cb0d5a51d9800d774c1d">BLINK_OBJECT_U32</a>, 
-<br/>
-&#160;&#160;<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa58fbec2f44aa569f5fcdb80da1b43e71">BLINK_OBJECT_U64</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa85632a70969236fefe19b3a6ca3e3044">BLINK_OBJECT_I8</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa1d8d0b1479f2c04545146c9c3996e3e2">BLINK_OBJECT_I16</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa28cf54abadb4ad210baa5321ea71a87f">BLINK_OBJECT_I32</a>, 
-<br/>
-&#160;&#160;<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa64a4969e6fc2d0ae523f7224234504fb">BLINK_OBJECT_I64</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa2a47a8940db33bf6cad51cbeea6518d5">BLINK_OBJECT_F64</a>, 
-<b>BLINK_OBJECT_DATE</b>, 
-<b>BLINK_OBJECT_TIME_OF_DAY_MILLI</b>, 
-<br/>
-&#160;&#160;<b>BLINK_OBJECT_TIME_OF_DAY_NANO</b>, 
-<b>BLINK_OBJECT_NANO_TIME</b>, 
-<b>BLINK_OBJECT_MILLI_TIME</b>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa3d9e32a8789aa4376872a6325610f6b5">BLINK_OBJECT_DECIMAL</a>, 
-<br/>
-&#160;&#160;<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa076ac920cfa31b382585095371464458">BLINK_OBJECT_ENUM</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfa847387ebeb8a460da3d9644088407f52">BLINK_OBJECT_STATIC_GROUP</a>, 
-<a class="el" href="group__blink__object.html#ggaab99ec98eb5db10e39880b450f1959dfacddcda71aac69a65408a8acdacd11493">BLINK_OBJECT_DYNAMIC_GROUP</a>, 
-<b>BLINK_OBJECT_SEQUENCE</b>, 
-<br/>
-&#160;&#160;<b>BLINK_OBJECT_NULL</b>
-<br/>
- }</td></tr>
-<tr class="separator:gaab99ec98eb5db10e39880b450f1959df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b15ed02ca529af28b3ac2b7d9a37137"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3b15ed02ca529af28b3ac2b7d9a37137"></a>
+typedef struct <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_schema_t</b></td></tr>
+<tr class="separator:ga3b15ed02ca529af28b3ac2b7d9a37137"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Enumeration Type Documentation</h2>
-<a class="anchor" id="gaab99ec98eb5db10e39880b450f1959df"></a>
+<hr/><h2 class="groupheader">Data Structure Documentation</h2>
+<a name="structblink__decimal" id="structblink__decimal"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">enum <a class="el" href="group__blink__object.html#gaab99ec98eb5db10e39880b450f1959df">blink_object_type</a></td>
+          <td class="memname">struct blink_decimal</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa436a46bd078008a71efecbbb264c6f5e"></a>BLINK_OBJECT_STRING</em>&#160;</td><td class="fielddoc">
-<p>UTF8 encoded string. </p>
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a5d593f8697f1d9a6eb442c10f253ca9f"></a>int8_t</td>
+<td class="fieldname">
+exponent</td>
+<td class="fielddoc">
 </td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa2cb0eb24d2b92bb4f7ea8222d4c4d841"></a>BLINK_OBJECT_BINARY</em>&#160;</td><td class="fielddoc">
-<p>octet string </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfaeaeebc71f33e471235937f2f90f66766"></a>BLINK_OBJECT_FIXED</em>&#160;</td><td class="fielddoc">
-<p>fixed size string </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfaf1960db323b966d4efbc4e22f1aad63e"></a>BLINK_OBJECT_BOOL</em>&#160;</td><td class="fielddoc">
-<p>boolean </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfac09891e875d360db3e52f9429093b226"></a>BLINK_OBJECT_U8</em>&#160;</td><td class="fielddoc">
-<p>8 bit unsigned integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfae148fab45692336e164d0136699501e0"></a>BLINK_OBJECT_U16</em>&#160;</td><td class="fielddoc">
-<p>16 bit unsigned integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfaa361c61ebe78cb0d5a51d9800d774c1d"></a>BLINK_OBJECT_U32</em>&#160;</td><td class="fielddoc">
-<p>32 bit unsigned integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa58fbec2f44aa569f5fcdb80da1b43e71"></a>BLINK_OBJECT_U64</em>&#160;</td><td class="fielddoc">
-<p>64 bit unsigned integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa85632a70969236fefe19b3a6ca3e3044"></a>BLINK_OBJECT_I8</em>&#160;</td><td class="fielddoc">
-<p>8 bit signed integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa1d8d0b1479f2c04545146c9c3996e3e2"></a>BLINK_OBJECT_I16</em>&#160;</td><td class="fielddoc">
-<p>16 bit signed integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa28cf54abadb4ad210baa5321ea71a87f"></a>BLINK_OBJECT_I32</em>&#160;</td><td class="fielddoc">
-<p>32 bit signed integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa64a4969e6fc2d0ae523f7224234504fb"></a>BLINK_OBJECT_I64</em>&#160;</td><td class="fielddoc">
-<p>64 bit signed integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa2a47a8940db33bf6cad51cbeea6518d5"></a>BLINK_OBJECT_F64</em>&#160;</td><td class="fielddoc">
-<p>IEEE 754 double. </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa3d9e32a8789aa4376872a6325610f6b5"></a>BLINK_OBJECT_DECIMAL</em>&#160;</td><td class="fielddoc">
-<p>8 bit signed integer exponent, 64 bit signed integer mantissa </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa076ac920cfa31b382585095371464458"></a>BLINK_OBJECT_ENUM</em>&#160;</td><td class="fielddoc">
-<p>32 bit signed integer </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfa847387ebeb8a460da3d9644088407f52"></a>BLINK_OBJECT_STATIC_GROUP</em>&#160;</td><td class="fielddoc">
-<p>static group </p>
-</td></tr>
-<tr><td class="fieldname"><em><a class="anchor" id="ggaab99ec98eb5db10e39880b450f1959dfacddcda71aac69a65408a8acdacd11493"></a>BLINK_OBJECT_DYNAMIC_GROUP</em>&#160;</td><td class="fielddoc">
-<p>dynamic group </p>
+<tr><td class="fieldtype">
+<a class="anchor" id="a8d403789f1acd6f2d2671d32011e1403"></a>int64_t</td>
+<td class="fieldname">
+mantissa</td>
+<td class="fielddoc">
 </td></tr>
 </table>
+
+</div>
+</div>
+<a name="structblink__string" id="structblink__string"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct blink_string</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"></div><table class="fieldtable">
+<tr><th colspan="3">Data Fields</th></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a806777d86301fe3be036065021b0c423"></a>const uint8_t *</td>
+<td class="fieldname">
+data</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a6cdc2e93b57ab5ca61ab34e273463275"></a>uint32_t</td>
+<td class="fieldname">
+len</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a class="anchor" id="gaf6a5d1cc6f459cae373c0ce238511c8b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">blink_object_t BLINK_Object_decodeCompact </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a>&#160;</td>
+          <td class="paramname"><em>pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
+          <td class="paramname"><em>schema</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__blink__stream.html#structblink__stream">blink_stream_t</a>&#160;</td>
+          <td class="paramname"><em>in</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compact decode a group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pool</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">schema</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">in</td><td>input stream</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>group </dd>
+<dd>
+NULL group could not be decoded </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga548cfea5742cc21c7b211c6325f282d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_encodeCompact </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__blink__stream.html#structblink__stream">blink_stream_t</a>&#160;</td>
+          <td class="paramname"><em>out</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compact encode a group. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">out</td><td>output stream</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if group was encoded </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa5cbf30f764a803aecee5395f6c0e608"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_fieldIsNull </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Test if field value is NULL. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if field value is NULL </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga4569c1288b9c46d791ebc0f2f59b3512"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getBinary </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read binary from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>binary</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae91b1f69216c83318ec71d23768eab06"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getBool </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read boolean from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>boolean</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaec978972733bd8ee50535f6bedff49c0"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getDecimal </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__blink__object.html#structblink__decimal">blink_decimal</a> *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read decimal from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>boolean</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gafef861eb44616ddb4525522095e28d05"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getEnum </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>valueLen</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read enum from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>length of enum </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">valueLen</td><td>length of enum value</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga475cdd816cb613e24db437072bf26936"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getF64 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read f64 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>f64</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5132b47b5d06a897b67053486fde648f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_Object_getFieldDefinition </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cont char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read field definition from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">fieldName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>field definition </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad74df0e747541b9325c239bb1d2d2faa"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getFixed </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read fixed from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>fixed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaa44d194192ade55df82ecbe3ec64b4b1"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getGroup </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">blink_object_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read group from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>group</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae5dce0a025b17b027ac3ea93351fb7d2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getI16 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read i16 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>i16</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga28454e1b2a9a47dc43a70f31a234b3a5"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getI32 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read i32 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>i32</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga12f06f1c9ccc17ea33d26556f2fbef7d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getI64 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read i64 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>i64</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga831b4fe1ac02856bb8858977b6a13d0e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getI8 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read i8 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>i8</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad658be7103858126469374cd9b9013fd"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getString </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a> *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read string from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>string</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7fd4b5279b210e299eb6e73771c6842d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getU16 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read u16 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>u16</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga5280246efe4e9073b53033fb4202ff17"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getU32 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read u32 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>u32</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gacd175c7126a4a4eba75d4b86608f52c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getU64 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read u64 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>u64</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8a6e63b6a2d5fe78df7d149c97bbbad3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_getU8 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read u8 from field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>u8</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if value can be read </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gaaa734c8c6146282972fa740471562456"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">blink_object_t BLINK_Object_newGroup </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a>&#160;</td>
+          <td class="paramname"><em>pool</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
+          <td class="paramname"><em>group</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a new group model from a group definition. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pool</td><td>pool to allocate from </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>group definition</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>group model</dd></dl>
+<dl class="retval"><dt>Return values</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">NULL</td><td>could not create group model </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a class="anchor" id="ga87cc8c5849e22fa6bc5e8e3ba59ddd10"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setBinary </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write binary to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>binary</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gabe86cd6fb4ee19940324a9f07b409ee3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setBool </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write boolean to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>boolean</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga13a8f82da3468e7ca4e8a0b17b1e455d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setDecimal </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__blink__object.html#structblink__decimal">blink_decimal</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write decimal to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>decimal</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga577a77972e95fa7601eab5bbb0891b6f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setEnum </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write enum to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>enum</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga05f24a64b687eacd85eaa89a7398f73a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setF64 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write f64 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>f64</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae52f9d7dccc54a3f0fbe136de2c45067"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setFixed </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write fixed to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>fixed</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7b8d5c68cbc44de5d4d416ec102292f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setGroup </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write group to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>group</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gae59ecb95f7399641da30cedf5a4e6c41"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setI16 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write i16 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>i16</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga2c61f5d051a537bb3ce226d10b3e6d3b"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setI32 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write i32 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>i32</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga7f6c8749bebcc19646ed6aa33848eb51"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setI64 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write i64 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>i64</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga0f3e4e80a93e84faf4cb6acf77fc0508"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setI8 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write i8 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>i8</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gab4d62ea12a33eafe984d8328077d6588"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setNull </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a group field to NULL. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga413ad1d1a2f7b21493e060e14341c5df"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setString </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="group__blink__object.html#structblink__string">blink_string</a>&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write string to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>string</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9dc0a3a0f89333a56b1031e4c99ffceb"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setU16 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write u16 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>u16</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="gad7d689f0909f50166f64a1585dfc79d9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setU32 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write u32 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>u32</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga9a0437c424187ae9dfaf2e8bc7e22d14"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setU64 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint64_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write u64 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>u64</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga8343ad8bb555971721fb051110cada11"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool BLINK_Object_setU8 </td>
+          <td>(</td>
+          <td class="paramtype">blink_object_t&#160;</td>
+          <td class="paramname"><em>group</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>fieldName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Write u8 to field. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>[in] fieldName </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>u8</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if successful </dd></dl>
 
 </div>
 </div>

@@ -61,7 +61,6 @@ $(document).ready(function(){initNavTree('group__blink__schema.html','');});
   <div class="summary">
 <a href="#func-members">Functions</a> &#124;
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
@@ -73,8 +72,8 @@ $(document).ready(function(){initNavTree('group__blink__schema.html','');});
 <h2>Example Workflow</h2>
 <p>First initialise a heap that will store the schema objects:</p>
 <div class="fragment"><div class="line">uint8_t heap[1024U];</div>
-<div class="line"><span class="keyword">struct </span><a class="code" href="group__blink__pool.html#structblink__pool">blink_pool</a> pool_state;</div>
-<div class="line"><a class="code" href="group__blink__pool.html#structblink__pool">blink_pool_t</a> pool = <a class="code" href="group__blink__pool.html#ga692f3297cb513a3894de23c8c57efabe">BLINK_Pool_init</a>(&amp;pool, heap, <span class="keyword">sizeof</span>(heap));</div>
+<div class="line"><span class="keyword">struct </span><a class="code" href="group__blink__pool.html#structblink__pool">blink_pool</a> poolState;</div>
+<div class="line"><a class="code" href="group__blink__pool.html#structblink__pool">blink_pool_t</a> pool = <a class="code" href="group__blink__pool.html#ga692f3297cb513a3894de23c8c57efabe">BLINK_Pool_init</a>(&amp;poolState, heap, <span class="keyword">sizeof</span>(heap));</div>
 </div><!-- fragment --><p>Next create a schema object from schema syntax:</p>
 <div class="fragment"><div class="line"><span class="keyword">const</span> <span class="keywordtype">char</span> syntax[] =</div>
 <div class="line">     <span class="stringliteral">&quot;InsertOrder/1 -&gt;\n&quot;</span></div>
@@ -85,81 +84,100 @@ $(document).ready(function(){initNavTree('group__blink__schema.html','');});
 <div class="line"></div>
 <div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema = <a class="code" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a>(pool, syntax, <span class="keyword">sizeof</span>(syntax));</div>
 </div><!-- fragment --><p>To operate on the "InsertOrder" group we need to get a reference to it:</p>
-<div class="fragment"><div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> group = <a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;InsertOrder&quot;</span>);</div>
+<div class="fragment"><div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> group = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;InsertOrder&quot;</span>);</div>
 </div><!-- fragment --><p>It's also possible to get a reference to "InsertOrder" by its group ID:</p>
-<div class="fragment"><div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> group = <a class="code" href="group__blink__schema.html#ga15d46e9bafcd00168a82b11f8cf85beb">BLINK_Schema_getGroupByID</a>(schema, 1U);</div>
+<div class="fragment"><div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> group = <a class="code" href="group__blink__schema.html#ga48f324b98b588ce03b5e95fb1482400f">BLINK_Schema_getGroupByID</a>(schema, 1U);</div>
 </div><!-- fragment --><p>While not very useful in this example, it is possible to read attributes from a group like so:</p>
 <div class="fragment"><div class="line"><span class="comment">// will return &quot;InsertOrder&quot;</span></div>
-<div class="line"><a class="code" href="group__blink__schema.html#ga90603b2309e452c7a2c7937eaf469b07">BLINK_Group_getName</a>(group);</div>
+<div class="line"><a class="code" href="group__blink__schema.html#gab768b3e4699adbf19bbdf339d8e792e5">BLINK_Group_getName</a>(group);</div>
 <div class="line"></div>
 <div class="line"><span class="comment">// will return 1</span></div>
-<div class="line"><a class="code" href="group__blink__schema.html#ga59f950d783a2c5903c58b61530745809">BLINK_Group_getID</a>(group);</div>
+<div class="line"><a class="code" href="group__blink__schema.html#gab71cd546e3354476a0d93775204b83c0">BLINK_Group_getID</a>(group);</div>
+</div><!-- fragment --><p>To access the fields of a group you will need a field iterator. An iterator is composed of an array of schema references, one entry for this group plus any inherited supergroups. Where the memory is stored depends on your requirements for the lifetime of the iterator - below we use a VLA.</p>
+<div class="fragment"><div class="line"><span class="keywordtype">size_t</span> stackDimension = <a class="code" href="group__blink__schema.html#gaefb26078abaa570fdb74b86a181808b5">BLINK_Group_numberOfSuperGroup</a>(group)+1U;</div>
+<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> stack[stackDimension];</div>
+<div class="line"><span class="keyword">struct </span><a class="code" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> iter = <a class="code" href="group__blink__schema.html#ga7be41e3a3adf117f672fe6b8cf7a8bb2">BLINK_FieldIterator_init</a>(stack, stackDimension, group);</div>
+</div><!-- fragment --><p>Below is an example of accessing field definitions sequentally using the iterator:</p>
+<div class="fragment"><div class="line"><span class="comment">// this call does not advance the iterator state</span></div>
+<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> <a class="code" href="group__blink__schema.html#a31669a5c631d9eb2cc3de6fd2a9d6331">field</a> = <a class="code" href="group__blink__schema.html#ga9370b30d47032abedbc3f09b482cc0ad">BLINK_FieldIterator_peek</a>(&amp;iter);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// these calls advance the iterator state </span></div>
+<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> fieldSymbol = <a class="code" href="group__blink__schema.html#ga522eed0c2ca73ead86adfb8668deb0a8">BLINK_FieldIterator_next</a>(&amp;iter);</div>
+<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> fieldOrderID = <a class="code" href="group__blink__schema.html#ga522eed0c2ca73ead86adfb8668deb0a8">BLINK_FieldIterator_next</a>(&amp;iter);</div>
+<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> fieldPrice = <a class="code" href="group__blink__schema.html#ga522eed0c2ca73ead86adfb8668deb0a8">BLINK_FieldIterator_next</a>(&amp;iter);</div>
+<div class="line"><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> fieldQuantity = <a class="code" href="group__blink__schema.html#ga522eed0c2ca73ead86adfb8668deb0a8">BLINK_FieldIterator_next</a>(&amp;iter);</div>
+<div class="line"></div>
+<div class="line"><span class="comment">// the iterator will be exhausted after returning all fields</span></div>
+<div class="line">assert(<a class="code" href="group__blink__schema.html#ga9370b30d47032abedbc3f09b482cc0ad">BLINK_FieldIterator_peek</a>(&amp;iter) == NULL);</div>
 </div><!-- fragment --> <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:gab31f459960f31c950737f13ce775586d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gab31f459960f31c950737f13ce775586d">BLINK_Schema_new</a> (<a class="el" href="group__blink__pool.html#ga7e55aaeda31ce2413a8e1dbe6984f9ca">blink_pool_t</a> pool, const char *in, size_t inLen)</td></tr>
 <tr class="memdesc:gab31f459960f31c950737f13ce775586d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new schema object from schema syntax.  <a href="#gab31f459960f31c950737f13ce775586d">More...</a><br/></td></tr>
 <tr class="separator:gab31f459960f31c950737f13ce775586d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga31562771019c2f4f25f187af1915a0fb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self, const char *name)</td></tr>
-<tr class="memdesc:ga31562771019c2f4f25f187af1915a0fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find group by name.  <a href="#ga31562771019c2f4f25f187af1915a0fb">More...</a><br/></td></tr>
-<tr class="separator:ga31562771019c2f4f25f187af1915a0fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15d46e9bafcd00168a82b11f8cf85beb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga15d46e9bafcd00168a82b11f8cf85beb">BLINK_Schema_getGroupByID</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self, uint64_t id)</td></tr>
-<tr class="memdesc:ga15d46e9bafcd00168a82b11f8cf85beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a group by ID.  <a href="#ga15d46e9bafcd00168a82b11f8cf85beb">More...</a><br/></td></tr>
-<tr class="separator:ga15d46e9bafcd00168a82b11f8cf85beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga90603b2309e452c7a2c7937eaf469b07"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga90603b2309e452c7a2c7937eaf469b07">BLINK_Group_getName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> self)</td></tr>
-<tr class="memdesc:ga90603b2309e452c7a2c7937eaf469b07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get group name.  <a href="#ga90603b2309e452c7a2c7937eaf469b07">More...</a><br/></td></tr>
-<tr class="separator:ga90603b2309e452c7a2c7937eaf469b07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga59f950d783a2c5903c58b61530745809"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga59f950d783a2c5903c58b61530745809">BLINK_Group_getID</a> (<a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> self)</td></tr>
-<tr class="memdesc:ga59f950d783a2c5903c58b61530745809"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get group ID.  <a href="#ga59f950d783a2c5903c58b61530745809">More...</a><br/></td></tr>
-<tr class="separator:ga59f950d783a2c5903c58b61530745809"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac91b8f5c0695481efbe464a77b83e1c5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gac91b8f5c0695481efbe464a77b83e1c5">BLINK_Group_hasID</a> (<a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> self)</td></tr>
-<tr class="memdesc:gac91b8f5c0695481efbe464a77b83e1c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discover if group has a valid ID.  <a href="#gac91b8f5c0695481efbe464a77b83e1c5">More...</a><br/></td></tr>
-<tr class="separator:gac91b8f5c0695481efbe464a77b83e1c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga08fd178ecba69592359b9125701ee92e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga08fd178ecba69592359b9125701ee92e">BLINK_Field_getName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> self)</td></tr>
-<tr class="memdesc:ga08fd178ecba69592359b9125701ee92e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get field name.  <a href="#ga08fd178ecba69592359b9125701ee92e">More...</a><br/></td></tr>
-<tr class="separator:ga08fd178ecba69592359b9125701ee92e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4d04dc309906b696728464a1d469926f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga4d04dc309906b696728464a1d469926f">BLINK_Field_isOptional</a> (<a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> self)</td></tr>
-<tr class="memdesc:ga4d04dc309906b696728464a1d469926f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discover if field is optional.  <a href="#ga4d04dc309906b696728464a1d469926f">More...</a><br/></td></tr>
-<tr class="separator:ga4d04dc309906b696728464a1d469926f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf14aea88ddd7577f8121961c4b0f05a8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gaf14aea88ddd7577f8121961c4b0f05a8">BLINK_Field_isSequence</a> (<a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> self)</td></tr>
-<tr class="memdesc:gaf14aea88ddd7577f8121961c4b0f05a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discover if field is a sequence.  <a href="#gaf14aea88ddd7577f8121961c4b0f05a8">More...</a><br/></td></tr>
-<tr class="separator:gaf14aea88ddd7577f8121961c4b0f05a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga87546cc620f0ad4f900431b583c4936b"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__blink__schema.html#ga3c752bf7f68879c88427adabf3778509">blink_type_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga87546cc620f0ad4f900431b583c4936b">BLINK_Field_getType</a> (<a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> self)</td></tr>
-<tr class="memdesc:ga87546cc620f0ad4f900431b583c4936b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get field type.  <a href="#ga87546cc620f0ad4f900431b583c4936b">More...</a><br/></td></tr>
-<tr class="separator:ga87546cc620f0ad4f900431b583c4936b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab661b63edc392faa908c32895e0ef42b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gab661b63edc392faa908c32895e0ef42b">BLINK_Field_getSize</a> (<a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> self)</td></tr>
-<tr class="memdesc:gab661b63edc392faa908c32895e0ef42b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get field size.  <a href="#gab661b63edc392faa908c32895e0ef42b">More...</a><br/></td></tr>
-<tr class="separator:gab661b63edc392faa908c32895e0ef42b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga914ba68eae3b2b46509f9ec3ecf2d797"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga914ba68eae3b2b46509f9ec3ecf2d797">BLINK_Field_getGroup</a> (<a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> self)</td></tr>
-<tr class="memdesc:ga914ba68eae3b2b46509f9ec3ecf2d797"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get group (nested within field)  <a href="#ga914ba68eae3b2b46509f9ec3ecf2d797">More...</a><br/></td></tr>
-<tr class="separator:ga914ba68eae3b2b46509f9ec3ecf2d797"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga04224aa13d7b54028aa138aedf991c16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__enum">blink_enum_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga04224aa13d7b54028aa138aedf991c16">BLINK_Field_getEnum</a> (<a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> self)</td></tr>
-<tr class="memdesc:ga04224aa13d7b54028aa138aedf991c16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get enum (nested within field)  <a href="#ga04224aa13d7b54028aa138aedf991c16">More...</a><br/></td></tr>
-<tr class="separator:ga04224aa13d7b54028aa138aedf991c16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga53cffec9b4b87a4133a8863a41755868"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga53cffec9b4b87a4133a8863a41755868">BLINK_Group_isKindOf</a> (<a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> self, <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> group)</td></tr>
-<tr class="memdesc:ga53cffec9b4b87a4133a8863a41755868"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if self is group or a subclass of group.  <a href="#ga53cffec9b4b87a4133a8863a41755868">More...</a><br/></td></tr>
-<tr class="separator:ga53cffec9b4b87a4133a8863a41755868"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga6c0bf097c91ce7d18ef2097bcd7f242e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga6c0bf097c91ce7d18ef2097bcd7f242e">BLINK_Enum_getSymbolByName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__enum">blink_enum_t</a> self, const char *name)</td></tr>
-<tr class="memdesc:ga6c0bf097c91ce7d18ef2097bcd7f242e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find enum symbol by name.  <a href="#ga6c0bf097c91ce7d18ef2097bcd7f242e">More...</a><br/></td></tr>
-<tr class="separator:ga6c0bf097c91ce7d18ef2097bcd7f242e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf62123f5e14b5d11587ec5e4dd8d0762"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gaf62123f5e14b5d11587ec5e4dd8d0762">BLINK_Enum_getSymbolByValue</a> (<a class="el" href="group__blink__schema__internal.html#structblink__enum">blink_enum_t</a> self, int32_t value)</td></tr>
-<tr class="memdesc:gaf62123f5e14b5d11587ec5e4dd8d0762"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find enum symbol by value.  <a href="#gaf62123f5e14b5d11587ec5e4dd8d0762">More...</a><br/></td></tr>
-<tr class="separator:gaf62123f5e14b5d11587ec5e4dd8d0762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3ce014fbfb29487f7aa074f643f3ffc1"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga3ce014fbfb29487f7aa074f643f3ffc1">BLINK_Symbol_getName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol_t</a> self)</td></tr>
-<tr class="memdesc:ga3ce014fbfb29487f7aa074f643f3ffc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get symbol name.  <a href="#ga3ce014fbfb29487f7aa074f643f3ffc1">More...</a><br/></td></tr>
-<tr class="separator:ga3ce014fbfb29487f7aa074f643f3ffc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad67b096fa9833aebfd1ea80fbf4a0798"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gad67b096fa9833aebfd1ea80fbf4a0798">BLINK_Symbol_getValue</a> (<a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol_t</a> self)</td></tr>
-<tr class="memdesc:gad67b096fa9833aebfd1ea80fbf4a0798"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get symbol value.  <a href="#gad67b096fa9833aebfd1ea80fbf4a0798">More...</a><br/></td></tr>
-<tr class="separator:gad67b096fa9833aebfd1ea80fbf4a0798"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3262cad8453737a4c24b96c360529294"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga3262cad8453737a4c24b96c360529294">BLINK_FieldIterator_init</a> (struct <a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> *iter, <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> group)</td></tr>
-<tr class="memdesc:ga3262cad8453737a4c24b96c360529294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialise a field iterator.  <a href="#ga3262cad8453737a4c24b96c360529294">More...</a><br/></td></tr>
-<tr class="separator:ga3262cad8453737a4c24b96c360529294"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4f6f84245e50a2239110e4b5220158b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga4f6f84245e50a2239110e4b5220158b2">BLINK_FieldIterator_peek</a> (<a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator_t</a> self)</td></tr>
-<tr class="memdesc:ga4f6f84245e50a2239110e4b5220158b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get next field from a field iterator but do not change the iterator state.  <a href="#ga4f6f84245e50a2239110e4b5220158b2">More...</a><br/></td></tr>
-<tr class="separator:ga4f6f84245e50a2239110e4b5220158b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga5a41212dd663118d01d43c6f14ec413c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga5a41212dd663118d01d43c6f14ec413c">BLINK_FieldIterator_next</a> (<a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator_t</a> self)</td></tr>
-<tr class="memdesc:ga5a41212dd663118d01d43c6f14ec413c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get next field from a field iterator.  <a href="#ga5a41212dd663118d01d43c6f14ec413c">More...</a><br/></td></tr>
-<tr class="separator:ga5a41212dd663118d01d43c6f14ec413c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8114b049d55c0e51cac4b4ff3271628"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self, const char *name)</td></tr>
+<tr class="memdesc:gaa8114b049d55c0e51cac4b4ff3271628"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find group by name.  <a href="#gaa8114b049d55c0e51cac4b4ff3271628">More...</a><br/></td></tr>
+<tr class="separator:gaa8114b049d55c0e51cac4b4ff3271628"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48f324b98b588ce03b5e95fb1482400f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga48f324b98b588ce03b5e95fb1482400f">BLINK_Schema_getGroupByID</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> schema, uint64_t id)</td></tr>
+<tr class="memdesc:ga48f324b98b588ce03b5e95fb1482400f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find a group by ID.  <a href="#ga48f324b98b588ce03b5e95fb1482400f">More...</a><br/></td></tr>
+<tr class="separator:ga48f324b98b588ce03b5e95fb1482400f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab768b3e4699adbf19bbdf339d8e792e5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gab768b3e4699adbf19bbdf339d8e792e5">BLINK_Group_getName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:gab768b3e4699adbf19bbdf339d8e792e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get group name.  <a href="#gab768b3e4699adbf19bbdf339d8e792e5">More...</a><br/></td></tr>
+<tr class="separator:gab768b3e4699adbf19bbdf339d8e792e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab71cd546e3354476a0d93775204b83c0"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gab71cd546e3354476a0d93775204b83c0">BLINK_Group_getID</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:gab71cd546e3354476a0d93775204b83c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get group ID.  <a href="#gab71cd546e3354476a0d93775204b83c0">More...</a><br/></td></tr>
+<tr class="separator:gab71cd546e3354476a0d93775204b83c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga721a42e2936052f8f5b166f0736a7940"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga721a42e2936052f8f5b166f0736a7940">BLINK_Group_hasID</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:ga721a42e2936052f8f5b166f0736a7940"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discover if group has a valid ID.  <a href="#ga721a42e2936052f8f5b166f0736a7940">More...</a><br/></td></tr>
+<tr class="separator:ga721a42e2936052f8f5b166f0736a7940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae0c0c31249cb1857afa946ab6be3350d"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gae0c0c31249cb1857afa946ab6be3350d">BLINK_Field_getName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:gae0c0c31249cb1857afa946ab6be3350d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get field name.  <a href="#gae0c0c31249cb1857afa946ab6be3350d">More...</a><br/></td></tr>
+<tr class="separator:gae0c0c31249cb1857afa946ab6be3350d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaede8164f144273528cf93bb83e9d26db"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gaede8164f144273528cf93bb83e9d26db">BLINK_Field_isOptional</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:gaede8164f144273528cf93bb83e9d26db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discover if field is optional.  <a href="#gaede8164f144273528cf93bb83e9d26db">More...</a><br/></td></tr>
+<tr class="separator:gaede8164f144273528cf93bb83e9d26db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga13a76e030b282872152524572861803d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga13a76e030b282872152524572861803d">BLINK_Field_isSequence</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:ga13a76e030b282872152524572861803d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Discover if field is a sequence.  <a href="#ga13a76e030b282872152524572861803d">More...</a><br/></td></tr>
+<tr class="separator:ga13a76e030b282872152524572861803d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1fff8ce40acb739913dfb6364487b302"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__blink__schema.html#ga3c752bf7f68879c88427adabf3778509">blink_type_tag</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga1fff8ce40acb739913dfb6364487b302">BLINK_Field_getType</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:ga1fff8ce40acb739913dfb6364487b302"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get field type.  <a href="#ga1fff8ce40acb739913dfb6364487b302">More...</a><br/></td></tr>
+<tr class="separator:ga1fff8ce40acb739913dfb6364487b302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga40aa68c5226a671e99c6570f7f450d83"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga40aa68c5226a671e99c6570f7f450d83">BLINK_Field_getSize</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:ga40aa68c5226a671e99c6570f7f450d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get field size.  <a href="#ga40aa68c5226a671e99c6570f7f450d83">More...</a><br/></td></tr>
+<tr class="separator:ga40aa68c5226a671e99c6570f7f450d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0d1bb4704f72ccbcedfa7df2f8b8a80e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga0d1bb4704f72ccbcedfa7df2f8b8a80e">BLINK_Field_getGroup</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:ga0d1bb4704f72ccbcedfa7df2f8b8a80e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get group (nested within field)  <a href="#ga0d1bb4704f72ccbcedfa7df2f8b8a80e">More...</a><br/></td></tr>
+<tr class="separator:ga0d1bb4704f72ccbcedfa7df2f8b8a80e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d89f834915850d144cf52f8020c8fc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga1d89f834915850d144cf52f8020c8fc0">BLINK_Field_getEnum</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:ga1d89f834915850d144cf52f8020c8fc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get enum (nested within field)  <a href="#ga1d89f834915850d144cf52f8020c8fc0">More...</a><br/></td></tr>
+<tr class="separator:ga1d89f834915850d144cf52f8020c8fc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab358b6db5fe832921ff1444a1e5c8012"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gab358b6db5fe832921ff1444a1e5c8012">BLINK_Group_isKindOf</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self, <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> group)</td></tr>
+<tr class="memdesc:gab358b6db5fe832921ff1444a1e5c8012"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test if self is group or a subclass of group.  <a href="#gab358b6db5fe832921ff1444a1e5c8012">More...</a><br/></td></tr>
+<tr class="separator:gab358b6db5fe832921ff1444a1e5c8012"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac5f8e73da1c3af232a152ad4abad4d37"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gac5f8e73da1c3af232a152ad4abad4d37">BLINK_Enum_getSymbolByName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self, const char *name)</td></tr>
+<tr class="memdesc:gac5f8e73da1c3af232a152ad4abad4d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find enum symbol by name.  <a href="#gac5f8e73da1c3af232a152ad4abad4d37">More...</a><br/></td></tr>
+<tr class="separator:gac5f8e73da1c3af232a152ad4abad4d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga061505deb5c6001687f78bf0de95da1b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga061505deb5c6001687f78bf0de95da1b">BLINK_Enum_getSymbolByValue</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self, int32_t value)</td></tr>
+<tr class="memdesc:ga061505deb5c6001687f78bf0de95da1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find enum symbol by value.  <a href="#ga061505deb5c6001687f78bf0de95da1b">More...</a><br/></td></tr>
+<tr class="separator:ga061505deb5c6001687f78bf0de95da1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8313ce3d3f6a330aadf778b4d85a81e1"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga8313ce3d3f6a330aadf778b4d85a81e1">BLINK_Symbol_getName</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:ga8313ce3d3f6a330aadf778b4d85a81e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get symbol name.  <a href="#ga8313ce3d3f6a330aadf778b4d85a81e1">More...</a><br/></td></tr>
+<tr class="separator:ga8313ce3d3f6a330aadf778b4d85a81e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8c3bce89fdfdad73a22ea666a7afb17a"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga8c3bce89fdfdad73a22ea666a7afb17a">BLINK_Symbol_getValue</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:ga8c3bce89fdfdad73a22ea666a7afb17a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get symbol value.  <a href="#ga8c3bce89fdfdad73a22ea666a7afb17a">More...</a><br/></td></tr>
+<tr class="separator:ga8c3bce89fdfdad73a22ea666a7afb17a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7be41e3a3adf117f672fe6b8cf7a8bb2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga7be41e3a3adf117f672fe6b8cf7a8bb2">BLINK_FieldIterator_init</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> *stack, size_t depth, <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> group)</td></tr>
+<tr class="memdesc:ga7be41e3a3adf117f672fe6b8cf7a8bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create field iterator object.  <a href="#ga7be41e3a3adf117f672fe6b8cf7a8bb2">More...</a><br/></td></tr>
+<tr class="separator:ga7be41e3a3adf117f672fe6b8cf7a8bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9370b30d47032abedbc3f09b482cc0ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga9370b30d47032abedbc3f09b482cc0ad">BLINK_FieldIterator_peek</a> (struct <a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> *self)</td></tr>
+<tr class="memdesc:ga9370b30d47032abedbc3f09b482cc0ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get next field from a field iterator but do not change the iterator state.  <a href="#ga9370b30d47032abedbc3f09b482cc0ad">More...</a><br/></td></tr>
+<tr class="separator:ga9370b30d47032abedbc3f09b482cc0ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga522eed0c2ca73ead86adfb8668deb0a8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga522eed0c2ca73ead86adfb8668deb0a8">BLINK_FieldIterator_next</a> (struct <a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> *self)</td></tr>
+<tr class="memdesc:ga522eed0c2ca73ead86adfb8668deb0a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get next field from a field iterator.  <a href="#ga522eed0c2ca73ead86adfb8668deb0a8">More...</a><br/></td></tr>
+<tr class="separator:ga522eed0c2ca73ead86adfb8668deb0a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaefb26078abaa570fdb74b86a181808b5"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#gaefb26078abaa570fdb74b86a181808b5">BLINK_Group_numberOfSuperGroup</a> (<a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> self)</td></tr>
+<tr class="memdesc:gaefb26078abaa570fdb74b86a181808b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of supergroups this group inherits from.  <a href="#gaefb26078abaa570fdb74b86a181808b5">More...</a><br/></td></tr>
+<tr class="separator:gaefb26078abaa570fdb74b86a181808b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -167,40 +185,12 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:structblink__field__iterator"><td class="mdescLeft">&#160;</td><td class="mdescRight">A field iterator stores state required to iterate through all fields of a group (including any inherited fields)  <a href="group__blink__schema.html#structblink__field__iterator">More...</a><br/></td></tr>
 <tr class="separator:structblink__field__iterator"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:ga14131866a7eba6a0b1e64d9eab1a3f2c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga14131866a7eba6a0b1e64d9eab1a3f2c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga14131866a7eba6a0b1e64d9eab1a3f2c">BLINK_INHERIT_DEPTH</a>&#160;&#160;&#160;10U</td></tr>
-<tr class="memdesc:ga14131866a7eba6a0b1e64d9eab1a3f2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">maximum inheritence depth <br/></td></tr>
-<tr class="separator:ga14131866a7eba6a0b1e64d9eab1a3f2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ga7ecfa9da1786a02a360d3c49f2c172bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga7ecfa9da1786a02a360d3c49f2c172bc"></a>
-typedef struct <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_partial_schema_t</b></td></tr>
-<tr class="separator:ga7ecfa9da1786a02a360d3c49f2c172bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac54b80a0fe67a57e3fe5fc06caffe27f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac54b80a0fe67a57e3fe5fc06caffe27f"></a>
-typedef const struct <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_schema_t</b></td></tr>
-<tr class="separator:gac54b80a0fe67a57e3fe5fc06caffe27f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga647ce0e9223f4e57f9fd056893d002e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga647ce0e9223f4e57f9fd056893d002e9"></a>
-typedef const struct <a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_group_t</b></td></tr>
-<tr class="separator:ga647ce0e9223f4e57f9fd056893d002e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga230816c5a308f5b2fc40e51075a26bf1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga230816c5a308f5b2fc40e51075a26bf1"></a>
-typedef const struct <a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_field_t</b></td></tr>
-<tr class="separator:ga230816c5a308f5b2fc40e51075a26bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaacb34e468ce331cf30aeed3df3e0f773"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaacb34e468ce331cf30aeed3df3e0f773"></a>
-typedef const struct <a class="el" href="group__blink__schema__internal.html#structblink__enum">blink_enum</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_enum_t</b></td></tr>
-<tr class="separator:gaacb34e468ce331cf30aeed3df3e0f773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga51c4ea558fcf2306b877be662905ba84"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga51c4ea558fcf2306b877be662905ba84"></a>
-typedef const struct <a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_symbol_t</b></td></tr>
-<tr class="separator:ga51c4ea558fcf2306b877be662905ba84"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0bcc60d2dea9c32291458009e25d9098"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga0bcc60d2dea9c32291458009e25d9098"></a>
-typedef struct <a class="el" href="group__blink__schema__internal.html#structblink__list__element">blink_list_element</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_list_element_t</b></td></tr>
-<tr class="separator:ga0bcc60d2dea9c32291458009e25d9098"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa0d6b6044d33358128ebdcb9fdc0ad93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaa0d6b6044d33358128ebdcb9fdc0ad93"></a>
-typedef struct <br class="typebreak"/>
-<a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>blink_field_iterator_t</b></td></tr>
-<tr class="separator:gaa0d6b6044d33358128ebdcb9fdc0ad93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3b15ed02ca529af28b3ac2b7d9a37137"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3b15ed02ca529af28b3ac2b7d9a37137"></a>
+typedef struct <a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__blink__schema.html#ga3b15ed02ca529af28b3ac2b7d9a37137">blink_schema_t</a></td></tr>
+<tr class="memdesc:ga3b15ed02ca529af28b3ac2b7d9a37137"><td class="mdescLeft">&#160;</td><td class="mdescRight">this type refers to any immutable schema object <br/></td></tr>
+<tr class="separator:ga3b15ed02ca529af28b3ac2b7d9a37137"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -249,21 +239,20 @@ Enumerations</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock"><p>A field iterator stores state required to iterate through all fields of a group (including any inherited fields) </p>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_new_8c-example.html#_a6">tc_blink_schema_new.c</a>.</dd>
-</dl></div><table class="fieldtable">
+</div><table class="fieldtable">
 <tr><th colspan="3">Data Fields</th></tr>
 <tr><td class="fieldtype">
-<a class="anchor" id="a6b5342b94a0c689cb6d09ccca43f795e"></a>uint16_t</td>
+<a class="anchor" id="a31669a5c631d9eb2cc3de6fd2a9d6331"></a><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> *</td>
 <td class="fieldname">
-depth</td>
-<td class="fielddoc">
-current depth in <code>field</code> </td></tr>
-<tr><td class="fieldtype">
-<a class="anchor" id="ae190d746d9ba2ce2d642688992254c07"></a>struct <a class="el" href="group__blink__schema__internal.html#structblink__list__element">blink_list_element</a> *</td>
-<td class="fieldname">
-field[<a class="el" href="group__blink__schema.html#ga14131866a7eba6a0b1e64d9eab1a3f2c">BLINK_INHERIT_DEPTH</a>]</td>
+field</td>
 <td class="fielddoc">
 stack of pointers to fields within groups </td></tr>
+<tr><td class="fieldtype">
+<a class="anchor" id="a2eea92dd51ac6d759bad01e33d94800a"></a>size_t</td>
+<td class="fieldname">
+index</td>
+<td class="fielddoc">
+current index in <code>field</code> </td></tr>
 </table>
 
 </div>
@@ -355,14 +344,14 @@ stack of pointers to fields within groups </td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="ga6c0bf097c91ce7d18ef2097bcd7f242e"></a>
+<a class="anchor" id="gac5f8e73da1c3af232a152ad4abad4d37"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol_t</a> BLINK_Enum_getSymbolByName </td>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_Enum_getSymbolByName </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__enum">blink_enum_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em>, </td>
         </tr>
         <tr>
@@ -382,7 +371,7 @@ stack of pointers to fields within groups </td></tr>
 <p>Find enum symbol by name. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>enum object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">name</td><td>null terminated name string </td></tr>
   </table>
   </dd>
@@ -397,14 +386,14 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gaf62123f5e14b5d11587ec5e4dd8d0762"></a>
+<a class="anchor" id="ga061505deb5c6001687f78bf0de95da1b"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol_t</a> BLINK_Enum_getSymbolByValue </td>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_Enum_getSymbolByValue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__enum">blink_enum_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em>, </td>
         </tr>
         <tr>
@@ -424,7 +413,7 @@ stack of pointers to fields within groups </td></tr>
 <p>Find enum symbol by value. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>enum object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td></td></tr>
   </table>
   </dd>
@@ -439,14 +428,14 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga04224aa13d7b54028aa138aedf991c16"></a>
+<a class="anchor" id="ga1d89f834915850d144cf52f8020c8fc0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__enum">blink_enum_t</a> BLINK_Field_getEnum </td>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_Field_getEnum </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -471,14 +460,14 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga914ba68eae3b2b46509f9ec3ecf2d797"></a>
+<a class="anchor" id="ga0d1bb4704f72ccbcedfa7df2f8b8a80e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> BLINK_Field_getGroup </td>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_Field_getGroup </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -503,14 +492,14 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga08fd178ecba69592359b9125701ee92e"></a>
+<a class="anchor" id="gae0c0c31249cb1857afa946ab6be3350d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">const char* BLINK_Field_getName </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -525,18 +514,17 @@ stack of pointers to fields within groups </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>null terminated string </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_new_8c-example.html#a10">tc_blink_schema_new.c</a>.</dd>
-</dl>
+
 </div>
 </div>
-<a class="anchor" id="gab661b63edc392faa908c32895e0ef42b"></a>
+<a class="anchor" id="ga40aa68c5226a671e99c6570f7f450d83"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">uint32_t BLINK_Field_getSize </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -552,18 +540,17 @@ stack of pointers to fields within groups </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>field size </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_new_8c-example.html#a12">tc_blink_schema_new.c</a>.</dd>
-</dl>
+
 </div>
 </div>
-<a class="anchor" id="ga87546cc620f0ad4f900431b583c4936b"></a>
+<a class="anchor" id="ga1fff8ce40acb739913dfb6364487b302"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">enum <a class="el" href="group__blink__schema.html#ga3c752bf7f68879c88427adabf3778509">blink_type_tag</a> BLINK_Field_getType </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -578,18 +565,17 @@ stack of pointers to fields within groups </td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>field type </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_new_8c-example.html#a11">tc_blink_schema_new.c</a>.</dd>
-</dl>
+
 </div>
 </div>
-<a class="anchor" id="ga4d04dc309906b696728464a1d469926f"></a>
+<a class="anchor" id="gaede8164f144273528cf93bb83e9d26db"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool BLINK_Field_isOptional </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -611,18 +597,17 @@ stack of pointers to fields within groups </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_new_8c-example.html#a14">tc_blink_schema_new.c</a>.</dd>
-</dl>
+
 </div>
 </div>
-<a class="anchor" id="gaf14aea88ddd7577f8121961c4b0f05a8"></a>
+<a class="anchor" id="ga13a76e030b282872152524572861803d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool BLINK_Field_isSequence </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -647,20 +632,26 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga3262cad8453737a4c24b96c360529294"></a>
+<a class="anchor" id="ga7be41e3a3adf117f672fe6b8cf7a8bb2"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator_t</a> BLINK_FieldIterator_init </td>
+          <td class="memname">struct <a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> BLINK_FieldIterator_init </td>
           <td>(</td>
-          <td class="paramtype">struct <a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> *&#160;</td>
-          <td class="paramname"><em>iter</em>, </td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> *&#160;</td>
+          <td class="paramname"><em>stack</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>depth</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>group</em>&#160;</td>
         </tr>
         <tr>
@@ -671,27 +662,29 @@ stack of pointers to fields within groups </td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Initialise a field iterator. </p>
+<p>Create field iterator object. </p>
+<p>Use the returned object to iterate through group fields.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">iter</td><td>iterator </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td>group to iterate </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">stack</td><td>an array of references which must be maintained for same lifetime as iterator object</td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">depth</td><td>dimension of <code>stack</code></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>initialised field iterator </dd></dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_new_8c-example.html#a7">tc_blink_schema_new.c</a>.</dd>
-</dl>
+<p>To iterate through all inherited fields <code>depth</code> must be equal to (BLINK_Group_getAncestorCount(self) + 1U).</p>
+<p>To iterate only through the subgroup <code>depth</code> must be 1U.</p>
+<dl class="section return"><dt>Returns</dt><dd>field iterator </dd></dl>
+
 </div>
 </div>
-<a class="anchor" id="ga5a41212dd663118d01d43c6f14ec413c"></a>
+<a class="anchor" id="ga522eed0c2ca73ead86adfb8668deb0a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> BLINK_FieldIterator_next </td>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_FieldIterator_next </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator_t</a>&#160;</td>
+          <td class="paramtype">struct <a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> *&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -712,18 +705,17 @@ stack of pointers to fields within groups </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_new_8c-example.html#a9">tc_blink_schema_new.c</a>.</dd>
-</dl>
+
 </div>
 </div>
-<a class="anchor" id="ga4f6f84245e50a2239110e4b5220158b2"></a>
+<a class="anchor" id="ga9370b30d47032abedbc3f09b482cc0ad"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__field">blink_field_t</a> BLINK_FieldIterator_peek </td>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_FieldIterator_peek </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator_t</a>&#160;</td>
+          <td class="paramtype">struct <a class="el" href="group__blink__schema.html#structblink__field__iterator">blink_field_iterator</a> *&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -747,14 +739,14 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga59f950d783a2c5903c58b61530745809"></a>
+<a class="anchor" id="gab71cd546e3354476a0d93775204b83c0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">uint64_t BLINK_Group_getID </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -773,14 +765,14 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga90603b2309e452c7a2c7937eaf469b07"></a>
+<a class="anchor" id="gab768b3e4699adbf19bbdf339d8e792e5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">const char* BLINK_Group_getName </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -798,14 +790,14 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gac91b8f5c0695481efbe464a77b83e1c5"></a>
+<a class="anchor" id="ga721a42e2936052f8f5b166f0736a7940"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool BLINK_Group_hasID </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -831,20 +823,20 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ga53cffec9b4b87a4133a8863a41755868"></a>
+<a class="anchor" id="gab358b6db5fe832921ff1444a1e5c8012"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">bool BLINK_Group_isKindOf </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>group</em>&#160;</td>
         </tr>
         <tr>
@@ -858,7 +850,7 @@ stack of pointers to fields within groups </td></tr>
 <p>Test if self is group or a subclass of group. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td></td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>group object </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">group</td><td></td></tr>
   </table>
   </dd>
@@ -871,19 +863,44 @@ stack of pointers to fields within groups </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_group_iskindof_8c-example.html#a6">tc_blink_group_iskindof.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_group_iskindof_8c-example.html#a5">tc_blink_group_iskindof.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga15d46e9bafcd00168a82b11f8cf85beb"></a>
+<a class="anchor" id="gaefb26078abaa570fdb74b86a181808b5"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> BLINK_Schema_getGroupByID </td>
+          <td class="memname">size_t BLINK_Group_numberOfSuperGroup </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
-          <td class="paramname"><em>self</em>, </td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the number of supergroups this group inherits from. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">self</td><td>group </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>number of supergroups </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="ga48f324b98b588ce03b5e95fb1482400f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_Schema_getGroupByID </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
+          <td class="paramname"><em>schema</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -914,16 +931,16 @@ stack of pointers to fields within groups </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_getgroupbyid_8c-example.html#a4">tc_blink_schema_getgroupbyid.c</a>, and <a class="el" href="tc_blink_schema_new_8c-example.html#a5">tc_blink_schema_new.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_schema_getgroupbyid_8c-example.html#a4">tc_blink_schema_getgroupbyid.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga31562771019c2f4f25f187af1915a0fb"></a>
+<a class="anchor" id="gaa8114b049d55c0e51cac4b4ff3271628"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> BLINK_Schema_getGroupByName </td>
+          <td class="memname"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> BLINK_Schema_getGroupByName </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -957,7 +974,7 @@ stack of pointers to fields within groups </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_group_iskindof_8c-example.html#a5">tc_blink_group_iskindof.c</a>, <a class="el" href="tc_blink_schema_getgroupbyid_8c-example.html#a6">tc_blink_schema_getgroupbyid.c</a>, and <a class="el" href="tc_blink_schema_new_8c-example.html#a4">tc_blink_schema_new.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_group_iskindof_8c-example.html#a4">tc_blink_group_iskindof.c</a>, <a class="el" href="tc_blink_schema_getgroupbyid_8c-example.html#a5">tc_blink_schema_getgroupbyid.c</a>, and <a class="el" href="tc_blink_schema_getgroupbyname_8c-example.html#a4">tc_blink_schema_getgroupbyname.c</a>.</dd>
 </dl>
 </div>
 </div>
@@ -1007,18 +1024,18 @@ stack of pointers to fields within groups </td></tr>
   </table>
   </dd>
 </dl>
-<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_group_iskindof_8c-example.html#a3">tc_blink_group_iskindof.c</a>, <a class="el" href="tc_blink_schema_getgroupbyid_8c-example.html#a1">tc_blink_schema_getgroupbyid.c</a>, and <a class="el" href="tc_blink_schema_new_8c-example.html#a3">tc_blink_schema_new.c</a>.</dd>
+<dl><dt><b>Examples: </b></dt><dd><a class="el" href="tc_blink_group_iskindof_8c-example.html#a3">tc_blink_group_iskindof.c</a>, <a class="el" href="tc_blink_schema_getgroupbyid_8c-example.html#a1">tc_blink_schema_getgroupbyid.c</a>, <a class="el" href="tc_blink_schema_getgroupbyname_8c-example.html#a1">tc_blink_schema_getgroupbyname.c</a>, and <a class="el" href="tc_blink_schema_new_8c-example.html#a3">tc_blink_schema_new.c</a>.</dd>
 </dl>
 </div>
 </div>
-<a class="anchor" id="ga3ce014fbfb29487f7aa074f643f3ffc1"></a>
+<a class="anchor" id="ga8313ce3d3f6a330aadf778b4d85a81e1"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">const char* BLINK_Symbol_getName </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>
@@ -1036,14 +1053,14 @@ stack of pointers to fields within groups </td></tr>
 
 </div>
 </div>
-<a class="anchor" id="gad67b096fa9833aebfd1ea80fbf4a0798"></a>
+<a class="anchor" id="ga8c3bce89fdfdad73a22ea666a7afb17a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">int32_t BLINK_Symbol_getValue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__symbol">blink_symbol_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>&#160;</td>
           <td class="paramname"><em>self</em></td><td>)</td>
           <td></td>
         </tr>

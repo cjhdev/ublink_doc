@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.6"/>
-<title>uBlink: tc_blink_schema_getgroupbyid.c</title>
+<title>uBlink: tc_blink_schema_getgroupbyname.c</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -54,12 +54,12 @@
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('tc_blink_schema_getgroupbyid_8c-example.html','');});
+$(document).ready(function(){initNavTree('tc_blink_schema_getgroupbyname_8c-example.html','');});
 </script>
 <div id="doc-content">
 <div class="header">
   <div class="headertitle">
-<div class="title">tc_blink_schema_getgroupbyid.c</div>  </div>
+<div class="title">tc_blink_schema_getgroupbyname.c</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"></div>
@@ -69,7 +69,6 @@ $(document).ready(function(){initNavTree('tc_blink_schema_getgroupbyid_8c-exampl
 <div class="line"></div>
 <div class="line"><span class="preprocessor">#include &quot;cmocka.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &quot;blink_schema.h&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &quot;blink_debug.h&quot;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;string.h&gt;</span></div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> setup(<span class="keywordtype">void</span> **user)</div>
@@ -80,13 +79,13 @@ $(document).ready(function(){initNavTree('tc_blink_schema_getgroupbyid_8c-exampl
 <div class="line">        <span class="stringliteral">&quot;   string OrderId,\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;   u32 Price,\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;   u32 Quantity\n&quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;CancelOrder/2 -&gt;\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;   string OrderId\n&quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;OrderInserted/3 -&gt;\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;   string OrderId\n&quot;</span></div>
-<div class="line">        <span class="stringliteral">&quot;&quot;</span></div>
+<div class="line">        <span class="stringliteral">&quot;\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;OrderCanceled/4 -&gt;\n&quot;</span></div>
 <div class="line">        <span class="stringliteral">&quot;   string OrderId\n&quot;</span>;</div>
 <div class="line">    </div>
@@ -96,48 +95,46 @@ $(document).ready(function(){initNavTree('tc_blink_schema_getgroupbyid_8c-exampl
 <div class="line">    <span class="keywordflow">return</span> 0;</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_getGroupByID_insertOrder(<span class="keywordtype">void</span> **user)</div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_getGroupByName_insertOrder(<span class="keywordtype">void</span> **user)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> name[] = <span class="stringliteral">&quot;InsertOrder&quot;</span>;</div>
-<div class="line">    <a name="_a3"></a><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> g = <a name="a4"></a><a class="code" href="group__blink__schema.html#ga48f324b98b588ce03b5e95fb1482400f">BLINK_Schema_getGroupByID</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), 1);</div>
+<div class="line">    <a name="_a3"></a><a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> g = <a name="a4"></a><a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), name);</div>
 <div class="line">    assert_true(g != NULL);</div>
-<div class="line">    assert_true(g == <a name="a5"></a><a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), name));</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_getGroupByID_cancelOrder(<span class="keywordtype">void</span> **user)</div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_getGroupByName_cancelOrder(<span class="keywordtype">void</span> **user)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> name[] = <span class="stringliteral">&quot;CancelOrder&quot;</span>;</div>
-<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> g = <a class="code" href="group__blink__schema.html#ga48f324b98b588ce03b5e95fb1482400f">BLINK_Schema_getGroupByID</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), 2);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> g = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), name);</div>
 <div class="line">    assert_true(g != NULL);</div>
-<div class="line">    assert_true(g == <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), name));</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_getGroupByID_orderInserted(<span class="keywordtype">void</span> **user)</div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_getGroupByName_orderInserted(<span class="keywordtype">void</span> **user)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> name[] = <span class="stringliteral">&quot;OrderInserted&quot;</span>;</div>
-<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> g = <a class="code" href="group__blink__schema.html#ga48f324b98b588ce03b5e95fb1482400f">BLINK_Schema_getGroupByID</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), 3);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> g = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), name);</div>
 <div class="line">    assert_true(g != NULL);</div>
-<div class="line">    assert_true(g == <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), name));</div>
 <div class="line">}</div>
 <div class="line"></div>
-<div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_getGroupByID_orderCanceled(<span class="keywordtype">void</span> **user)</div>
+<div class="line"><span class="keywordtype">void</span> test_BLINK_Schema_getGroupByName_orderCanceled(<span class="keywordtype">void</span> **user)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> name[] = <span class="stringliteral">&quot;OrderCanceled&quot;</span>;</div>
-<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> g = <a class="code" href="group__blink__schema.html#ga48f324b98b588ce03b5e95fb1482400f">BLINK_Schema_getGroupByID</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), 4);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> g = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), name);</div>
 <div class="line">    assert_true(g != NULL);</div>
-<div class="line">    assert_true(g == <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>((<a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a>)(*user), name));</div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
 <div class="line">{</div>
 <div class="line">    <span class="keyword">const</span> <span class="keyword">struct </span>CMUnitTest tests[] = {</div>
-<div class="line">        cmocka_unit_test_setup(test_BLINK_Schema_getGroupByID_insertOrder, setup),</div>
-<div class="line">        cmocka_unit_test_setup(test_BLINK_Schema_getGroupByID_cancelOrder, setup),</div>
-<div class="line">        cmocka_unit_test_setup(test_BLINK_Schema_getGroupByID_orderInserted, setup),</div>
-<div class="line">        cmocka_unit_test_setup(test_BLINK_Schema_getGroupByID_orderCanceled, setup),</div>
+<div class="line">        cmocka_unit_test_setup(test_BLINK_Schema_getGroupByName_insertOrder, setup),</div>
+<div class="line">        cmocka_unit_test_setup(test_BLINK_Schema_getGroupByName_cancelOrder, setup),</div>
+<div class="line">        cmocka_unit_test_setup(test_BLINK_Schema_getGroupByName_orderInserted, setup),</div>
+<div class="line">        cmocka_unit_test_setup(test_BLINK_Schema_getGroupByName_orderCanceled, setup),</div>
 <div class="line">    };</div>
 <div class="line">    <span class="keywordflow">return</span> cmocka_run_group_tests(tests, NULL, NULL);</div>
 <div class="line">}</div>
+<div class="line"></div>
+<div class="line"></div>
 </div><!-- fragment --> </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.8.6-->

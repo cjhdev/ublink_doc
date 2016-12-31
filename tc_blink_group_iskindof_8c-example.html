@@ -91,13 +91,13 @@ $(document).ready(function(){initNavTree('tc_blink_group_iskindof_8c-example.htm
 <div class="line"></div>
 <div class="line">    assert_true(schema != NULL);</div>
 <div class="line"></div>
-<div class="line">    <a name="_a4"></a><a class="code" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> base = <a name="a5"></a><a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;base&quot;</span>);</div>
-<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> derived = <a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;derived&quot;</span>);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> base = <a name="a4"></a><a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;base&quot;</span>);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> derived = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;derived&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    assert_true(base != NULL);</div>
 <div class="line">    assert_true(derived != NULL);</div>
 <div class="line"></div>
-<div class="line">    assert_true(<a name="a6"></a><a class="code" href="group__blink__schema.html#ga53cffec9b4b87a4133a8863a41755868">BLINK_Group_isKindOf</a>(derived, base));    </div>
+<div class="line">    assert_true(<a name="a5"></a><a class="code" href="group__blink__schema.html#gab358b6db5fe832921ff1444a1e5c8012">BLINK_Group_isKindOf</a>(derived, base));    </div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_Group_isKindOf_isMulti(<span class="keywordtype">void</span> **user)</div>
@@ -111,13 +111,13 @@ $(document).ready(function(){initNavTree('tc_blink_group_iskindof_8c-example.htm
 <div class="line"></div>
 <div class="line">    assert_true(schema != NULL);</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> base = <a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;base&quot;</span>);</div>
-<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> derived = <a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;derived&quot;</span>);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> base = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;base&quot;</span>);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> derived = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;derived&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    assert_true(base != NULL);</div>
 <div class="line">    assert_true(derived != NULL);</div>
 <div class="line"></div>
-<div class="line">    assert_true(<a class="code" href="group__blink__schema.html#ga53cffec9b4b87a4133a8863a41755868">BLINK_Group_isKindOf</a>(derived, base));    </div>
+<div class="line">    assert_true(<a class="code" href="group__blink__schema.html#gab358b6db5fe832921ff1444a1e5c8012">BLINK_Group_isKindOf</a>(derived, base));    </div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">void</span> test_BLINK_Group_isKindOf_isNot(<span class="keywordtype">void</span> **user)</div>
@@ -130,13 +130,13 @@ $(document).ready(function(){initNavTree('tc_blink_group_iskindof_8c-example.htm
 <div class="line"></div>
 <div class="line">    assert_true(schema != NULL);</div>
 <div class="line"></div>
-<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> base = <a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;base&quot;</span>);</div>
-<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__group">blink_group_t</a> otherBase = <a class="code" href="group__blink__schema.html#ga31562771019c2f4f25f187af1915a0fb">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;otherBase&quot;</span>);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> base = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;base&quot;</span>);</div>
+<div class="line">    <a class="code" href="group__blink__schema__internal.html#structblink__schema">blink_schema_t</a> otherBase = <a class="code" href="group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628">BLINK_Schema_getGroupByName</a>(schema, <span class="stringliteral">&quot;otherBase&quot;</span>);</div>
 <div class="line"></div>
 <div class="line">    assert_true(base != NULL);</div>
 <div class="line">    assert_true(otherBase != NULL);</div>
 <div class="line"></div>
-<div class="line">    assert_false(<a class="code" href="group__blink__schema.html#ga53cffec9b4b87a4133a8863a41755868">BLINK_Group_isKindOf</a>(otherBase, base));    </div>
+<div class="line">    assert_false(<a class="code" href="group__blink__schema.html#gab358b6db5fe832921ff1444a1e5c8012">BLINK_Group_isKindOf</a>(otherBase, base));    </div>
 <div class="line">}</div>
 <div class="line"></div>
 <div class="line"><span class="keywordtype">int</span> main(<span class="keywordtype">void</span>)</div>
