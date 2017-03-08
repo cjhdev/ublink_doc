@@ -18,17 +18,21 @@ var group__blink__schema__internal =
     ] ],
     [ "blink_schema_field", "group__blink__schema__internal.html#structblink__schema__field", [
       [ "a", "group__blink__schema__internal.html#a85f9c073245c3695208da12df711893b", null ],
-      [ "hasID", "group__blink__schema__internal.html#aa1d76e1e63ca2e0b7958ab9ffbab3a82", null ],
-      [ "id", "group__blink__schema__internal.html#aaaf1cacd9997f4bc7f56e2e9710786d5", null ],
       [ "isOptional", "group__blink__schema__internal.html#a638d7db41a6f7d136fd7cda4b0a16b44", null ],
       [ "super", "group__blink__schema__internal.html#a5bd57c22caefbb33defc70117bf9b4ff", null ],
       [ "type", "group__blink__schema__internal.html#a206bcb47f30991da663663baa99c1026", null ]
+    ] ],
+    [ "blink_schema_namespace", "group__blink__schema__internal.html#structblink__schema__namespace", [
+      [ "a", "group__blink__schema__internal.html#a585a0f5a580a4f61344c12bc6288846d", null ],
+      [ "defs", "group__blink__schema__internal.html#a2b1674f292c93670a160e350c8ddb36b", null ],
+      [ "super", "group__blink__schema__internal.html#a92f7e2f479ebdb308153a5ebeb17a466", null ]
     ] ],
     [ "blink_schema_group", "group__blink__schema__internal.html#structblink__schema__group", [
       [ "a", "group__blink__schema__internal.html#a782182a6cd240a1155bf7f5d4b69f709", null ],
       [ "f", "group__blink__schema__internal.html#a7beb8f90ac0667998e3d3b110060c647", null ],
       [ "hasID", "group__blink__schema__internal.html#a013745117547851a42811334e9bdff95", null ],
       [ "id", "group__blink__schema__internal.html#a3ecf916e97b6605946f91aa1195d7bcf", null ],
+      [ "ns", "group__blink__schema__internal.html#a02e1f3583e369af805c2b865dfe0028b", null ],
       [ "s", "group__blink__schema__internal.html#ada64cfbcb427ed56d0c969cf8101be4c", null ],
       [ "super", "group__blink__schema__internal.html#a7b3e17a1024d9aaf79d51cad9efc4493", null ],
       [ "superGroup", "group__blink__schema__internal.html#a298e3133122f81cc0d95b5934fa0bdf4", null ],
@@ -63,19 +67,9 @@ var group__blink__schema__internal =
       [ "super", "group__blink__schema__internal.html#a91caa17f49da41e47ddf41f43f62732d", null ],
       [ "type", "group__blink__schema__internal.html#a70bc1496e9e89adbcc700982f1b413c5", null ]
     ] ],
-    [ "blink_schema_namespace", "group__blink__schema__internal.html#structblink__schema__namespace", [
-      [ "a", "group__blink__schema__internal.html#a585a0f5a580a4f61344c12bc6288846d", null ],
-      [ "defs", "group__blink__schema__internal.html#a2b1674f292c93670a160e350c8ddb36b", null ],
-      [ "super", "group__blink__schema__internal.html#a92f7e2f479ebdb308153a5ebeb17a466", null ]
-    ] ],
-    [ "blink_def_iterator", "group__blink__schema__internal.html#structblink__def__iterator", [
-      [ "def", "group__blink__schema__internal.html#afeabbc11fd926844b27eeb3a3531dea0", null ],
-      [ "ns", "group__blink__schema__internal.html#adf3233b534e78def95d022d6da01ed0b", null ]
-    ] ],
     [ "blink_schema_base", "group__blink__schema__internal.html#structblink__schema__base", [
-      [ "finalised", "group__blink__schema__internal.html#a8adb75e89a725177b33f71806d3a90f3", null ],
+      [ "alloc", "group__blink__schema__internal.html#af32c660267002e4ee6ecc2f770ad07c9", null ],
       [ "ns", "group__blink__schema__internal.html#aa893847bce9b2281e4576e5c2c499a98", null ],
-      [ "pool", "group__blink__schema__internal.html#ae01ba11789e38bddfbd8de6f02722932", null ],
       [ "super", "group__blink__schema__internal.html#af04625775f2b337cc22f935e9d65129f", null ]
     ] ],
     [ "blink_itype_tag", "group__blink__schema__internal.html#gae43bc05ab8fdfe9d4404501718bd6d6e", [

@@ -1,8 +1,16 @@
 var group__blink__schema =
 [
+    [ "blink_syntax", "group__blink__schema.html#structblink__syntax", [
+      [ "in", "group__blink__schema.html#a0c51ad1fe7dfd2d62601a749bc18a171", null ],
+      [ "name", "group__blink__schema.html#a8116d3bcff5f841f0d7a203ab3fc1006", null ]
+    ] ],
     [ "blink_field_iterator", "group__blink__schema.html#structblink__field__iterator", [
       [ "field", "group__blink__schema.html#a31669a5c631d9eb2cc3de6fd2a9d6331", null ],
       [ "index", "group__blink__schema.html#a2eea92dd51ac6d759bad01e33d94800a", null ]
+    ] ],
+    [ "blink_group_iterator", "group__blink__schema.html#structblink__group__iterator", [
+      [ "def", "group__blink__schema.html#ac1d4618f8fd2be2de73eeb04a29899c4", null ],
+      [ "ns", "group__blink__schema.html#a1a0cb7c750de3e867e033e7a2110410c", null ]
     ] ],
     [ "blink_schema_t", "group__blink__schema.html#ga3b15ed02ca529af28b3ac2b7d9a37137", null ],
     [ "blink_type_tag", "group__blink__schema.html#ga3c752bf7f68879c88427adabf3778509", [
@@ -44,12 +52,13 @@ var group__blink__schema =
     [ "BLINK_FieldIterator_peek", "group__blink__schema.html#ga9370b30d47032abedbc3f09b482cc0ad", null ],
     [ "BLINK_Group_getID", "group__blink__schema.html#gab71cd546e3354476a0d93775204b83c0", null ],
     [ "BLINK_Group_getName", "group__blink__schema.html#gab768b3e4699adbf19bbdf339d8e792e5", null ],
+    [ "BLINK_Group_getNamespace", "group__blink__schema.html#ga5205d7646d2a8e6ad21b18ce768b26c4", null ],
     [ "BLINK_Group_hasID", "group__blink__schema.html#ga721a42e2936052f8f5b166f0736a7940", null ],
     [ "BLINK_Group_isKindOf", "group__blink__schema.html#gab358b6db5fe832921ff1444a1e5c8012", null ],
     [ "BLINK_Group_numberOfSuperGroup", "group__blink__schema.html#gaefb26078abaa570fdb74b86a181808b5", null ],
     [ "BLINK_Schema_getGroupByID", "group__blink__schema.html#ga48f324b98b588ce03b5e95fb1482400f", null ],
     [ "BLINK_Schema_getGroupByName", "group__blink__schema.html#gaa8114b049d55c0e51cac4b4ff3271628", null ],
-    [ "BLINK_Schema_new", "group__blink__schema.html#gab31f459960f31c950737f13ce775586d", null ],
+    [ "BLINK_Schema_new", "group__blink__schema.html#ga27bc8d4a4b759d4cddbb962ca3ce63cc", null ],
     [ "BLINK_Symbol_getName", "group__blink__schema.html#ga8313ce3d3f6a330aadf778b4d85a81e1", null ],
     [ "BLINK_Symbol_getValue", "group__blink__schema.html#ga8c3bce89fdfdad73a22ea666a7afb17a", null ]
 ];
